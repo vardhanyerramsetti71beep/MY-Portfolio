@@ -1,0 +1,92 @@
+/* ========================================================
+   Vardhan Yerramsetti - Professional Portfolio Stylesheet
+   ======================================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Ambient Radial Glow */
+.glow-bg {
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15) 0%, rgba(99, 102, 241, 0.08) 35%, transparent 70%);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Equalizer Spectrum Bars for Project Simulator */
+.bar {
+  display: inline-block;
+  width: 4px;
+  margin: 0 1.5px;
+  border-radius: 2px;
+  animation: soundBars 1s ease-in-out infinite alternate;
+}
+
+@keyframes soundBars {
+  0% {
+    height: 6px;
+  }
+  100% {
+    height: 28px;
+  }
+}
+
+.bar:nth-child(1) { animation-duration: 0.6s; }
+.bar:nth-child(2) { animation-duration: 0.9s; }
+.bar:nth-child(3) { animation-duration: 0.7s; }
+.bar:nth-child(4) { animation-duration: 1.1s; }
+.bar:nth-child(5) { animation-duration: 0.5s; }
+.bar:nth-child(6) { animation-duration: 0.8s; }
+.bar:nth-child(7) { animation-duration: 1.2s; }
+.bar:nth-child(8) { animation-duration: 0.65s; }
+
+/* Smooth element hover transitions */
+.skill-item,
+.task-row,
+.emotion-btn {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Print Styles for Clean Resume Printing */
+@media print {
+  nav,
+  #particleCanvas,
+  #terminalModal,
+  #toastNotification,
+  .emotion-btn,
+  #newTaskInput,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .glass-card {
+    background: transparent !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+}

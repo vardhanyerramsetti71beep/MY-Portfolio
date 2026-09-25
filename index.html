@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vardhan Yerramsetti | Python Full Stack Developer & AWS Cloud Practitioner</title>
+  <meta name="description" content="Portfolio of Vardhan Yerramsetti - Python Full Stack Developer, AWS Certified Cloud Practitioner, and ML Engineer." />
+
+  <!-- Tailwind CSS Framework CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              aws: '#FF9900',
+              python: '#3776AB',
+              accent: '#6366f1'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-amber-500 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          VY
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-brand-400 transition-colors">Vardhan Yerramsetti</span>
+          <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            Python • AWS Certified
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
+        <a href="#about" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">About</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Skills</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Projects & Demos</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Experience</a>
+        <a href="#certifications" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Certifications</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Contact</a>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center space-x-3">
+        <!-- Interactive Terminal CLI Shortcut -->
+        <button onclick="toggleTerminal()" title="Toggle Developer Terminal (`)" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800/80 border border-slate-700 hover:border-brand-500 text-slate-300 hover:text-brand-400 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-terminal text-brand-400"></i>
+          <span class="hidden sm:inline">CLI</span>
+          <kbd class="text-[10px] bg-slate-900 px-1 py-0.5 rounded border border-slate-700">~</kbd>
+        </button>
+
+        <!-- Social Icons -->
+        <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="GitHub Profile">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+        <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-slate-400 hover:text-[#0077b5] hover:bg-slate-800 transition" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin text-lg"></i>
+        </a>
+
+        <!-- Contact CTA -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Get In Touch</span>
+        </a>
+
+        <!-- Mobile Nav Menu Button -->
+        <button onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileNav" class="hidden md:hidden px-4 pt-2 pb-6 space-y-2 border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
+      <a href="#about" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">About</a>
+      <a href="#skills" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Skills</a>
+      <a href="#projects" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Projects & Live Demos</a>
+      <a href="#experience" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Experience & Education</a>
+      <a href="#certifications" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Certifications</a>
+      <a href="#contact" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="about" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden glow-bg z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Summary & Metrics -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs text-slate-300 backdrop-blur-md">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="font-medium text-emerald-400">Available for Opportunities</span>
+            <span class="text-slate-500">•</span>
+            <span class="text-amber-400 font-mono flex items-center gap-1">
+              <i class="fa-brands fa-aws"></i> AWS Certified Cloud Practitioner
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+            Hi, I'm <span class="bg-gradient-to-r from-brand-400 via-indigo-400 to-amber-300 bg-clip-text text-transparent">Vardhan Yerramsetti</span>
+          </h1>
+
+          <div class="text-lg sm:text-2xl font-mono text-slate-300 flex items-center justify-center lg:justify-start gap-2">
+            <span class="text-brand-400">&gt;</span>
+            <span id="typedRole" class="text-white font-semibold"></span>
+            <span class="w-2.5 h-6 bg-brand-400 animate-pulse"></span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Results-driven <strong class="text-white font-semibold">Python Full Stack Developer</strong> and <strong class="text-amber-400 font-semibold">AWS Certified Cloud Practitioner</strong> with foundational expertise in Data Science and Machine Learning. Proficient in architecting scalable Flask microservices, high-efficiency RESTful APIs, and reactive React.js web interfaces deployed on AWS (EC2, S3, Lambda).
+          </p>
+
+          <!-- Metrics Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+              <div class="text-2xl font-bold font-mono text-brand-400">>90%</div>
+              <div class="text-xs text-slate-400 mt-1">Emotion Detection ML</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+              <div class="text-2xl font-bold font-mono text-indigo-400">-25%</div>
+              <div class="text-xs text-slate-400 mt-1">API Latency Cut</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+              <div class="text-2xl font-bold font-mono text-amber-400">AWS</div>
+              <div class="text-xs text-slate-400 mt-1">Certified Practitioner</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+              <div class="text-2xl font-bold font-mono text-emerald-400">99%</div>
+              <div class="text-xs text-slate-400 mt-1">Data & Operations SLA</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Explore Interactive Projects</span>
+            </a>
+            
+            <a href="mailto:vardhanyerramsetti71@gmail.com" class="px-6 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-semibold text-sm transition-all flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-brand-400"></i>
+              <span>Email Vardhan</span>
+            </a>
+
+            <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied to clipboard!')" class="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-100 text-sm transition" title="Quick Copy Email">
+              <i class="fa-regular fa-clone"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right: Code Card Simulation -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-2xl p-5 shadow-2xl relative border border-slate-700/60 overflow-hidden group">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="text-xs font-mono text-slate-400 ml-2">vardhan_developer.py</span>
+              </div>
+              <span class="text-[11px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">AWS Active</span>
+            </div>
+
+            <pre class="font-mono text-xs sm:text-sm text-slate-300 pt-4 leading-relaxed overflow-x-auto"><code><span class="text-indigo-400">class</span> <span class="text-amber-300">SoftwareEngineer</span>:
+    <span class="text-indigo-400">def</span> <span class="text-blue-400">__init__</span>(<span class="text-rose-400">self</span>):
+        <span class="text-rose-400">self</span>.name = <span class="text-emerald-300">"Vardhan Yerramsetti"</span>
+        <span class="text-rose-400">self</span>.role = <span class="text-emerald-300">"Python Full Stack Dev"</span>
+        <span class="text-rose-400">self</span>.certification = <span class="text-amber-400">"AWS Cloud Practitioner"</span>
+        <span class="text-rose-400">self</span>.backend = [<span class="text-emerald-300">"Python"</span>, <span class="text-emerald-300">"Flask"</span>, <span class="text-emerald-300">"Django"</span>]
+        <span class="text-rose-400">self</span>.frontend = [<span class="text-emerald-300">"React.js"</span>, <span class="text-emerald-300">"JavaScript ES6+"</span>]
+        <span class="text-rose-400">self</span>.cloud_ai = [<span class="text-emerald-300">"AWS EC2/S3/Lambda"</span>, <span class="text-emerald-300">"OpenCV"</span>, <span class="text-emerald-300">"Scikit-learn"</span>]
+
+    <span class="text-indigo-400">def</span> <span class="text-blue-400">build_scalable_solution</span>(<span class="text-rose-400">self</span>, problem):
+        <span class="text-slate-500"># Optimized REST API + High Availability</span>
+        <span class="text-indigo-400">return</span> <span class="text-rose-400">self</span>.deploy_microservice(
+            stack=<span class="text-emerald-300">"Flask + React + MySQL"</span>,
+            infra=<span class="text-emerald-300">"AWS Cloud"</span>,
+            efficiency_gain=<span class="text-emerald-300">"+25%"</span>
+        )
+
+vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
+<span class="text-indigo-400">print</span>(<span class="text-emerald-300">"Ready to build high-performance systems."</span>)</code></pre>
+
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
+              <span class="flex items-center gap-1.5 text-emerald-400">
+                <i class="fa-solid fa-circle-check"></i> Clean Code & OOP Principles
+              </span>
+              <button onclick="runSampleCodeAnimation(this)" class="text-brand-400 hover:text-brand-300 underline cursor-pointer">
+                Run Simulation ▶
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS MATRIX ================= -->
+  <section id="skills" class="py-20 relative z-10 bg-slate-900/40 border-y border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+          <i class="fa-solid fa-microchip"></i> TECHNICAL ARSENAL
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Skills & Core Competencies
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Filtering and structured breakdown of languages, backend microservices, cloud platforms, and ML pipelines.
+        </p>
+
+        <!-- Search & Filter Controls -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div class="relative w-full sm:w-72">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
+            <input type="text" id="skillSearch" oninput="filterSkills()" placeholder="Search skill (e.g. Flask, AWS)..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-slate-950/80 rounded-xl border border-slate-800 text-xs">
+            <button onclick="setSkillFilter('all')" class="skill-tab active px-3 py-1.5 rounded-lg text-white bg-brand-600 transition" data-filter="all">All</button>
+            <button onclick="setSkillFilter('backend')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="backend">Backend & APIs</button>
+            <button onclick="setSkillFilter('frontend')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="frontend">Frontend</button>
+            <button onclick="setSkillFilter('cloud')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="cloud">AWS & DevOps</button>
+            <button onclick="setSkillFilter('data-ml')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="data-ml">Data & ML</button>
+            <button onclick="setSkillFilter('database')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="database">Databases</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div id="skillsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card: Languages -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend frontend">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Languages</h3>
+              <p class="text-xs text-slate-400">Core algorithms & script programming</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">Python</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-yellow-500/10 border border-yellow-500/20 text-yellow-300">JavaScript (ES6+)</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">SQL</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">C++</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Card: Backend & Microservices -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Backend & Frameworks</h3>
+              <p class="text-xs text-slate-400">Microservices & High-Throughput APIs</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">Flask (API Dev)</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">Django</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">RESTful Architecture</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Microservices</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Server-Side Logic</span>
+          </div>
+        </div>
+
+        <!-- Card: Cloud & DevOps -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="cloud">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-lg">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Cloud & DevOps</h3>
+              <p class="text-xs text-slate-400">Certified AWS Cloud Practitioner</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300 font-semibold">AWS (EC2, S3, Lambda)</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300">Cloud Architecture</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">Docker Basics</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Scalable Deployment</span>
+          </div>
+        </div>
+
+        <!-- Card: Frontend Development -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="frontend">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Frontend Engineering</h3>
+              <p class="text-xs text-slate-400">Interactive & Reactive Web UIs</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-sky-500/10 border border-sky-500/20 text-sky-300 font-semibold">React.js</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-purple-500/10 border border-purple-500/20 text-purple-300">Bootstrap / Tailwind</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Responsive Web Design</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">DOM Manipulation</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Single Page Apps (SPA)</span>
+          </div>
+        </div>
+
+        <!-- Card: Data Science & ML -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="data-ml">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Data Science & ML</h3>
+              <p class="text-xs text-slate-400">Computer Vision & Predictive Analysis</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-rose-500/10 border border-rose-500/20 text-rose-300 font-semibold">OpenCV</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">Scikit-learn</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">TensorFlow</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">NumPy / Pandas</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Data Preprocessing</span>
+          </div>
+        </div>
+
+        <!-- Card: Databases & Storage -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="database">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Databases & Storage</h3>
+              <p class="text-xs text-slate-400">Schema Design & Query Optimization</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-semibold">MySQL</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Relational Schema Design</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold">Query Optimization (-25% latency)</span>
+            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">CRUD Operations</span>
+          </div>
+        </div>
+
+        <!-- Card: Core CS & Methodologies -->
+        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group sm:col-span-2 lg:col-span-3" data-category="backend">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-cubes"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Core Computer Science & Methodologies</h3>
+                <p class="text-xs text-slate-400">Engineering standards & development lifecycle</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Data Structures & Algorithms (DSA)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Object-Oriented Programming (OOP)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Computer Networks</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Git / GitHub</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Postman</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Agile / Scrum (SDLC)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">TDD & Unit Testing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS & INTERACTIVE DEMOS ================= -->
+  <section id="projects" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono mb-3">
+          <i class="fa-solid fa-laptop-code"></i> FEATURED WORK & LIVE EXPERIENCES
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Engineering Projects with Live Simulators
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Interactive simulations demonstrating computer vision inference and optimized backend API performance.
+        </p>
+      </div>
+
+      <!-- PROJECT 1: Music Recommendation System Based on Facial Expression Recognition -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 mb-16 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-6 space-y-4">
+            <div class="flex items-center gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300">Computer Vision</span>
+              <span class="px-2.5 py-1 rounded-md bg-brand-500/10 border border-brand-500/30 text-brand-300">Flask REST API</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">>90% Accuracy</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Music Recommendation System Based on Facial Expression Recognition
+            </h3>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Designed and developed an end-to-end intelligent music recommendation platform analyzing user facial expressions in real-time. Features an optimized image processing pipeline using OpenCV for low-latency face detection and feature extraction.
+            </p>
+
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Engineered high-throughput backend <strong>Flask RESTful APIs</strong> to handle live video frame streaming, asynchronous model inference, and track delivery.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Implemented supervised machine learning algorithms to classify emotions (<span class="text-emerald-400">Happy</span>, <span class="text-sky-400">Sad</span>, <span class="text-amber-400">Neutral</span>, <span class="text-rose-400">Angry</span>) with <strong>over 90% detection accuracy</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Optimized OpenCV frame pipeline, resulting in a <strong>20% uplift in real-time user session engagement</strong>.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Flask</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">OpenCV</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">REST API</span>
+            </div>
+          </div>
+
+          <!-- Interactive Simulator: Face Emotion & Music Recommender -->
+          <div class="lg:col-span-6">
+            <div class="bg-slate-950/90 rounded-2xl p-5 border border-slate-800 shadow-inner relative">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Model Inference Simulator</span>
+                </div>
+                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">OpenCV Ready</span>
+              </div>
+
+              <!-- Interactive Buttons -->
+              <div class="mb-4">
+                <label class="block text-xs font-mono text-slate-400 mb-2">Select User Facial Emotion to Classify:</label>
+                <div class="grid grid-cols-4 gap-2">
+                  <button onclick="setEmotion('happy')" id="btn-happy" class="emotion-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-emerald-600 text-white flex flex-col items-center gap-1 border border-emerald-400 transition">
+                    <span class="text-lg">😄</span>
+                    <span>Happy</span>
+                  </button>
+                  <button onclick="setEmotion('sad')" id="btn-sad" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-sky-500 transition">
+                    <span class="text-lg">😢</span>
+                    <span>Sad</span>
+                  </button>
+                  <button onclick="setEmotion('neutral')" id="btn-neutral" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-amber-500 transition">
+                    <span class="text-lg">😐</span>
+                    <span>Neutral</span>
+                  </button>
+                  <button onclick="setEmotion('angry')" id="btn-angry" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-rose-500 transition">
+                    <span class="text-lg">🔥</span>
+                    <span>Energetic</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Visual Classifier Box -->
+              <div class="relative bg-slate-900 rounded-xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
+                <div class="flex items-center gap-3">
+                  <div id="simFaceIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-emerald-500 flex items-center justify-center text-3xl shadow-lg relative">
+                    <span id="faceEmoji">😄</span>
+                    <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="text-xs font-mono text-slate-400">Classified Landmark:</div>
+                    <div id="detectedLabel" class="text-sm font-bold text-emerald-400">Happy Expression</div>
+                    <div class="text-[11px] font-mono text-slate-500 flex items-center gap-2 mt-0.5">
+                      <span>Latency: <strong class="text-slate-300">14ms</strong></span>
+                      <span>•</span>
+                      <span>Confidence: <strong id="confidenceScore" class="text-emerald-400">94.8%</strong></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Equalizer Bar Visualization -->
+                <div class="flex items-end h-8">
+                  <span class="bar bg-brand-400"></span>
+                  <span class="bar bg-brand-400"></span>
+                  <span class="bar bg-brand-400"></span>
+                  <span class="bar bg-brand-400"></span>
+                  <span class="bar bg-brand-400"></span>
+                  <span class="bar bg-brand-400"></span>
+                </div>
+              </div>
+
+              <!-- Track Output Box -->
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-music"></i>
+                  </div>
+                  <div>
+                    <div id="trackTitle" class="text-xs font-bold text-white">"Uplifting Vibes" - Synthwave Sunset</div>
+                    <div id="trackMeta" class="text-[11px] text-slate-400 font-mono">BPM: 124 • Mode: Harmonic Major</div>
+                  </div>
+                </div>
+
+                <button onclick="toggleAudioPreview(this)" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-600/20 border border-brand-500/40 text-brand-300 hover:bg-brand-600 hover:text-white transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-play text-[10px]"></i>
+                  <span>Test API Stream</span>
+                </button>
+              </div>
+
+              <div class="mt-3 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1">
+                <i class="fa-solid fa-bolt text-amber-400"></i>
+                <span>Asynchronous Flask API Pipeline & Supervised ML Model</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Scalable Full-Stack Task & Data Management Portal -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-6 space-y-4">
+            <div class="flex items-center gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300">AWS Deployed</span>
+              <span class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-300">React.js + Flask</span>
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">MySQL Optimized</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Scalable Full-Stack Task & Data Management Portal
+            </h3>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Architected a responsive full-stack enterprise data portal with a modular backend powered by Flask RESTful APIs and secure token authentication. Built dynamic React frontend components integrated with backend endpoints for high-efficiency data exchange and CRUD operations.
+            </p>
+
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Designed normalized relational database schemas in <strong>MySQL with indexed queries, cutting API response times by 25%</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Deployed complete multi-tier solution on <strong>AWS infrastructure (EC2, S3)</strong>, ensuring high availability, fault tolerance, and secure asset storage.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
+                <span>Integrated token-based authentication and role-based data isolation across all endpoints.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Flask</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">React.js</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">MySQL</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">AWS EC2 / S3</span>
+            </div>
+          </div>
+
+          <!-- Interactive CRUD & API Simulator -->
+          <div class="lg:col-span-6">
+            <div class="bg-slate-950/90 rounded-2xl p-5 border border-slate-800 shadow-inner">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-database text-brand-400 text-xs"></i>
+                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Task & Query Workbench</span>
+                </div>
+                <span class="text-[11px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">AWS EC2 Hosted</span>
+              </div>
+
+              <!-- Input Task -->
+              <div class="flex gap-2 mb-4">
+                <input type="text" id="newTaskInput" placeholder="Add task (e.g., Deploy EC2 microservice)..." class="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                <button onclick="addTaskInteractive()" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold font-mono flex items-center gap-1 transition">
+                  <i class="fa-solid fa-plus text-xs"></i>
+                  <span>Add</span>
+                </button>
+              </div>
+
+              <!-- Task List Container -->
+              <div id="taskListContainer" class="space-y-2 mb-4 max-h-48 overflow-y-auto pr-1">
+                <div class="task-row p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between text-xs transition">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="text-slate-200">Scale Flask Worker Nodes via AWS Auto-Scaling</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">200 OK</span>
+                    <button onclick="deleteTask(this)" class="text-slate-500 hover:text-rose-400 transition" title="Delete">
+                      <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="task-row p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between text-xs transition">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                    <span class="text-slate-200">Optimize MySQL Relational Indexing for CRUD</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded">Indexed</span>
+                    <button onclick="deleteTask(this)" class="text-slate-500 hover:text-rose-400 transition" title="Delete">
+                      <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Latency Benchmark Inspector -->
+              <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 font-mono text-xs space-y-1.5">
+                <div class="flex items-center justify-between text-slate-400 text-[11px]">
+                  <span>ENDPOINT: <strong class="text-brand-400">POST /api/v1/tasks</strong></span>
+                  <span class="text-emerald-400 font-bold">LATENCY: 18ms (-25%)</span>
+                </div>
+                <div class="text-[10px] text-slate-500 truncate">
+                  SQL: SELECT t.id, t.title FROM tasks t USE INDEX (idx_user_status) WHERE t.status='active'
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WORK EXPERIENCE & EDUCATION ================= -->
+  <section id="experience" class="py-20 relative z-10 bg-slate-900/40 border-y border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
+          <i class="fa-solid fa-briefcase"></i> CAREER & ACADEMICS
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Work Experience & Education
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          A track record of operational throughput, academic mentorship in computer science, and data-driven execution.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Experience Column -->
+        <div class="lg:col-span-8 space-y-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-layer-group text-brand-400"></i> Professional Experience
+          </h3>
+
+          <!-- Instakart -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 relative group hover:border-brand-500/40 transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h4 class="text-lg font-bold text-white">Operations and Logistics Associate</h4>
+              <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded-md border border-brand-500/20 w-fit">
+                Jan 2026 – Apr 2026
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-slate-300 mb-3">Instakart Services Private Limited</div>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-400 mt-1 text-xs"></i>
+                <span>Supervised and audited warehouse operations, order processing, and inventory databases, maintaining <strong>99% data accuracy</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-400 mt-1 text-xs"></i>
+                <span>Coordinated cross-functional workflows to eliminate pipeline bottlenecks, driving a <strong>15% increase in operational throughput</strong>.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sri Srinivasa Gravity Junior College -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 relative group hover:border-brand-500/40 transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h4 class="text-lg font-bold text-white">Teaching Assistant</h4>
+              <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20 w-fit">
+                Jun 2022 – Aug 2022
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-slate-300 mb-3">Sri Srinivasa Gravity Junior College</div>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-indigo-400 mt-1 text-xs"></i>
+                <span>Mentored <strong>40+ students</strong> in computer science fundamentals, analytical problem-solving, and career trajectory planning.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-indigo-400 mt-1 text-xs"></i>
+                <span>Assisted senior faculty with tracking academic indicators and curriculum delivery, lifting overall student performance.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Future Generali -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 relative group hover:border-brand-500/40 transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h4 class="text-lg font-bold text-white">Direct Marketing Coordinator</h4>
+              <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 w-fit">
+                Aug 2022 – Jan 2023
+              </span>
+            </div>
+            <div class="text-sm font-semibold text-slate-300 mb-3">Future Generali Total Health Insurance</div>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-amber-400 mt-1 text-xs"></i>
+                <span>Executed targeted digital campaigns across multiple channels, engaging <strong>5,000+ prospective leads</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-amber-400 mt-1 text-xs"></i>
+                <span>Analyzed customer conversion telemetry alongside product and sales teams, contributing to a <strong>10% uplift in lead acquisition</strong>.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Education & Languages Column -->
+        <div class="lg:col-span-4 space-y-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Education
+          </h3>
+
+          <div class="glass-card rounded-2xl p-6 border border-slate-800">
+            <div class="text-xs font-mono text-indigo-400 mb-1">2018 – 2026</div>
+            <h4 class="font-bold text-white text-base">Bachelor of Technology</h4>
+            <div class="text-sm font-semibold text-slate-300">Computer Science and Engineering</div>
+            <div class="text-xs text-brand-400 font-mono mt-1">JNTU Kakinada • CGPA: 6.5</div>
+
+            <div class="mt-4 pt-4 border-t border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-2">Relevant Coursework:</div>
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-300">
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Web Development</span>
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">DBMS</span>
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">DSA</span>
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">OOP</span>
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Cloud Computing</span>
+                <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Computer Networks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spoken Languages -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800">
+            <h4 class="font-bold text-white text-sm mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-language text-brand-400"></i> Languages Known
+            </h4>
+            <div class="space-y-2 text-xs font-mono">
+              <div class="flex justify-between items-center text-slate-300">
+                <span>English</span>
+                <span class="text-emerald-400">Professional</span>
+              </div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-brand-500 h-full rounded-full" style="width: 90%"></div>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-300 pt-2">
+                <span>Telugu</span>
+                <span class="text-emerald-400">Native</span>
+              </div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-indigo-500 h-full rounded-full" style="width: 100%"></div>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-300 pt-2">
+                <span>Hindi</span>
+                <span class="text-emerald-400">Conversational</span>
+              </div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-amber-500 h-full rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS SECTION ================= -->
+  <section id="certifications" class="py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-brand-aws text-xs font-mono mb-3">
+          <i class="fa-solid fa-award"></i> VERIFIED CREDENTIALS
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Certifications & Accreditations
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Validated industry credentials across cloud computing, enterprise networking, and modern software development.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- AWS Cloud Practitioner -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">2023</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-amber-300 transition">AWS Certified Cloud Practitioner</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Amazon Web Services</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">Cloud Architecture</span>
+          </div>
+        </div>
+
+        <!-- AWS Academy -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">2023</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-amber-300 transition">AWS Academy Cloud Foundations</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Amazon Web Services</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">EC2 / S3 / IAM</span>
+          </div>
+        </div>
+
+        <!-- Google Android Enterprise -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-google"></i>
+            </div>
+            <span class="text-[11px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">2022</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-300 transition">Android Enterprise Associate</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Google</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">Enterprise Mobile</span>
+          </div>
+        </div>
+
+        <!-- Cisco Networking -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-sky-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="text-[11px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">2022</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-sky-300 transition">Cisco Networking Essentials</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Cisco Networking Academy</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">TCP/IP & Routing</span>
+          </div>
+        </div>
+
+        <!-- Coursera C++ -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-indigo-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <span class="text-[11px] font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">2021</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-indigo-300 transition">Object-Oriented Programming in C++</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Coursera</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">OOP & Memory</span>
+          </div>
+        </div>
+
+        <!-- Coursera Python -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-emerald-500/60 transition group relative">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">2021</span>
+          </div>
+          <h3 class="font-bold text-white text-base group-hover:text-emerald-300 transition">Programming for Everybody (Python)</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">Coursera</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-emerald-400 flex items-center gap-1 font-mono">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">Python Core</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="py-24 relative z-10 bg-slate-900/40 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Contact Intro -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono">
+            <i class="fa-solid fa-paper-plane"></i> INITIATE CONTACT
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Let's build scalable systems together.
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Whether you have an opening for a <strong>Python Full Stack Developer</strong>, an <strong>AWS Cloud Engineer</strong>, or want to collaborate on machine learning projects, I'm just a click away!
+          </p>
+
+          <div class="space-y-3 pt-2">
+            
+            <!-- Email -->
+            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-brand-500/50 transition">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 font-mono">Email Address</div>
+                  <a href="mailto:vardhanyerramsetti71@gmail.com" class="text-sm font-semibold text-white hover:text-brand-400 transition">
+                    vardhanyerramsetti71@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Email">
+                <i class="fa-regular fa-clone"></i>
+              </button>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 font-mono">Direct Phone & WhatsApp</div>
+                  <a href="https://wa.me/917386033417" target="_blank" class="text-sm font-semibold text-white hover:text-emerald-400 transition">
+                    +91 7386033417
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="https://wa.me/917386033417" target="_blank" class="p-2 text-emerald-400 hover:text-emerald-300 transition" title="Chat on WhatsApp">
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <button onclick="copyToClipboard('+91 7386033417', 'Phone number copied!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Phone">
+                  <i class="fa-regular fa-clone"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-[#0077b5] flex items-center gap-3 text-slate-300 hover:text-white transition">
+                <i class="fa-brands fa-linkedin text-xl text-[#0077b5]"></i>
+                <div class="text-xs font-mono font-semibold">LinkedIn Profile</div>
+              </a>
+              <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-500 flex items-center gap-3 text-slate-300 hover:text-white transition">
+                <i class="fa-brands fa-github text-xl text-white"></i>
+                <div class="text-xs font-mono font-semibold">GitHub Profile</div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Direct Message Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl relative">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Message Directly</h3>
+            <p class="text-xs text-slate-400 mb-6 font-mono">Triggers your default email client with formatted subject & message.</p>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
+                  <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
+                  <input type="email" id="senderEmail" required placeholder="alex@company.com" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1">Opportunity / Subject</label>
+                <input type="text" id="senderSubject" required placeholder="Python Full Stack / AWS Cloud Role" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
+                <textarea id="senderMessage" rows="4" required placeholder="Hi Vardhan, we'd like to discuss an opportunity..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-amber-500 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold text-xs tracking-wider uppercase shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message to Vardhan</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 bg-slate-950 border-t border-slate-900 text-slate-400 text-xs font-mono relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 <strong class="text-white">Vardhan Yerramsetti</strong>. Built for Scalable Web & Cloud.
+      </div>
+      <div class="flex items-center space-x-4 text-sm">
+        <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" class="hover:text-[#0077b5] transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:vardhanyerramsetti71@gmail.com" class="hover:text-brand-400 transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE TERMINAL CLI MODAL ================= -->
+  <div id="terminalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-slate-950 rounded-2xl w-full max-w-2xl border border-slate-700 shadow-2xl overflow-hidden font-mono flex flex-col h-96">
+      
+      <!-- Terminal Window Bar -->
+      <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <span onclick="toggleTerminal()" class="w-3 h-3 rounded-full bg-rose-500 cursor-pointer inline-block" title="Close"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+          <span class="text-xs text-slate-400 ml-2">vardhan@aws-terminal:~</span>
+        </div>
+        <button onclick="toggleTerminal()" class="text-slate-400 hover:text-white text-xs">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Output Screen -->
+      <div id="terminalOutput" class="flex-1 p-4 overflow-y-auto text-xs text-slate-300 space-y-1.5 leading-relaxed">
+        <div class="text-brand-400">Welcome to Vardhan Yerramsetti's Developer Terminal!</div>
+        <div class="text-slate-500">Type <span class="text-amber-400">'help'</span> to see available commands or <span class="text-amber-400">'skills'</span>, <span class="text-amber-400">'projects'</span>, <span class="text-amber-400">'aws'</span>, <span class="text-amber-400">'contact'</span>, <span class="text-amber-400">'clear'</span>.</div>
+      </div>
+
+      <!-- Input Line -->
+      <div class="bg-slate-900/60 px-4 py-2.5 border-t border-slate-800 flex items-center gap-2">
+        <span class="text-emerald-400 text-xs">vardhan@cloud:~$</span>
+        <input type="text" id="terminalInput" onkeydown="handleTerminalCommand(event)" autofocus class="flex-1 bg-transparent text-xs text-white focus:outline-none font-mono" placeholder="Type a command..." />
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 px-4 py-3 rounded-xl bg-slate-900 border border-brand-500/40 text-white text-xs font-mono shadow-2xl flex items-center gap-2">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toastMessage">Copied!</span>
+  </div>
+
+  <!-- External JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
