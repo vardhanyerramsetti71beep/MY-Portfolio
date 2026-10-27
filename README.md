@@ -18,9 +18,9 @@ This portfolio showcases scalable full-stack web applications, machine learning 
 - 🧠 **Live Emotion & Music Recommendation Simulator**:
   - Simulates the computer vision pipeline built with **OpenCV** and **Scikit-learn** (>90% classification accuracy).
   - Toggle between *Happy*, *Sad*, *Neutral*, and *Energetic* moods to see real-time facial landmark detection, confidence scores, and dynamic audio equalizer animations.
-- 🧵 **S.V.T. Tailors — Bespoke Atelier Customizer & Order Tracker**:
-  - Full-stack bespoke tailoring e-commerce and booking web platform deployed live on Vercel.
-  - Interactive garment price estimator, multi-method sizing options, and real-time production pipeline tracking.
+- 🧵 **S.V.T. Tailors — Master Gents Bespoke Tailoring & Order Tracker**:
+  - Full-stack gents bespoke tailoring e-commerce and booking web platform deployed live on Vercel.
+  - Interactive gents garment customizer, multi-method sizing options, and real-time production pipeline tracking.
 - 💻 **Interactive Developer Terminal (CLI)**:
   - Toggle anytime by pressing <kbd>~</kbd> or clicking **CLI** in the navigation bar.
   - Supports commands: `help`, `about`, `skills`, `projects`, `aws`, `contact`, `clear`, and `exit`.

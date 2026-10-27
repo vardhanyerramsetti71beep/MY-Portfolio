@@ -214,12 +214,12 @@ function toggleAudioPreview(btn) {
   showToast("Triggered simulated Flask API stream: 200 OK (Audio Frame Dispatched)");
 }
 
-// 6. Interactive SVT Tailors Bespoke Estimator & Order Tracker Simulator
+// 6. Interactive SVT Tailors Gents Bespoke Configurator & Order Tracker
 const tailorData = {
   suit: {
     emoji: "🤵",
     title: "Bespoke 2-Piece Suit",
-    price: "₹4,500",
+    fit: "Master Tailored",
     time: "48h Express",
     badge: "Luxury Fit",
     color: "text-amber-400",
@@ -232,7 +232,7 @@ const tailorData = {
   shirt: {
     emoji: "👔",
     title: "Executive Bespoke Shirt",
-    price: "₹650",
+    fit: "Custom Contoured",
     time: "24h Express",
     badge: "Giza Cotton",
     color: "text-sky-400",
@@ -245,9 +245,9 @@ const tailorData = {
   trouser: {
     emoji: "👖",
     title: "Tailored Formal Trouser",
-    price: "₹550",
+    fit: "Slim / Comfort Cut",
     time: "2 Days",
-    badge: "Comfort Waist",
+    badge: "Custom Pleats",
     color: "text-emerald-400",
     border: "border-emerald-500",
     btnClass: "bg-emerald-600 text-white border-emerald-400",
@@ -255,24 +255,24 @@ const tailorData = {
     progress: "40%",
     desc: "Computerized chalk drafting, pocket lining assembly, and hem cuffing."
   },
-  blouse: {
-    emoji: "🥻",
-    title: "Designer Bridal Blouse",
-    price: "₹950",
-    time: "48h Handcrafted",
-    badge: "Maggam Work",
-    color: "text-rose-400",
-    border: "border-rose-500",
-    btnClass: "bg-rose-600 text-white border-rose-400",
-    stage: "Stage 3 / 5: Hand Embroidery",
+  blazer: {
+    emoji: "🧥",
+    title: "Classic Bespoke Blazer",
+    fit: "Handcrafted Canvassed",
+    time: "3 Days",
+    badge: "Italian Wool",
+    color: "text-indigo-400",
+    border: "border-indigo-500",
+    btnClass: "bg-indigo-600 text-white border-indigo-400",
+    stage: "Stage 3 / 5: Lapel & Lining",
     progress: "60%",
-    desc: "Intricate zari work stitching, reinforced lining, and latkan attachment."
+    desc: "Hand-rolled lapel roll, structured shoulder pads, and horn button assembly."
   }
 };
 
 let currentGarment = 'suit';
 const tailorStages = [
-  { stage: "Stage 1 / 5: Order Logged", progress: "20%", desc: "Measurements recorded via MySQL REST API and fabric verified." },
+  { stage: "Stage 1 / 5: Order Logged", progress: "20%", desc: "Gents measurements recorded via MySQL REST API and fabric verified." },
   { stage: "Stage 2 / 5: Fabric Cut", progress: "40%", desc: "Individual paper pattern drafted and shear cutting completed." },
   { stage: "Stage 3 / 5: Master Stitch", progress: "60%", desc: "Master craftsman assembling panels with reinforced interior canvas." },
   { stage: "Stage 4 / 5: Steam Press", progress: "80%", desc: "Industrial steam pressure styling and quality audit inspection." },
@@ -300,8 +300,8 @@ function setTailorGarment(type) {
     titleEl.className = `text-sm font-bold ${data.color}`;
   }
 
-  const priceEl = document.getElementById("tailorPrice");
-  if (priceEl) priceEl.textContent = data.price;
+  const fitEl = document.getElementById("tailorFit");
+  if (fitEl) fitEl.textContent = data.fit;
 
   const timeEl = document.getElementById("tailorTime");
   if (timeEl) timeEl.textContent = data.time;
@@ -342,7 +342,7 @@ function advanceTailorStage() {
 function simulateOrderDispatch() {
   const g = tailorData[currentGarment];
   const orderId = Math.floor(1000 + Math.random() * 9000);
-  showToast(`WhatsApp Order Formatted: [SVT #${orderId}] ${g.title} (${g.price})`);
+  showToast(`WhatsApp Order Formatted: [SVT #${orderId}] ${g.title} (Custom Fit Measurements)`);
 }
 
 // 7. Interactive Terminal CLI
@@ -386,7 +386,7 @@ function handleTerminalCommand(e) {
         response = "Languages: Python, JS ES6+, SQL, C++ | Frameworks: Flask, Django, React.js | Cloud: AWS (EC2, S3, Lambda) | ML: OpenCV, Scikit-learn, TensorFlow.";
         break;
       case "projects":
-        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)<br>2. S.V.T. Tailors — Bespoke Atelier & Luxury E-Commerce Platform (Python + MySQL + Vercel)";
+        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)<br>2. S.V.T. Tailors — Master Gents Bespoke Tailoring & E-Commerce Platform (Python + MySQL + Vercel)";
         break;
       case "aws":
         response = "AWS Certified Cloud Practitioner (2023) | AWS Academy Cloud Foundations (2023) | Hands-on: EC2, S3, Lambda, Cloud Architecture.";

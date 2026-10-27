@@ -589,11 +589,11 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             </div>
 
             <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
-              S.V.T. Tailors — Bespoke Atelier & Luxury E-Commerce Platform
+              S.V.T. Tailors — Master Gents Bespoke Tailoring & E-Commerce Platform
             </h3>
 
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Designed and engineered a full-stack luxury bespoke tailoring e-commerce and booking web platform for a heritage atelier established in 1965. Features dynamic garment customization, real-time price calculation, serverless Python REST endpoints, and automated multi-channel order dispatch.
+              Designed and engineered a full-stack luxury gents bespoke tailoring e-commerce and booking web platform for a heritage atelier established in 1965. Features dynamic garment customization, precision fitting workflows, serverless Python REST endpoints, and automated multi-channel order dispatch.
             </p>
 
             <ul class="space-y-2 text-sm text-slate-300">
@@ -603,7 +603,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Built an interactive <strong>garment customizer & price estimator</strong> supporting 4 measurement methods (standard sizing, body inches, workshop sample pickup, and doorstep tailor visits).</span>
+                <span>Built an interactive <strong>gents garment customizer & fitting configuration engine</strong> supporting 4 measurement methods (standard sizing, body inches, workshop sample pickup, and doorstep tailor visits).</span>
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
@@ -639,7 +639,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
               <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
                 <div class="flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Atelier & Estimator Simulator</span>
+                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Atelier & Order Tracker Simulator</span>
                 </div>
                 <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Vercel Live</span>
               </div>
@@ -660,14 +660,14 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
                     <span class="text-lg">👖</span>
                     <span>Trouser</span>
                   </button>
-                  <button onclick="setTailorGarment('blouse')" id="btn-tailor-blouse" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-rose-500 transition">
-                    <span class="text-lg">🥻</span>
-                    <span>Blouse</span>
+                  <button onclick="setTailorGarment('blazer')" id="btn-tailor-blazer" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-indigo-500 transition">
+                    <span class="text-lg">🧥</span>
+                    <span>Blazer</span>
                   </button>
                 </div>
               </div>
 
-              <!-- Visual Configurator & Price Box -->
+              <!-- Visual Configurator Box -->
               <div class="relative bg-slate-900 rounded-xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
                 <div class="flex items-center gap-3">
                   <div id="tailorGarmentIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-amber-500 flex items-center justify-center text-3xl shadow-lg relative">
@@ -681,7 +681,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
                     <div class="text-xs font-mono text-slate-400">Atelier Configurator:</div>
                     <div id="tailorGarmentTitle" class="text-sm font-bold text-amber-400">Bespoke 2-Piece Suit</div>
                     <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
-                      <span>Stitching: <strong id="tailorPrice" class="text-white">₹4,500</strong></span>
+                      <span>Craft: <strong id="tailorFit" class="text-white">Master Tailored</strong></span>
                       <span>•</span>
                       <span>Timeline: <strong id="tailorTime" class="text-emerald-400">48h Express</strong></span>
                     </div>
