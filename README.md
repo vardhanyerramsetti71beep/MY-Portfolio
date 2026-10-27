@@ -11,7 +11,7 @@
 
 A production-grade, Apple-inspired developer portfolio architected for **Vardhan Yerramsetti** — **Python Full Stack Developer & AWS Certified Cloud Practitioner**. Modeled directly on the Cupertino design philosophy: ultra-refined `#fbfbfd` ambient canvas, frosted glass navigation (`blur(20px) saturate(180%)`), continuous dual-direction technology trains, floating spatial project navigation, Apple Command+K QuickSearch modal, interactive in-browser algorithm lab, and verified live production deployments.
 
-Live Portfolio: **[https://vardhan-portfolio.vercel.app/](https://vardhan-portfolio.vercel.app/)**
+Live Production Deployment: **[https://my-portfolio-vardhan-yerramsetti.vercel.app/](https://my-portfolio-vardhan-yerramsetti.vercel.app/)**
 
 ---
 
