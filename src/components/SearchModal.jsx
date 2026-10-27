@@ -68,16 +68,16 @@ export default function SearchModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/40 backdrop-blur-md animate-fadeIn"
+      className="fixed inset-0 z-[100] flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/50 dark:bg-black/70 backdrop-blur-md animate-fadeIn"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white/95 backdrop-blur-2xl border border-black/10 rounded-2xl shadow-2xl overflow-hidden animate-scaleUp"
+        className="relative w-full max-w-2xl bg-white/95 dark:bg-[#0b1324]/95 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-scaleUp"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 py-3.5 border-b border-black/5 gap-3">
-          <Search size={18} className="text-slate-400" />
+        <div className="flex items-center px-4 py-3.5 border-b border-black/5 dark:border-white/10 gap-3">
+          <Search size={18} className="text-slate-400 dark:text-slate-500" />
           <input
             ref={inputRef}
             type="text"
@@ -87,26 +87,26 @@ export default function SearchModal({ isOpen, onClose }) {
               setSelectedIndex(0);
             }}
             placeholder="Search projects, technologies, AWS credentials, experience..."
-            className="w-full bg-transparent text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none"
+            className="w-full bg-transparent text-sm sm:text-base text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="p-1 text-slate-400 hover:text-slate-600 rounded-md"
+              className="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-md"
             >
               <X size={16} />
             </button>
           )}
-          <kbd className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono font-medium text-slate-400 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+          <kbd className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono font-medium text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700">
             ESC
           </kbd>
         </div>
 
         {/* Results List */}
-        <div className="max-h-[360px] overflow-y-auto p-2 divide-y divide-slate-100/60">
+        <div className="max-h-[360px] overflow-y-auto p-2 divide-y divide-slate-100/60 dark:divide-white/5">
           {filtered.length === 0 ? (
-            <div className="py-12 text-center text-sm text-slate-500">
-              No results found for "<span className="font-semibold text-slate-700">{query}</span>"
+            <div className="py-12 text-center text-sm text-slate-500 dark:text-slate-400">
+              No results found for "<span className="font-semibold text-slate-700 dark:text-slate-200">{query}</span>"
             </div>
           ) : (
             filtered.map((item, idx) => (
@@ -119,19 +119,19 @@ export default function SearchModal({ isOpen, onClose }) {
                 onMouseEnter={() => setSelectedIndex(idx)}
                 className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-left transition-colors ${
                   idx === selectedIndex
-                    ? "bg-slate-100/90 text-slate-900"
-                    : "text-slate-700 hover:bg-slate-50"
+                    ? "bg-slate-100/90 dark:bg-slate-800/90 text-slate-900 dark:text-white"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-white shadow-sm border border-slate-200/60">
+                  <div className="p-2 rounded-lg bg-white dark:bg-slate-800 shadow-sm border border-slate-200/60 dark:border-slate-700">
                     {getItemIcon(item.title)}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold tracking-tight text-slate-900">
+                    <div className="text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
                       {item.title}
                     </div>
-                    <div className="text-xs text-slate-500 line-clamp-1 font-mono">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 font-mono">
                       {item.keywords}
                     </div>
                   </div>
@@ -139,7 +139,7 @@ export default function SearchModal({ isOpen, onClose }) {
                 <ArrowRight
                   size={15}
                   className={`text-slate-400 transition-transform ${
-                    idx === selectedIndex ? "translate-x-1 text-brand-600" : ""
+                    idx === selectedIndex ? "translate-x-1 text-brand-600 dark:text-brand-400" : ""
                   }`}
                 />
               </button>
@@ -148,17 +148,17 @@ export default function SearchModal({ isOpen, onClose }) {
         </div>
 
         {/* Footer shortcuts */}
-        <div className="px-4 py-2.5 bg-slate-50/80 border-t border-black/5 flex items-center justify-between text-[11px] text-slate-500">
+        <div className="px-4 py-2.5 bg-slate-50/80 dark:bg-slate-900/80 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-3">
             <span>
-              <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 font-mono text-[10px]">↑</kbd>{" "}
-              <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 font-mono text-[10px]">↓</kbd> to navigate
+              <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px]">↑</kbd>{" "}
+              <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px]">↓</kbd> to navigate
             </span>
             <span>
-              <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 font-mono text-[10px]">↵</kbd> to select
+              <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-mono text-[10px]">↵</kbd> to select
             </span>
           </div>
-          <span className="font-mono text-slate-400">Vardhan Portfolio Search</span>
+          <span className="font-mono text-slate-400 dark:text-slate-500">Vardhan Portfolio Search</span>
         </div>
       </div>
     </div>

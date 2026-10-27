@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function ScrollToTopElevator() {
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,7 @@ export default function ScrollToTopElevator() {
     <div className="fixed bottom-6 right-6 z-40 animate-scaleUp">
       <button
         onClick={scrollToTop}
-        className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-xl border border-black/10 shadow-lg hover:shadow-xl hover:border-brand-500/40 text-slate-700 hover:text-brand-600 transition-all apple-pressable"
+        className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-lg hover:shadow-xl hover:border-brand-500/40 text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 transition-all apple-pressable"
         aria-label="Scroll to top"
         title={`Scroll to Top (${Math.round(progress)}%)`}
       >
@@ -38,7 +40,7 @@ export default function ScrollToTopElevator() {
             cy="22"
             r="19"
             fill="none"
-            stroke="rgba(0, 0, 0, 0.06)"
+            stroke={isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.06)"}
             strokeWidth="2"
           />
           <circle

@@ -1,5 +1,5 @@
 /* src/styles/Navbar.css
-   Apple-Inspired Translucent Floating Navigation Bar
+   Apple-Inspired Translucent Floating Navigation Bar with Dark & Light Themes
 */
 
 .navbar-shell {
@@ -22,6 +22,12 @@
   box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04);
 }
 
+.dark .navbar-scrolled {
+  background: rgba(7, 13, 24, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.45);
+}
+
 .nav-link {
   position: relative;
   font-size: 13px;
@@ -33,14 +39,27 @@
   text-decoration: none;
 }
 
+.dark .nav-link {
+  color: #94a3b8;
+}
+
 .nav-link:hover {
   color: #1d1d1f;
   background-color: rgba(0, 0, 0, 0.04);
 }
 
+.dark .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
 .nav-link-active {
   color: #0ea5e9 !important;
   font-weight: 600;
+}
+
+.dark .nav-link-active {
+  color: #38bdf8 !important;
 }
 
 .nav-search-btn {
@@ -56,8 +75,51 @@
   transition: all 0.2s ease;
 }
 
+.dark .nav-search-btn {
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .nav-search-btn:hover {
   background: rgba(0, 0, 0, 0.07);
   color: #1d1d1f;
   border-color: rgba(0, 0, 0, 0.15);
+}
+
+.dark .nav-search-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  color: #515154;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.dark .theme-toggle-btn {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.theme-toggle-btn:hover {
+  color: #0ea5e9;
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(14, 165, 233, 0.3);
+}
+
+.dark .theme-toggle-btn:hover {
+  color: #38bdf8;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
 }

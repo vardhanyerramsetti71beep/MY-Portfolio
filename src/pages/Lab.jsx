@@ -5,7 +5,6 @@ import Reveal from "../components/motion/Reveal";
 export default function Lab() {
   // Sim 1: OpenCV Emotion Recognition & Music
   const [selectedEmotion, setSelectedEmotion] = useState("Happy");
-  const [isPlayingAudio, setIsPlayingAudio] = useState(true);
 
   // Sim 2: SVT Tailors Pipeline
   const [orderStage, setOrderStage] = useState(2); // 0 to 4
@@ -51,11 +50,11 @@ export default function Lab() {
       
       {/* Page Header */}
       <div>
-        <span className="headline-eyebrow text-emerald-600">INTERACTIVE ENGINEERING LAB</span>
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <span className="headline-eyebrow text-emerald-600 dark:text-emerald-400">INTERACTIVE ENGINEERING LAB</span>
+        <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
           In-Browser Simulators.
         </h1>
-        <p className="text-base sm:text-lg text-slate-600 mt-3 max-w-2xl leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-3 max-w-2xl leading-relaxed">
           Experience the mathematical models, computer vision classifiers, database optimizers, and workflow state engines running live in your browser.
         </p>
       </div>
@@ -66,25 +65,25 @@ export default function Lab() {
         {/* ============================================================
             SIMULATOR 01: OPENCV EMOTION RECOGNITION & MUSIC RECOMMENDER
             ============================================================ */}
-        <div className="apple-card p-7 bg-white border border-slate-200/80 flex flex-col justify-between">
+        <div className="apple-card p-7 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-mono mb-3">
-              <span className="text-brand-600 font-bold">SIM_01 // COMPUTER VISION</span>
-              <span className="px-2 py-0.5 rounded bg-brand-50 text-brand-700 font-semibold text-[10px]">
+              <span className="text-brand-600 dark:text-brand-400 font-bold">SIM_01 // COMPUTER VISION</span>
+              <span className="px-2 py-0.5 rounded bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 font-semibold text-[10px]">
                 OpenCV + Scikit-learn
               </span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               Facial Emotion Classifier &amp; Audio Stream
             </h3>
-            <p className="text-xs text-slate-500 font-mono mt-0.5 mb-5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 mb-5">
               Real-time facial landmark detection with automated mood playlist dispatch.
             </p>
 
             {/* Interactive Emotion Selectors */}
             <div className="space-y-3 mb-6">
-              <div className="text-xs font-semibold text-slate-700">Simulate Facial State:</div>
+              <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">Simulate Facial State:</div>
               <div className="grid grid-cols-4 gap-2">
                 {Object.keys(EMOTIONS).map((emo) => (
                   <button
@@ -92,8 +91,8 @@ export default function Lab() {
                     onClick={() => setSelectedEmotion(emo)}
                     className={`py-2 px-2.5 rounded-xl text-xs font-semibold font-mono transition apple-pressable ${
                       selectedEmotion === emo
-                        ? "bg-slate-900 text-white shadow-sm"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        ? "bg-slate-900 dark:bg-white text-white dark:text-slate-950 shadow-sm"
+                        : "bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700"
                     }`}
                   >
                     {emo}
@@ -103,7 +102,7 @@ export default function Lab() {
             </div>
 
             {/* Simulated Vision Camera Frame */}
-            <div className="relative rounded-2xl bg-slate-950 p-5 text-white font-mono text-xs overflow-hidden mb-6">
+            <div className="relative rounded-2xl bg-slate-950 p-5 text-white font-mono text-xs overflow-hidden mb-6 border border-white/5">
               <div className="flex items-center justify-between pb-3 border-b border-white/10 text-[11px] text-slate-400">
                 <span className="flex items-center gap-1.5 text-emerald-400">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -144,33 +143,33 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 font-mono">
-            Deployed on Vercel: <a href="https://music-recommending.vercel.app/" target="_blank" rel="noreferrer" className="text-brand-600 underline">music-recommending.vercel.app</a>
+          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+            Deployed on Vercel: <a href="https://music-recommending.vercel.app/" target="_blank" rel="noreferrer" className="text-brand-600 dark:text-brand-400 underline">music-recommending.vercel.app</a>
           </div>
         </div>
 
         {/* ============================================================
             SIMULATOR 02: S.V.T. TAILORS 5-STAGE WORKSHOP TRACKER
             ============================================================ */}
-        <div className="apple-card p-7 bg-white border border-slate-200/80 flex flex-col justify-between">
+        <div className="apple-card p-7 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-mono mb-3">
-              <span className="text-amber-600 font-bold">SIM_02 // WORKFLOW ENGINE</span>
-              <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-semibold text-[10px]">
+              <span className="text-amber-600 dark:text-amber-400 font-bold">SIM_02 // WORKFLOW ENGINE</span>
+              <span className="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-semibold text-[10px]">
                 Python Serverless + PyMySQL
               </span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               S.V.T. Bespoke Atelier 5-Stage Tracker
             </h3>
-            <p className="text-xs text-slate-500 font-mono mt-0.5 mb-5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 mb-5">
               Production state-machine tracking garment fabrication through atelier stages.
             </p>
 
             {/* Garment Selector */}
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-xs font-semibold text-slate-700">Garment:</span>
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Garment:</span>
               {["Silk Kurta", "Formal Shirt", "2-Piece Suit"].map((item) => (
                 <button
                   key={item}
@@ -178,7 +177,7 @@ export default function Lab() {
                   className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition apple-pressable ${
                     garmentType === item
                       ? "bg-amber-500 text-white font-bold"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      : "bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                   }`}
                 >
                   {item}
@@ -197,28 +196,28 @@ export default function Lab() {
                     onClick={() => setOrderStage(idx)}
                     className={`p-3 rounded-xl border transition cursor-pointer flex items-center justify-between ${
                       isCurrent
-                        ? "bg-amber-50/70 border-amber-300 shadow-sm"
+                        ? "bg-amber-50/70 dark:bg-amber-950/40 border-amber-300 dark:border-amber-600/60 shadow-sm"
                         : isPassed
-                        ? "bg-slate-50 border-slate-200 opacity-80"
-                        : "bg-white border-slate-100 opacity-40"
+                        ? "bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700/60 opacity-80"
+                        : "bg-white dark:bg-slate-800/40 border-slate-100 dark:border-slate-750 opacity-40"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono font-bold ${
-                          isPassed || isCurrent ? "bg-amber-500 text-white" : "bg-slate-200 text-slate-600"
+                          isPassed || isCurrent ? "bg-amber-500 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300"
                         }`}
                       >
                         {idx + 1}
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-slate-900">{s.title}</div>
-                        <div className="text-[10px] text-slate-500 font-mono">{s.desc}</div>
+                        <div className="text-xs font-bold text-slate-900 dark:text-white">{s.title}</div>
+                        <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{s.desc}</div>
                       </div>
                     </div>
 
                     {isCurrent && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-200 text-amber-900 font-bold animate-pulse">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-200 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 font-bold animate-pulse">
                         LIVE STATE
                       </span>
                     )}
@@ -228,9 +227,9 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+          <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/60 text-[11px] font-mono text-slate-500 dark:text-slate-400">
             <span>ORDER_ID: SVT-2026-8492</span>
-            <a href="https://svt-tailors.vercel.app/" target="_blank" rel="noreferrer" className="text-amber-600 underline">
+            <a href="https://svt-tailors.vercel.app/" target="_blank" rel="noreferrer" className="text-amber-600 dark:text-amber-400 underline">
               svt-tailors.vercel.app →
             </a>
           </div>
@@ -239,30 +238,30 @@ export default function Lab() {
         {/* ============================================================
             SIMULATOR 03: MYSQL LATENCY & INDEX OPTIMIZER
             ============================================================ */}
-        <div className="apple-card p-7 bg-white border border-slate-200/80 flex flex-col justify-between">
+        <div className="apple-card p-7 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-mono mb-3">
-              <span className="text-indigo-600 font-bold">SIM_03 // DATABASE OPTIMIZATION</span>
-              <span className="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-semibold text-[10px]">
+              <span className="text-indigo-600 dark:text-indigo-400 font-bold">SIM_03 // DATABASE OPTIMIZATION</span>
+              <span className="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-semibold text-[10px]">
                 MySQL B-Tree Index Bench
               </span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               MySQL Query Latency &amp; Index Hit
             </h3>
-            <p className="text-xs text-slate-500 font-mono mt-0.5 mb-5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 mb-5">
               Simulating the -25% to -78% query latency reduction engineered in my task portal.
             </p>
 
             {/* Toggle Switch */}
-            <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-100 mb-6">
-              <span className="text-xs font-semibold text-slate-700">Schema Index Strategy:</span>
-              <div className="flex gap-1 bg-white p-1 rounded-xl border border-slate-200">
+            <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900/80 mb-6">
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Schema Index Strategy:</span>
+              <div className="flex gap-1 bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
                 <button
                   onClick={() => setIndexMode("unindexed")}
                   className={`px-3 py-1 rounded-lg text-xs font-mono transition ${
-                    indexMode === "unindexed" ? "bg-rose-600 text-white font-bold" : "text-slate-600"
+                    indexMode === "unindexed" ? "bg-rose-600 text-white font-bold" : "text-slate-600 dark:text-slate-400"
                   }`}
                 >
                   Full Table Scan
@@ -270,7 +269,7 @@ export default function Lab() {
                 <button
                   onClick={() => setIndexMode("indexed")}
                   className={`px-3 py-1 rounded-lg text-xs font-mono transition ${
-                    indexMode === "indexed" ? "bg-emerald-600 text-white font-bold" : "text-slate-600"
+                    indexMode === "indexed" ? "bg-emerald-600 text-white font-bold" : "text-slate-600 dark:text-slate-400"
                   }`}
                 >
                   B-Tree Indexed
@@ -279,7 +278,7 @@ export default function Lab() {
             </div>
 
             {/* Benchmark Console */}
-            <div className="p-4 rounded-2xl bg-slate-900 text-slate-200 font-mono text-xs space-y-3 mb-6">
+            <div className="p-4 rounded-2xl bg-slate-900 dark:bg-slate-950 text-slate-200 font-mono text-xs space-y-3 mb-6 border border-white/5">
               <div className="flex items-center justify-between text-slate-400 text-[11px] pb-2 border-b border-white/10">
                 <span>SQL QUERY: SELECT * FROM tasks WHERE user_id = 4281</span>
                 <button
@@ -313,36 +312,36 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 font-mono">
-            Grounded in: <strong className="text-slate-700">Scalable Task &amp; Data Management Portal</strong>
+          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+            Grounded in: <strong className="text-slate-700 dark:text-slate-300">Scalable Task &amp; Data Management Portal</strong>
           </div>
         </div>
 
         {/* ============================================================
             SIMULATOR 04: OMNIPULSE RETENTION & CLV MATHEMATICS
             ============================================================ */}
-        <div className="apple-card p-7 bg-white border border-slate-200/80 flex flex-col justify-between">
+        <div className="apple-card p-7 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs font-mono mb-3">
-              <span className="text-purple-600 font-bold">SIM_04 // PROBABILISTIC MODEL</span>
-              <span className="px-2 py-0.5 rounded bg-purple-50 text-purple-700 font-semibold text-[10px]">
+              <span className="text-purple-600 dark:text-purple-400 font-bold">SIM_04 // PROBABILISTIC MODEL</span>
+              <span className="px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-semibold text-[10px]">
                 BG/NBD + Gamma-Gamma
               </span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               OmniPulse Customer Retention Calculator
             </h3>
-            <p className="text-xs text-slate-500 font-mono mt-0.5 mb-5">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 mb-5">
               Live Beta-Geometric/Negative Binomial equation estimating P(Alive).
             </p>
 
             {/* Sliders */}
             <div className="space-y-4 mb-6">
               <div>
-                <div className="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                <div className="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   <span>Repeat Purchases (Frequency):</span>
-                  <span className="font-mono text-purple-600">{purchaseFrequency} transactions</span>
+                  <span className="font-mono text-purple-600 dark:text-purple-400">{purchaseFrequency} transactions</span>
                 </div>
                 <input
                   type="range"
@@ -355,9 +354,9 @@ export default function Lab() {
               </div>
 
               <div>
-                <div className="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                <div className="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   <span>Weeks Since Last Order (Recency):</span>
-                  <span className="font-mono text-purple-600">{recencyWeeks} weeks</span>
+                  <span className="font-mono text-purple-600 dark:text-purple-400">{recencyWeeks} weeks</span>
                 </div>
                 <input
                   type="range"
@@ -371,20 +370,20 @@ export default function Lab() {
             </div>
 
             {/* Calculated Results */}
-            <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-purple-50/70 border border-purple-100 font-mono text-center">
+            <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-800/40 font-mono text-center">
               <div>
-                <div className="text-2xl font-black text-purple-900">{pAlive}%</div>
-                <div className="text-[11px] text-purple-700 mt-0.5">P(Alive) Probability</div>
+                <div className="text-2xl font-black text-purple-900 dark:text-purple-200">{pAlive}%</div>
+                <div className="text-[11px] text-purple-700 dark:text-purple-400 mt-0.5">P(Alive) Probability</div>
               </div>
               <div>
-                <div className="text-2xl font-black text-purple-900">₹{expectedValue.toLocaleString()}</div>
-                <div className="text-[11px] text-purple-700 mt-0.5">12-Mo Expected CLV</div>
+                <div className="text-2xl font-black text-purple-900 dark:text-purple-200">₹{expectedValue.toLocaleString()}</div>
+                <div className="text-[11px] text-purple-700 dark:text-purple-400 mt-0.5">12-Mo Expected CLV</div>
               </div>
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 font-mono pt-4">
-            Repository: <a href="https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine" target="_blank" rel="noreferrer" className="text-purple-600 underline">OmniPulse Engine GitHub →</a>
+          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono pt-4">
+            Repository: <a href="https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine" target="_blank" rel="noreferrer" className="text-purple-600 dark:text-purple-400 underline">OmniPulse Engine GitHub →</a>
           </div>
         </div>
 

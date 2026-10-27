@@ -53,7 +53,7 @@ export default function Overview() {
             
             {/* Live Availability Badge */}
             <Reveal y={12} delay={0.05}>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono shadow-sm border border-slate-700/60">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -66,9 +66,9 @@ export default function Overview() {
 
             {/* Main Headline */}
             <Reveal y={16} delay={0.1}>
-              <h1 className="headline-editorial text-4xl sm:text-6xl lg:text-7xl text-slate-900 tracking-tight">
+              <h1 className="headline-editorial text-4xl sm:text-6xl lg:text-7xl text-slate-900 dark:text-white tracking-tight">
                 I architect backends. <br />
-                <span className="bg-gradient-to-r from-brand-600 via-indigo-600 to-amber-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-600 via-indigo-600 to-amber-500 dark:from-brand-400 dark:via-indigo-400 dark:to-amber-300 bg-clip-text text-transparent">
                   I engineer cloud scale.
                 </span>
               </h1>
@@ -76,8 +76,8 @@ export default function Overview() {
 
             {/* Subtitle & Value Proposition */}
             <Reveal y={14} delay={0.15}>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Hi, I'm <strong className="text-slate-900 font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer and AWS Certified Cloud Practitioner. I specialize in high-throughput Flask/FastAPI microservices, computer vision pipelines, and reactive full-stack web applications backed by 8 verified production deployments.
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer and AWS Certified Cloud Practitioner. I specialize in high-throughput Flask/FastAPI microservices, computer vision pipelines, and reactive full-stack web applications backed by 8 verified production deployments.
               </p>
             </Reveal>
 
@@ -87,13 +87,13 @@ export default function Overview() {
                 {PROFILE.stats.map((stat, i) => (
                   <div
                     key={i}
-                    className="p-3.5 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-left hover:border-brand-500/40 transition-colors"
+                    className="p-3.5 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-left hover:border-brand-500/40 transition-colors"
                   >
-                    <div className="text-2xl font-bold font-mono text-slate-900 flex items-baseline">
+                    <div className="text-2xl font-bold font-mono text-slate-900 dark:text-white flex items-baseline">
                       {stat.value}
-                      <span className="text-xs font-semibold text-brand-600 ml-0.5">{stat.suffix}</span>
+                      <span className="text-xs font-semibold text-brand-600 dark:text-brand-400 ml-0.5">{stat.suffix}</span>
                     </div>
-                    <div className="text-[11px] text-slate-500 mt-0.5 font-medium">
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium">
                       {stat.label}
                     </div>
                   </div>
@@ -106,7 +106,7 @@ export default function Overview() {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button
                   onClick={() => navigate("/work")}
-                  className="apple-pressable inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-black text-white font-semibold text-xs tracking-wide shadow-md hover:shadow-lg transition-all"
+                  className="apple-pressable inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 dark:bg-white hover:bg-black dark:hover:bg-slate-100 text-white dark:text-slate-950 font-semibold text-xs tracking-wide shadow-md hover:shadow-lg transition-all"
                 >
                   <span>Explore Flagship Systems</span>
                   <ArrowRight size={14} />
@@ -114,7 +114,7 @@ export default function Overview() {
 
                 <button
                   onClick={() => navigate("/lab")}
-                  className="apple-pressable inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-semibold text-xs tracking-wide shadow-sm transition-all"
+                  className="apple-pressable inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs tracking-wide shadow-sm transition-all"
                 >
                   <Activity size={14} className="text-emerald-500" />
                   <span>Launch Interactive Simulators</span>
@@ -122,13 +122,13 @@ export default function Overview() {
 
                 <button
                   onClick={handleCopyEmail}
-                  className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono transition-colors"
+                  className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono transition-colors border border-transparent dark:border-slate-700/60"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
                     <>
-                      <CheckCircle2 size={13} className="text-emerald-600" />
-                      <span className="text-emerald-700 font-semibold">Email Copied!</span>
+                      <CheckCircle2 size={13} className="text-emerald-600 dark:text-emerald-400" />
+                      <span className="text-emerald-700 dark:text-emerald-300 font-semibold">Email Copied!</span>
                     </>
                   ) : (
                     <span>vardhanyerramsetti71@gmail.com</span>
@@ -212,9 +212,9 @@ export default function Overview() {
       {/* ============================================================
           SECTION 02 — DUAL-DIRECTION CONTINUOUS TECHNOLOGY TRAINS
           ============================================================ */}
-      <section className="w-full overflow-hidden py-4 border-y border-black/5 bg-slate-50/60">
+      <section className="w-full overflow-hidden py-4 border-y border-black/5 dark:border-white/5 bg-slate-50/60 dark:bg-[#050a14]/60 transition-colors">
         <div className="max-w-7xl mx-auto px-4 mb-3 text-center">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-slate-500">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
             ENGINEERING STACK &amp; PRODUCTION ECOSYSTEM
           </span>
         </div>
@@ -225,11 +225,11 @@ export default function Overview() {
             {[...TECH_TRAIN_1, ...TECH_TRAIN_1].map((tech, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-slate-200/80 shadow-sm text-xs font-semibold text-slate-800 whitespace-nowrap"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-xs font-semibold text-slate-800 dark:text-slate-100 whitespace-nowrap"
               >
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: tech.color }}></span>
                 <span>{tech.name}</span>
-                <span className="text-[10px] text-slate-400 font-mono font-normal">/ {tech.category}</span>
+                <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono font-normal">/ {tech.category}</span>
               </div>
             ))}
           </div>
@@ -241,11 +241,11 @@ export default function Overview() {
             {[...TECH_TRAIN_2, ...TECH_TRAIN_2].map((tech, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-slate-200/80 shadow-sm text-xs font-semibold text-slate-800 whitespace-nowrap"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-xs font-semibold text-slate-800 dark:text-slate-100 whitespace-nowrap"
               >
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: tech.color }}></span>
                 <span>{tech.name}</span>
-                <span className="text-[10px] text-slate-400 font-mono font-normal">/ {tech.category}</span>
+                <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono font-normal">/ {tech.category}</span>
               </div>
             ))}
           </div>
@@ -259,16 +259,16 @@ export default function Overview() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
             <span className="headline-eyebrow">VERIFIED PRODUCTION PORTFOLIO</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mt-1">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
               Flagship Systems.
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-xl">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-xl">
               Production web applications and microservices engineered, benchmarked, and deployed with verified live links.
             </p>
           </div>
           <Link
             to="/work"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 transition group"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition group"
           >
             <span>View All 8 Deployed Applications</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -279,36 +279,36 @@ export default function Overview() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {flagshipProjects.map((project) => (
             <Reveal key={project.id} y={20}>
-              <div className="apple-card p-7 flex flex-col justify-between h-full bg-white relative overflow-hidden group">
+              <div className="apple-card p-7 flex flex-col justify-between h-full bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 relative overflow-hidden group">
                 
                 {/* Top Card Meta */}
                 <div>
                   <div className="flex items-center justify-between text-xs font-mono mb-3">
-                    <span className="text-slate-400 font-bold">{project.index} // {project.category}</span>
+                    <span className="text-slate-400 dark:text-slate-500 font-bold">{project.index} // {project.category}</span>
                     {project.live && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-700/50">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         Live on Vercel
                       </span>
                     )}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-brand-600 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-slate-500 mt-1 mb-4">
+                  <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1 mb-4">
                     {project.subtitle}
                   </p>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                     {project.solution}
                   </p>
 
                   {/* Metrics Bar */}
-                  <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-50 border border-slate-100 mb-6 font-mono">
+                  <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/60 mb-6 font-mono">
                     {project.stats.map((s, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="text-sm sm:text-base font-bold text-slate-900">{s.value}</div>
+                        <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">{s.value}</div>
                         <div className="text-[10px] text-slate-400 leading-tight mt-0.5">{s.label}</div>
                       </div>
                     ))}
@@ -319,7 +319,7 @@ export default function Overview() {
                     {project.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-1 rounded-md text-[11px] font-mono bg-slate-100 text-slate-700 font-medium"
+                        className="px-2 py-1 rounded-md text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 font-medium"
                       >
                         {tag}
                       </span>
@@ -328,14 +328,14 @@ export default function Overview() {
                 </div>
 
                 {/* Bottom Action Links */}
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+                <div className="pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-semibold">
                   <div className="flex items-center gap-3">
                     {project.live && (
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 transition"
+                        className="inline-flex items-center gap-1 text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition"
                       >
                         <span>Launch App</span>
                         <ArrowUpRight size={13} />
@@ -346,7 +346,7 @@ export default function Overview() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 transition"
+                        className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition"
                       >
                         <span>GitHub Repo</span>
                         <ExternalLink size={12} />
@@ -356,7 +356,7 @@ export default function Overview() {
 
                   <Link
                     to="/work"
-                    className="text-slate-400 hover:text-slate-700 transition text-[11px] font-mono"
+                    className="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition text-[11px] font-mono"
                   >
                     Case Study →
                   </Link>
@@ -373,7 +373,7 @@ export default function Overview() {
           ============================================================ */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 w-full text-center">
         <Reveal y={16}>
-          <div className="relative py-14 px-8 sm:px-14 rounded-3xl bg-slate-900 text-white shadow-2xl overflow-hidden">
+          <div className="relative py-14 px-8 sm:px-14 rounded-3xl bg-slate-900 dark:bg-[#0b1324] text-white shadow-2xl border border-slate-800 dark:border-white/10 overflow-hidden">
             <span className="text-[11px] font-mono uppercase tracking-widest text-amber-400 font-semibold mb-4 block">
               ENGINEERING PHILOSOPHY
             </span>
@@ -451,33 +451,33 @@ export default function Overview() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Left: Certifications Snapshot */}
-          <div className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between">
+          <div className="apple-card p-7 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="headline-eyebrow text-amber-600">OFFICIAL CERTIFICATIONS</span>
-                <Link to="/credentials" className="text-xs font-semibold text-brand-600 hover:text-brand-700">
+                <span className="headline-eyebrow text-amber-600 dark:text-amber-400">OFFICIAL CERTIFICATIONS</span>
+                <Link to="/credentials" className="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300">
                   View All (4) →
                 </Link>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight mb-4">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">
                 Validated Cloud &amp; Engineering Credentials
               </h3>
               <div className="space-y-3">
                 {CERTIFICATIONS.slice(0, 3).map((cert) => (
-                  <div key={cert.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-start justify-between gap-3">
+                  <div key={cert.id} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/60 flex items-start justify-between gap-3">
                     <div>
-                      <div className="text-xs font-bold text-slate-900">{cert.title}</div>
-                      <div className="text-[11px] text-slate-500 font-mono">{cert.issuer} • {cert.year}</div>
+                      <div className="text-xs font-bold text-slate-900 dark:text-white">{cert.title}</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">{cert.issuer} • {cert.year}</div>
                     </div>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-100 text-amber-800 font-semibold whitespace-nowrap">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-semibold whitespace-nowrap">
                       {cert.badge}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-100">
-              <Link to="/credentials" className="text-xs font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-1">
+            <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <Link to="/credentials" className="text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-1">
                 <span>Inspect full verification registry</span>
                 <ArrowRight size={13} />
               </Link>
@@ -485,34 +485,34 @@ export default function Overview() {
           </div>
 
           {/* Right: Career Experience Snapshot */}
-          <div className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between">
+          <div className="apple-card p-7 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="headline-eyebrow text-indigo-600">PROFESSIONAL TRACK RECORD</span>
-                <Link to="/experience" className="text-xs font-semibold text-brand-600 hover:text-brand-700">
+                <span className="headline-eyebrow text-indigo-600 dark:text-indigo-400">PROFESSIONAL TRACK RECORD</span>
+                <Link to="/experience" className="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300">
                   Full Timeline →
                 </Link>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight mb-4">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">
                 Operational &amp; Academic Milestones
               </h3>
               <div className="space-y-3">
                 {EXPERIENCE.slice(0, 2).map((exp) => (
-                  <div key={exp.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <div key={exp.id} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/60">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-bold text-slate-900">{exp.role}</span>
-                      <span className="font-mono text-slate-500 text-[10px]">{exp.period}</span>
+                      <span className="font-bold text-slate-900 dark:text-white">{exp.role}</span>
+                      <span className="font-mono text-slate-500 dark:text-slate-400 text-[10px]">{exp.period}</span>
                     </div>
-                    <div className="text-[11px] text-brand-600 font-medium mt-0.5">{exp.company}</div>
-                    <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
+                    <div className="text-[11px] text-brand-600 dark:text-brand-400 font-medium mt-0.5">{exp.company}</div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 line-clamp-2 leading-relaxed">
                       {exp.bullets[0]}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-100">
-              <Link to="/experience" className="text-xs font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-1">
+            <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <Link to="/experience" className="text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-1">
                 <span>Explore career journey &amp; JNTUK degree</span>
                 <ArrowRight size={13} />
               </Link>
@@ -527,18 +527,18 @@ export default function Overview() {
           ============================================================ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         <Reveal y={16}>
-          <div className="p-10 sm:p-14 rounded-3xl bg-white border border-slate-200/80 shadow-card space-y-5">
+          <div className="p-10 sm:p-14 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 shadow-card space-y-5">
             <span className="headline-eyebrow">READY TO COLLABORATE</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Let's engineer something remarkable.
             </h2>
-            <p className="text-slate-600 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
               Whether you need a high-performance Python microservice architect, a certified AWS cloud engineer, or a full-stack developer who builds systems that scale.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/connect"
-                className="apple-pressable inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-black text-white font-semibold text-xs tracking-wide shadow-md transition"
+                className="apple-pressable inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 dark:bg-white hover:bg-black dark:hover:bg-slate-100 text-white dark:text-slate-950 font-semibold text-xs tracking-wide shadow-md transition"
               >
                 <span>Initiate Direct Outreach</span>
                 <ArrowRight size={14} />

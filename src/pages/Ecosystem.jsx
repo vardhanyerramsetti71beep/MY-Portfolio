@@ -21,10 +21,10 @@ export default function Ecosystem() {
       {/* Header */}
       <div>
         <span className="headline-eyebrow">SYSTEMS ARCHITECTURE</span>
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
           Technology Ecosystem.
         </h1>
-        <p className="text-base sm:text-lg text-slate-600 mt-3 max-w-2xl leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-3 max-w-2xl leading-relaxed">
           A layered architectural breakdown of how I engineer end-to-end applications — from AWS cloud infrastructure and Python microservices to normalized databases and reactive interfaces.
         </p>
       </div>
@@ -33,31 +33,31 @@ export default function Ecosystem() {
       <div className="space-y-8">
         {ECOSYSTEM_LAYERS.map((layer) => (
           <Reveal key={layer.layer} y={20}>
-            <div className="apple-card p-8 sm:p-10 bg-white border border-slate-200/80 space-y-6">
+            <div className="apple-card p-8 sm:p-10 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 space-y-6">
               
               {/* Layer Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-700/60 pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200/60">
+                  <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
                     {getLayerIcon(layer.layer)}
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold text-slate-400">
+                    <div className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500">
                       LAYER {layer.layer} //
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                       {layer.name}
                     </h2>
                   </div>
                 </div>
 
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-semibold self-start sm:self-center">
+                <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 font-semibold self-start sm:self-center">
                   Production Verified
                 </span>
               </div>
 
               {/* Layer Description */}
-              <p className="text-slate-600 text-sm leading-relaxed max-w-3xl">
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed max-w-3xl">
                 {layer.description}
               </p>
 
@@ -66,13 +66,13 @@ export default function Ecosystem() {
                 {layer.technologies.map((tech, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 transition-colors"
+                    className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
                   >
-                    <div className="text-sm font-bold text-slate-900 flex items-center justify-between">
+                    <div className="text-sm font-bold text-slate-900 dark:text-white flex items-center justify-between">
                       <span>{tech.name}</span>
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
                       {tech.role}
                     </p>
                   </div>
@@ -85,7 +85,7 @@ export default function Ecosystem() {
       </div>
 
       {/* Cloud Reliability Note */}
-      <div className="p-8 rounded-3xl bg-slate-900 text-white font-mono text-xs flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+      <div className="p-8 rounded-3xl bg-slate-900 dark:bg-[#0b1324] text-white font-mono text-xs flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border border-slate-800 dark:border-white/10">
         <div className="space-y-1">
           <div className="text-amber-400 font-bold text-sm">AWS CLOUD ARCHITECTURE PRINCIPLE</div>
           <p className="text-slate-300 text-xs max-w-2xl leading-relaxed">

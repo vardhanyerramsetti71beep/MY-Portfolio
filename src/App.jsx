@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
 import AppShell from "./AppShell";
 
 // Lazy-loaded pages for high-speed performance
@@ -23,20 +24,22 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <AppShell>
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Overview />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/ecosystem" element={<Ecosystem />} />
-          <Route path="/lab" element={<Lab />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/credentials" element={<Credentials />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/connect" element={<Connect />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Suspense>
-    </AppShell>
+    <ThemeProvider>
+      <AppShell>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Overview />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/ecosystem" element={<Ecosystem />} />
+            <Route path="/lab" element={<Lab />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/credentials" element={<Credentials />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/connect" element={<Connect />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
+      </AppShell>
+    </ThemeProvider>
   );
 }
