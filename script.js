@@ -654,7 +654,7 @@ function handleTerminalCommand(e) {
 5. 🫀 <strong>CardioGuard AI Heart Risk App</strong>: <a href="https://heart-disease-app.vercel.app/" target="_blank" class="text-brand-400 underline">https://heart-disease-app.vercel.app/</a><br>
 6. 🩺 <strong>AI Health Symptom Checker</strong>: <a href="https://ai-health-symptom-checker.vercel.app/" target="_blank" class="text-brand-400 underline">https://ai-health-symptom-checker.vercel.app/</a><br>
 7. 🏋️ <strong>90-Day Body Transformation Suite</strong>: <a href="https://90-days-body-transformation.vercel.app/" target="_blank" class="text-brand-400 underline">https://90-days-body-transformation.vercel.app/</a><br>
-8. 🎬 <strong>They Call Him OG Showcase</strong>: <a href="https://they-call-him-og.vercel.app/" target="_blank" class="text-brand-400 underline">https://they-call-him-og.vercel.app/</a>`;
+8. 🎬 <strong>They Call Him OG Showcase</strong>: <a href="https://they-call-him-og-lemon.vercel.app/" target="_blank" class="text-brand-400 underline">https://they-call-him-og-lemon.vercel.app/</a>`;
         break;
 
       case "aws":

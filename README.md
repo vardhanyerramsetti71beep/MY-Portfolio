@@ -27,7 +27,7 @@ Live Portfolio Website: **[https://vardhan-portfolio.vercel.app/](https://vardha
 | 5 | **CardioGuard AI Cardiovascular Risk App** | Python, Flask, Scikit-learn, Joblib, Chart.js | [🔗 Live App](https://heart-disease-app.vercel.app/) | Embedded in App |
 | 6 | **AI Health Symptom Checker & Clinical Triage** | FastAPI, Scikit-learn, Random Forest Ensemble | [🔗 Live App](https://ai-health-symptom-checker.vercel.app/) | [Mirror Deploy](https://health-symptom-checker.vercel.app/) |
 | 7 | **90-Day Body Transformation & 3D Manifolds** | Python, Plotly 3D, HTML5/CSS3, JavaScript | [🔗 Live App](https://90-days-body-transformation.vercel.app/) | [GitHub](https://github.com/vardhanyerramsetti71beep/90-Days-Body-Transformation) |
-| 8 | **"They Call Him OG" Cinematic Showcase** | Next.js 14, React, Tailwind CSS, Web Audio | [🔗 Live App](https://they-call-him-og.vercel.app/) | [GitHub](https://github.com/vardhanyerramsetti71beep/They-call-him-og) |
+| 8 | **"They Call Him OG" Cinematic Showcase** | Next.js 14, React, Tailwind CSS, Web Audio | [🔗 Live App](https://they-call-him-og-lemon.vercel.app/) | [GitHub](https://github.com/vardhanyerramsetti71beep/They-call-him-og) |
 
 ---
 
