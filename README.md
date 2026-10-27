@@ -28,7 +28,7 @@ All featured applications are built, tested, and grounded in authentic repositor
 | 5 | **90-Day Body Transformation & 3D Manifolds** | Python, Plotly 3D, HTML5/CSS3, JavaScript | [🔗 Live App](https://90-days-body-transformation.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/90-Days-Body-Transformation) |
 | 6 | **Google Forms Clone & MySQL ORM Engine** | Python, Flask, Flask-SQLAlchemy, MySQL, Jinja2 | [🔗 Live App](https://flask-google-form.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/google-forms-) |
 | 7 | **OmniPulse Enterprise CLV & Retention Engine** | FastAPI, Scikit-learn, BG/NBD, Gamma-Gamma | [🔗 Live App](https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine) |
-| 8 | **Scalable Task & Data Management Portal** | Python, Flask REST API, AWS EC2, S3, Docker | ☁️ AWS Cloud Architecture | [GitHub Profile](https://github.com/vardhanyerramsetti71beep) |
+| 8 | **Scalable Task & Data Management Portal** | Python, Flask REST API, AWS EC2, S3, Docker | [🔗 Live App](https://task-cloud-portal.vercel.app/) | [GitHub Profile](https://github.com/vardhanyerramsetti71beep) |
 
 ---
 

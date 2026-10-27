@@ -104,6 +104,12 @@ export default function Footer() {
                   <ArrowUpRight size={11} className="text-slate-400" />
                 </a>
               </li>
+              <li>
+                <a href="https://task-cloud-portal.vercel.app/" target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white transition-colors">
+                  <span>Task Cloud Portal (AWS S3 &amp; EC2)</span>
+                  <ArrowUpRight size={11} className="text-slate-400" />
+                </a>
+              </li>
             </ul>
           </div>
 
