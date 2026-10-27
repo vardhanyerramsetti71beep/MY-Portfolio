@@ -18,9 +18,6 @@ This portfolio showcases scalable full-stack web applications, machine learning 
 - 🧠 **Live Emotion & Music Recommendation Simulator**:
   - Simulates the computer vision pipeline built with **OpenCV** and **Scikit-learn** (>90% classification accuracy).
   - Toggle between *Happy*, *Sad*, *Neutral*, and *Energetic* moods to see real-time facial landmark detection, confidence scores, and dynamic audio equalizer animations.
-- ⚡ **Full-Stack Task & SQL Latency Benchmark**:
-  - Interactive mini-Kanban CRUD board powered by simulated **Flask RESTful APIs** (`201 Created`, `200 OK`).
-  - Displays live database query performance metrics demonstrating a **25% API latency reduction** via indexed MySQL schemas.
 - 💻 **Interactive Developer Terminal (CLI)**:
   - Toggle anytime by pressing <kbd>~</kbd> or clicking **CLI** in the navigation bar.
   - Supports commands: `help`, `about`, `skills`, `projects`, `aws`, `contact`, `clear`, and `exit`.

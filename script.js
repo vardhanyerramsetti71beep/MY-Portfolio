@@ -293,7 +293,7 @@ function handleTerminalCommand(e) {
         response = "Languages: Python, JS ES6+, SQL, C++ | Frameworks: Flask, Django, React.js | Cloud: AWS (EC2, S3, Lambda) | ML: OpenCV, Scikit-learn, TensorFlow.";
         break;
       case "projects":
-        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)<br>2. Full-Stack Task & Data Management Portal (Flask + React + MySQL + AWS)";
+        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)";
         break;
       case "aws":
         response = "AWS Certified Cloud Practitioner (2023) | AWS Academy Cloud Foundations (2023) | Hands-on: EC2, S3, Lambda, Cloud Architecture.";
