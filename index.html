@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vardhan Yerramsetti | Python Full Stack Developer & AWS Cloud Practitioner</title>
-  <meta name="description" content="Portfolio of Vardhan Yerramsetti - Python Full Stack Developer, AWS Certified Cloud Practitioner, and ML Engineer." />
+  <title>Vardhan Yerramsetti | Python Full Stack Developer & AWS Certified Cloud Practitioner</title>
+  <meta name="description" content="Portfolio of Vardhan Yerramsetti — Python Full Stack Developer, AWS Certified Cloud Practitioner, and Machine Learning Engineer featuring 8 live deployed production applications." />
 
   <!-- Tailwind CSS Framework CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,13 +15,14 @@
         extend: {
           colors: {
             brand: {
+              300: '#7dd3fc',
               400: '#38bdf8',
               500: '#0ea5e9',
               600: '#0284c7',
               700: '#0369a1',
               aws: '#FF9900',
               python: '#3776AB',
-              accent: '#6366f1'
+              accent: '#8b5cf6'
             }
           },
           fontFamily: {
@@ -36,50 +37,54 @@
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Custom External Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative">
+<body class="bg-[#030712] text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative min-h-screen">
 
-  <!-- Interactive Background Canvas -->
+  <!-- Interactive Background Canvas (Constellation Network) -->
   <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
 
   <!-- ================= NAVBAR ================= -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 transition-all duration-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand Logo -->
       <a href="#" class="flex items-center space-x-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-amber-500 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-amber-500 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
           VY
         </div>
         <div class="flex flex-col">
           <span class="font-bold text-base tracking-tight text-white group-hover:text-brand-400 transition-colors">Vardhan Yerramsetti</span>
           <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            Python • AWS Certified
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Python • AWS Certified • 8 Live Apps
           </span>
         </div>
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
-        <a href="#about" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">About</a>
-        <a href="#skills" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Skills</a>
-        <a href="#projects" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Projects & Demos</a>
-        <a href="#experience" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Experience</a>
-        <a href="#certifications" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Certifications</a>
-        <a href="#contact" class="px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Contact</a>
+      <div class="hidden lg:flex items-center space-x-1 xl:space-x-3">
+        <a href="#about" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">About</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5">
+          <span>Deployments</span>
+          <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-emerald-500/20 text-emerald-400 font-mono border border-emerald-500/30">8 Live</span>
+        </a>
+        <a href="#simulators" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Simulators</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Skills</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Experience</a>
+        <a href="#certifications" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Certifications</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Contact</a>
       </div>
 
       <!-- Quick Actions -->
-      <div class="flex items-center space-x-3">
-        <!-- Interactive Terminal CLI Shortcut -->
-        <button onclick="toggleTerminal()" title="Toggle Developer Terminal (`)" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800/80 border border-slate-700 hover:border-brand-500 text-slate-300 hover:text-brand-400 transition-all flex items-center gap-1.5">
+      <div class="flex items-center space-x-2.5">
+        <!-- Developer CLI Terminal Button -->
+        <button onclick="toggleTerminal()" title="Toggle Developer Terminal (~ or `)" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800/80 border border-slate-700 hover:border-brand-500 text-slate-300 hover:text-brand-400 transition-all flex items-center gap-1.5 shadow-sm">
           <i class="fa-solid fa-terminal text-brand-400"></i>
           <span class="hidden sm:inline">CLI</span>
           <kbd class="text-[10px] bg-slate-900 px-1 py-0.5 rounded border border-slate-700">~</kbd>
@@ -87,151 +92,164 @@
 
         <!-- Social Icons -->
         <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="GitHub Profile">
-          <i class="fa-brands fa-github text-lg"></i>
+          <i class="fa-brands fa-github text-base"></i>
         </a>
         <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-slate-400 hover:text-[#0077b5] hover:bg-slate-800 transition" title="LinkedIn Profile">
-          <i class="fa-brands fa-linkedin text-lg"></i>
+          <i class="fa-brands fa-linkedin text-base"></i>
         </a>
 
-        <!-- Contact CTA -->
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
-          <i class="fa-solid fa-paper-plane"></i>
+        <!-- Hire Me CTA -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-paper-plane text-[11px]"></i>
           <span>Get In Touch</span>
         </a>
 
         <!-- Mobile Nav Menu Button -->
-        <button onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
-          <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileNav" class="hidden md:hidden px-4 pt-2 pb-6 space-y-2 border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
-      <a href="#about" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">About</a>
-      <a href="#skills" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Skills</a>
-      <a href="#projects" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Projects & Live Demos</a>
-      <a href="#experience" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Experience & Education</a>
-      <a href="#certifications" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Certifications</a>
-      <a href="#contact" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800">Contact</a>
+    <div id="mobileNav" class="hidden lg:hidden px-4 pt-3 pb-6 space-y-2 border-t border-slate-800 bg-[#030712]/95 backdrop-blur-xl">
+      <a href="#about" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">About</a>
+      <a href="#projects" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800 flex items-center justify-between">
+        <span>Deployed Projects</span>
+        <span class="px-2 py-0.5 rounded-full text-xs bg-emerald-500/20 text-emerald-400 font-mono">8 Live</span>
+      </a>
+      <a href="#simulators" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Interactive Simulators</a>
+      <a href="#skills" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Skills & Tech Stack</a>
+      <a href="#experience" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Experience & Education</a>
+      <a href="#certifications" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Certifications</a>
+      <a href="#contact" onclick="toggleMobileNav()" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Contact</a>
     </div>
   </nav>
 
   <!-- ================= HERO SECTION ================= -->
-  <section id="about" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden glow-bg z-10">
+  <section id="about" class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden glow-bg z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left: Summary & Metrics -->
+        <!-- Left: Intro & Metrics -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs text-slate-300 backdrop-blur-md">
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs text-slate-300 backdrop-blur-md shadow-sm">
             <span class="flex h-2 w-2 relative">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="font-medium text-emerald-400">Available for Opportunities</span>
-            <span class="text-slate-500">•</span>
-            <span class="text-amber-400 font-mono flex items-center gap-1">
+            <span class="font-medium text-emerald-400">Actively Interviewing for Full-Stack & Cloud Roles</span>
+            <span class="text-slate-600 hidden sm:inline">•</span>
+            <span class="text-amber-400 font-mono hidden sm:flex items-center gap-1">
               <i class="fa-brands fa-aws"></i> AWS Certified Cloud Practitioner
             </span>
           </div>
 
+          <!-- Hero Headline -->
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
             Hi, I'm <span class="bg-gradient-to-r from-brand-400 via-indigo-400 to-amber-300 bg-clip-text text-transparent">Vardhan Yerramsetti</span>
           </h1>
 
-          <div class="text-lg sm:text-2xl font-mono text-slate-300 flex items-center justify-center lg:justify-start gap-2">
+          <!-- Dynamic Role Typing -->
+          <div class="text-base sm:text-xl font-mono text-slate-300 flex items-center justify-center lg:justify-start gap-2 h-8">
             <span class="text-brand-400">&gt;</span>
             <span id="typedRole" class="text-white font-semibold"></span>
-            <span class="w-2.5 h-6 bg-brand-400 animate-pulse"></span>
+            <span class="w-2.5 h-5 bg-brand-400 animate-pulse"></span>
           </div>
 
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Results-driven <strong class="text-white font-semibold">Python Full Stack Developer</strong> and <strong class="text-amber-400 font-semibold">AWS Certified Cloud Practitioner</strong> with foundational expertise in Data Science and Machine Learning. Proficient in architecting scalable Flask microservices, high-efficiency RESTful APIs, and reactive React.js web interfaces deployed on AWS (EC2, S3, Lambda).
+          <!-- Value Proposition -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Results-driven <strong class="text-white font-semibold">Python Full Stack Developer</strong> and <strong class="text-amber-400 font-semibold">AWS Certified Cloud Practitioner</strong> with <strong>8 production web applications deployed live</strong>. Specializing in high-throughput <strong>Flask & FastAPI RESTful microservices</strong>, computer vision pipelines (OpenCV), probabilistic machine learning, and reactive cloud architectures.
           </p>
 
           <!-- Metrics Row -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-center hover:border-brand-500/40 transition">
+              <div class="text-2xl font-bold font-mono text-emerald-400">8 Live</div>
+              <div class="text-xs text-slate-400 mt-1 font-mono">Deployed Web Apps</div>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-center hover:border-brand-500/40 transition">
               <div class="text-2xl font-bold font-mono text-brand-400">>90%</div>
-              <div class="text-xs text-slate-400 mt-1">Emotion Detection ML</div>
+              <div class="text-xs text-slate-400 mt-1 font-mono">Computer Vision ML</div>
             </div>
-            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-center hover:border-brand-500/40 transition">
               <div class="text-2xl font-bold font-mono text-indigo-400">-25%</div>
-              <div class="text-xs text-slate-400 mt-1">API Latency Cut</div>
+              <div class="text-xs text-slate-400 mt-1 font-mono">Query Latency Cut</div>
             </div>
-            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
+            <div class="p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800 text-center hover:border-brand-500/40 transition">
               <div class="text-2xl font-bold font-mono text-amber-400">AWS</div>
-              <div class="text-xs text-slate-400 mt-1">Certified Practitioner</div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 text-center">
-              <div class="text-2xl font-bold font-mono text-emerald-400">99%</div>
-              <div class="text-xs text-slate-400 mt-1">Data & Operations SLA</div>
+              <div class="text-xs text-slate-400 mt-1 font-mono">Certified Practitioner</div>
             </div>
           </div>
 
-          <!-- CTAs -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-            <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all flex items-center gap-2">
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-3">
+            <a href="#projects" class="px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs tracking-wide uppercase shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
               <i class="fa-solid fa-rocket"></i>
-              <span>Explore Interactive Projects</span>
+              <span>View Deployed Projects (8)</span>
             </a>
             
-            <a href="mailto:vardhanyerramsetti71@gmail.com" class="px-6 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-semibold text-sm transition-all flex items-center gap-2">
+            <a href="mailto:vardhanyerramsetti71@gmail.com" class="px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-semibold text-xs tracking-wide uppercase transition-all flex items-center gap-2">
               <i class="fa-solid fa-envelope text-brand-400"></i>
               <span>Email Vardhan</span>
             </a>
 
-            <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied to clipboard!')" class="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-100 text-sm transition" title="Quick Copy Email">
+            <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied to clipboard!')" class="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-100 text-xs transition" title="Quick Copy Email">
               <i class="fa-regular fa-clone"></i>
             </button>
           </div>
 
         </div>
 
-        <!-- Right: Code Card Simulation -->
+        <!-- Right: Interactive Code Sandbox Card -->
         <div class="lg:col-span-5">
-          <div class="glass-card rounded-2xl p-5 shadow-2xl relative border border-slate-700/60 overflow-hidden group">
+          <div class="glass-card rounded-3xl p-5 shadow-2xl relative border border-slate-700/60 overflow-hidden group">
             
-            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <!-- Window Title Bar & Tabs -->
+            <div class="flex flex-wrap items-center justify-between pb-3.5 border-b border-slate-800 gap-2">
               <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
                 <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
                 <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                <span class="text-xs font-mono text-slate-400 ml-2">vardhan_developer.py</span>
+                <span class="text-xs font-mono text-slate-400 ml-1.5">vardhan_cloud.py</span>
               </div>
-              <span class="text-[11px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">AWS Active</span>
+              
+              <!-- Code Tabs -->
+              <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800 text-[11px] font-mono">
+                <button onclick="switchCodeTab('python')" class="code-tab-btn active px-2.5 py-1 rounded-lg text-white bg-brand-600 transition" data-tab="python">Backend</button>
+                <button onclick="switchCodeTab('aws')" class="code-tab-btn px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition" data-tab="aws">AWS Cloud</button>
+                <button onclick="switchCodeTab('ml')" class="code-tab-btn px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition" data-tab="ml">ML Pipeline</button>
+              </div>
             </div>
 
-            <pre class="font-mono text-xs sm:text-sm text-slate-300 pt-4 leading-relaxed overflow-x-auto"><code><span class="text-indigo-400">class</span> <span class="text-amber-300">SoftwareEngineer</span>:
-    <span class="text-indigo-400">def</span> <span class="text-blue-400">__init__</span>(<span class="text-rose-400">self</span>):
-        <span class="text-rose-400">self</span>.name = <span class="text-emerald-300">"Vardhan Yerramsetti"</span>
-        <span class="text-rose-400">self</span>.role = <span class="text-emerald-300">"Python Full Stack Dev"</span>
-        <span class="text-rose-400">self</span>.certification = <span class="text-amber-400">"AWS Cloud Practitioner"</span>
-        <span class="text-rose-400">self</span>.backend = [<span class="text-emerald-300">"Python"</span>, <span class="text-emerald-300">"Flask"</span>, <span class="text-emerald-300">"Django"</span>]
-        <span class="text-rose-400">self</span>.frontend = [<span class="text-emerald-300">"React.js"</span>, <span class="text-emerald-300">"JavaScript ES6+"</span>]
-        <span class="text-rose-400">self</span>.cloud_ai = [<span class="text-emerald-300">"AWS EC2/S3/Lambda"</span>, <span class="text-emerald-300">"OpenCV"</span>, <span class="text-emerald-300">"Scikit-learn"</span>]
+            <!-- Code Output Display -->
+            <pre class="font-mono text-xs text-slate-300 pt-4 leading-relaxed overflow-x-auto h-56 select-all"><code id="heroCodeBlock">class CloudMicroservice:
+    def __init__(self):
+        self.developer = "Vardhan Yerramsetti"
+        self.certification = "AWS Cloud Practitioner"
+        self.stack = ["Python", "Flask", "MySQL", "OpenCV"]
+        self.endpoints = ["/api/v1/infer", "/api/v1/orders"]
 
-    <span class="text-indigo-400">def</span> <span class="text-blue-400">build_scalable_solution</span>(<span class="text-rose-400">self</span>, problem):
-        <span class="text-slate-500"># Optimized REST API + High Availability</span>
-        <span class="text-indigo-400">return</span> <span class="text-rose-400">self</span>.deploy_microservice(
-            stack=<span class="text-emerald-300">"Flask + React + MySQL"</span>,
-            infra=<span class="text-emerald-300">"AWS Cloud"</span>,
-            efficiency_gain=<span class="text-emerald-300">"+25%"</span>
-        )
+    def process_request(self, payload):
+        # Latency cut by 25% via indexed queries
+        return {
+            "status": 200,
+            "latency": "14ms",
+            "deployed_on": "Vercel + AWS Cloud"
+        }</code></pre>
 
-vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
-<span class="text-indigo-400">print</span>(<span class="text-emerald-300">"Ready to build high-performance systems."</span>)</code></pre>
-
+            <!-- Bottom Actions -->
             <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
               <span class="flex items-center gap-1.5 text-emerald-400">
-                <i class="fa-solid fa-circle-check"></i> Clean Code & OOP Principles
+                <i class="fa-solid fa-circle-check"></i> 8 Live Production Microservices
               </span>
-              <button onclick="runSampleCodeAnimation(this)" class="text-brand-400 hover:text-brand-300 underline cursor-pointer">
-                Run Simulation ▶
+              <button onclick="runSampleCodeAnimation(this)" class="text-brand-400 hover:text-brand-300 font-semibold cursor-pointer transition flex items-center gap-1">
+                <span>Run Simulation ▶</span>
               </button>
             </div>
+
           </div>
         </div>
 
@@ -239,35 +257,877 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
     </div>
   </section>
 
-  <!-- ================= SKILLS MATRIX ================= -->
-  <section id="skills" class="py-20 relative z-10 bg-slate-900/40 border-y border-slate-800/60">
+  <!-- ================= DEPLOYED PROJECTS & PORTFOLIO HUB ================= -->
+  <section id="projects" class="py-24 relative z-10 bg-slate-950/60 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
+          <i class="fa-solid fa-globe"></i> PRODUCTION DEPLOYMENTS
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Featured Engineering Projects & Live Deployments
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Every project below is deployed to production and actively serving traffic. Explore live web applications, check the source code, or test interactive simulations below.
+        </p>
+
+        <!-- Category Filter & Search Bar -->
+        <div class="mt-8 space-y-4">
+          <!-- Category Pills -->
+          <div class="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-slate-900/90 rounded-2xl border border-slate-800 max-w-fit mx-auto text-xs">
+            <button onclick="setProjectFilter('all')" class="project-filter-btn px-3.5 py-1.5 rounded-xl font-mono font-semibold bg-brand-600 text-white shadow-md shadow-brand-500/20 transition-all" data-category="all">All Projects (8)</button>
+            <button onclick="setProjectFilter('ai-ml')" class="project-filter-btn px-3.5 py-1.5 rounded-xl font-mono text-slate-400 hover:text-white transition-all" data-category="ai-ml">AI & Computer Vision (4)</button>
+            <button onclick="setProjectFilter('fullstack')" class="project-filter-btn px-3.5 py-1.5 rounded-xl font-mono text-slate-400 hover:text-white transition-all" data-category="fullstack">Full Stack & Web (4)</button>
+            <button onclick="setProjectFilter('ecommerce')" class="project-filter-btn px-3.5 py-1.5 rounded-xl font-mono text-slate-400 hover:text-white transition-all" data-category="ecommerce">E-Commerce (2)</button>
+            <button onclick="setProjectFilter('cloud-systems')" class="project-filter-btn px-3.5 py-1.5 rounded-xl font-mono text-slate-400 hover:text-white transition-all" data-category="cloud-systems">Analytics & Systems (2)</button>
+          </div>
+
+          <!-- Search Input & Live Counter -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div class="relative w-full sm:w-80">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+              <input type="text" id="projectSearch" oninput="filterProjects()" placeholder="Search by tech (e.g. OpenCV, Flask, MySQL)..." class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono" />
+            </div>
+            <div id="projectCountBadge" class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-2 rounded-xl border border-slate-800">
+              Showing 8 of 8 Deployed Projects
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid (8 Complete Production Projects) -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- PROJECT 1: Music Recommendation System (OpenCV + Flask) -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="ai-ml fullstack">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Computer Vision</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              Music Emotion Recommender
+            </h3>
+            <p class="text-xs text-brand-400 font-mono mt-0.5">OpenCV • Real-Time Face Emotion Inference</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Intelligent music recommendation web app that detects user facial expressions in real-time using OpenCV and Scikit-learn (&gt;90% accuracy). Streams curated playlists, dynamic equalizer animations, and Web Audio API playback.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-0.5 text-[10px]"></i>
+                <span>OpenCV facial landmark detection &gt;90% accuracy</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-brand-400 mt-0.5 text-[10px]"></i>
+                <span>Asynchronous Flask RESTful inference API</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">OpenCV</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Flask</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Web Audio</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://music-recommending.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold font-mono shadow-md shadow-brand-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/music-recommending" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: S.V.T. Tailors (Python + MySQL + Vercel) -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="fullstack ecommerce">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Bespoke Atelier</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              S.V.T. Tailors (Est. 1965)
+            </h3>
+            <p class="text-xs text-amber-400 font-mono mt-0.5">Heritage Atelier E-Commerce & Production Tracker</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Full-stack luxury gents bespoke tailoring platform for a 60-year heritage business. Features an interactive garment customizer, 4 measurement workflows, automated WhatsApp ordering, and a live 5-stage workshop production tracker.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-amber-400 mt-0.5 text-[10px]"></i>
+                <span>Python serverless endpoints + Cloud MySQL database</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-amber-400 mt-0.5 text-[10px]"></i>
+                <span>Automated WhatsApp order routing & barcode receipts</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">MySQL</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">REST APIs</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://svt-tailors.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold font-mono shadow-md shadow-amber-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/S.V.T.Tailors" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: MS Pickles (Andhra E-Commerce) -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="ecommerce fullstack">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Culinary E-Commerce</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              MS Pickles Andhra Store
+            </h3>
+            <p class="text-xs text-emerald-400 font-mono mt-0.5">Authentic Andhra Delicacies & Dynamic Ordering</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              High-converting e-commerce storefront for authentic Andhra homemade pickles (Chicken, Mutton, Prawns, Gongura). Features dynamic cart persistence, spice level configurators, interactive poster viewer, and direct WhatsApp order generation.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 text-[10px]"></i>
+                <span>11 authentic Andhra product catalogs with grammage tiers</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 text-[10px]"></i>
+                <span>1-click WhatsApp order generation and persistent cart</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">JavaScript ES6+</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">LocalStorage</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">WhatsApp API</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://ms-pickles.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold font-mono shadow-md shadow-emerald-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/MS-pickles" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: OmniPulse Enterprise CLV & Churn Engine -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="ai-ml cloud-systems">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Enterprise ML</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              OmniPulse CLV & Churn Engine
+            </h3>
+            <p class="text-xs text-cyan-400 font-mono mt-0.5">Probabilistic Modeling & Retention Intelligence</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Enterprise predictive analytics platform combining BG/NBD and Gamma-Gamma probabilistic models with calibrated machine learning ensembles for Customer Lifetime Value (CLV) forecasting, churn risk scoring, and automated Next-Best-Action retention.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5 text-[10px]"></i>
+                <span>BG/NBD repeat transaction modeling + Gamma-Gamma spend</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5 text-[10px]"></i>
+                <span>FastAPI backend with discounted cash flow customer equity</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">BG/NBD</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Python 3.11</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://omnipulse.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold font-mono shadow-md shadow-cyan-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: CardioGuard AI (Heart Disease App) -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="ai-ml fullstack">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">Clinical AI</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              CardioGuard AI Clinical Profiler
+            </h3>
+            <p class="text-xs text-rose-400 font-mono mt-0.5">Cleveland Dataset Machine Learning Classifier</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Cardiovascular disease risk assessment platform powered by trained machine learning models (Joblib scikit-learn). Features multi-variable clinical parameter scoring, interactive radar risk maps via Chart.js, and lifestyle recommendations.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-rose-400 mt-0.5 text-[10px]"></i>
+                <span>Trained on clinical datasets (blood pressure, cholesterol, ECG)</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-rose-400 mt-0.5 text-[10px]"></i>
+                <span>Interactive Chart.js radar profiling & probability calibration</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Joblib</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Chart.js</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://heart-disease-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold font-mono shadow-md shadow-rose-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="#simulators" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-solid fa-sliders text-xs"></i>
+              <span>Simulator</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: AI Health Symptom Checker -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="ai-ml fullstack">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">Diagnostic ML</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              AI Health Symptom Checker
+            </h3>
+            <p class="text-xs text-blue-400 font-mono mt-0.5">Ensemble Disease Prediction & Clinical Triage</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Full-featured clinical symptom triage backend powered by an ensemble of Decision Trees and Random Forests in FastAPI. Validates complex multi-symptom inputs, generates diagnostic confidence metrics, severity ratings, and medical specialist referrals.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-blue-400 mt-0.5 text-[10px]"></i>
+                <span>Decision Tree & Random Forest ensemble predictions</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-blue-400 mt-0.5 text-[10px]"></i>
+                <span>Severity indexing, precautions, and specialist routing</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Random Forest</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">REST API</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://ai-health-symptom-checker.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold font-mono shadow-md shadow-blue-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://health-symptom-checker.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all" title="Mirror Deploy">
+              <i class="fa-solid fa-server text-xs"></i>
+              <span>Mirror</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 7: 90-Day Body Transformation -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="cloud-systems ai-ml">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded border border-orange-500/20">Scientific Suite</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              90-Day Body Recomposition
+            </h3>
+            <p class="text-xs text-orange-400 font-mono mt-0.5">3D Metabolic Manifolds & Hypertrophy Algorithms</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Scientific 4-pillar body transformation suite packed with interactive 3D Plotly biomechanical activation maps, 90-day metabolic burn trajectories, real-time workout completion meters, and an automated discipline penalty ledger.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-orange-400 mt-0.5 text-[10px]"></i>
+                <span>3D Plotly metabolic burn manifolds & muscle activation</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-orange-400 mt-0.5 text-[10px]"></i>
+                <span>Live 100% completion gauge & physical penalty tracker</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Plotly 3D</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Jupyter Engine</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">HTML5/JS</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://90-days-body-transformation.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold font-mono shadow-md shadow-orange-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/90-Days-Body-Transformation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 8: "They Call Him OG" Showcase -->
+        <div class="project-card glow-card glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between" data-category="fullstack">
+          <div>
+            <!-- Live Status & Domain Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Live on Vercel
+              </span>
+              <span class="text-xs font-mono text-red-400 bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">Next.js Cinematic</span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">
+              "They Call Him OG" Showcase
+            </h3>
+            <p class="text-xs text-red-400 font-mono mt-0.5">High-Octane Cinematic Web & Audio Showcase</p>
+
+            <p class="text-slate-300 text-xs leading-relaxed mt-3">
+              Cinematic fan tribute platform engineered in Next.js. Features custom scroll-driven circular transitions, rotating archival visual gallery, red crescent design language, custom audio effects, and an automated 55-second showcase mode.
+            </p>
+
+            <!-- Key Feature Highlights -->
+            <ul class="space-y-1.5 text-xs text-slate-400 mt-3 font-mono">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-red-400 mt-0.5 text-[10px]"></i>
+                <span>Next.js modern SSR and scroll-driven CSS canvas transitions</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-circle-check text-red-400 mt-0.5 text-[10px]"></i>
+                <span>Interactive rotating film chapter archive & Web Audio FX</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-4">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Next.js 14</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">React.js</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Web Audio</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="pt-5 border-t border-slate-800/80 mt-5 flex items-center justify-between gap-2">
+            <a href="https://they-call-him-og.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-semibold font-mono shadow-md shadow-red-500/20 transition-all">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              <span>Live Website</span>
+            </a>
+            <a href="https://github.com/vardhanyerramsetti71beep/They-call-him-og" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-mono transition-all">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>Source</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE SIMULATORS SECTION ================= -->
+  <section id="simulators" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono mb-3">
+          <i class="fa-solid fa-gamepad"></i> LIVE ALGORITHM SIMULATORS
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Test Engineering Algorithms Directly in Browser
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Simulators demonstrating real-time computer vision classification, heritage tailoring workflows, clinical risk scoring, and customer retention mathematics.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- SIMULATOR 1: Music Emotion Recommender Simulator -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 relative shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">OpenCV & Flask Emotion Pipeline</span>
+              </div>
+              <a href="https://music-recommending.vercel.app/" target="_blank" class="text-[11px] font-mono text-brand-400 hover:underline flex items-center gap-1">
+                <span>Open Full App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+              </a>
+            </div>
+
+            <!-- Emotion Switcher -->
+            <div class="mb-4">
+              <label class="block text-xs font-mono text-slate-400 mb-2">Simulate Detected Facial Expression:</label>
+              <div class="grid grid-cols-4 gap-2">
+                <button onclick="setEmotion('happy')" id="btn-happy" class="emotion-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-emerald-600 text-white flex flex-col items-center gap-1 border border-emerald-400 transition">
+                  <span class="text-lg">😄</span>
+                  <span>Happy</span>
+                </button>
+                <button onclick="setEmotion('sad')" id="btn-sad" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-sky-500 transition">
+                  <span class="text-lg">😢</span>
+                  <span>Sad</span>
+                </button>
+                <button onclick="setEmotion('neutral')" id="btn-neutral" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-amber-500 transition">
+                  <span class="text-lg">😐</span>
+                  <span>Neutral</span>
+                </button>
+                <button onclick="setEmotion('angry')" id="btn-angry" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-rose-500 transition">
+                  <span class="text-lg">🔥</span>
+                  <span>Energetic</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Classifier Display Box -->
+            <div class="relative bg-slate-900/90 rounded-2xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
+              <div class="flex items-center gap-3">
+                <div id="simFaceIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-emerald-500 flex items-center justify-center text-3xl shadow-lg relative">
+                  <span id="faceEmoji">😄</span>
+                  <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  </span>
+                </div>
+                <div>
+                  <div class="text-[11px] font-mono text-slate-400">Classified Emotion Landmark:</div>
+                  <div id="detectedLabel" class="text-sm font-bold text-emerald-400">Happy Expression</div>
+                  <div class="text-[11px] font-mono text-slate-500 flex items-center gap-2 mt-0.5">
+                    <span>Latency: <strong class="text-slate-300">12ms</strong></span>
+                    <span>•</span>
+                    <span>Confidence: <strong id="confidenceScore" class="text-emerald-400">94.8%</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Animated Equalizer Bars -->
+              <div class="flex items-end h-8">
+                <span class="bar bg-brand-400"></span>
+                <span class="bar bg-brand-400"></span>
+                <span class="bar bg-brand-400"></span>
+                <span class="bar bg-brand-400"></span>
+                <span class="bar bg-brand-400"></span>
+                <span class="bar bg-brand-400"></span>
+              </div>
+            </div>
+
+            <!-- Track Output -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between mb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white">
+                  <i class="fa-solid fa-music"></i>
+                </div>
+                <div>
+                  <div id="trackTitle" class="text-xs font-bold text-white">"Uplifting Vibes" - Synthwave Sunset</div>
+                  <div id="trackMeta" class="text-[11px] text-slate-400 font-mono">BPM: 124 • Key: G Major • Energy: High</div>
+                </div>
+              </div>
+              <button onclick="testApiStream(this)" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-600/20 border border-brand-500/40 text-brand-300 hover:bg-brand-600 hover:text-white transition flex items-center gap-1.5">
+                <i class="fa-solid fa-play text-[10px]"></i>
+                <span>Test Audio</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-bolt text-amber-400"></i>
+            <span>Live Web Audio Stream & OpenCV Facial Classification Engine</span>
+          </div>
+        </div>
+
+        <!-- SIMULATOR 2: S.V.T. Tailors Bespoke Atelier & Tracker -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 relative shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">S.V.T. Atelier Production Engine</span>
+              </div>
+              <a href="https://svt-tailors.vercel.app/" target="_blank" class="text-[11px] font-mono text-amber-400 hover:underline flex items-center gap-1">
+                <span>Open Full App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+              </a>
+            </div>
+
+            <!-- Garment Switcher -->
+            <div class="mb-4">
+              <label class="block text-xs font-mono text-slate-400 mb-2">Select Bespoke Garment to Configure:</label>
+              <div class="grid grid-cols-4 gap-2">
+                <button onclick="setTailorGarment('suit')" id="btn-tailor-suit" class="tailor-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-amber-600 text-white flex flex-col items-center gap-1 border border-amber-400 transition">
+                  <span class="text-lg">🤵</span>
+                  <span>Suit</span>
+                </button>
+                <button onclick="setTailorGarment('shirt')" id="btn-tailor-shirt" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-sky-500 transition">
+                  <span class="text-lg">👔</span>
+                  <span>Shirt</span>
+                </button>
+                <button onclick="setTailorGarment('trouser')" id="btn-tailor-trouser" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-emerald-500 transition">
+                  <span class="text-lg">👖</span>
+                  <span>Trouser</span>
+                </button>
+                <button onclick="setTailorGarment('blazer')" id="btn-tailor-blazer" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-indigo-500 transition">
+                  <span class="text-lg">🧥</span>
+                  <span>Blazer</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Configurator Display -->
+            <div class="relative bg-slate-900/90 rounded-2xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
+              <div class="flex items-center gap-3">
+                <div id="tailorGarmentIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-amber-500 flex items-center justify-center text-3xl shadow-lg relative">
+                  <span id="tailorEmoji">🤵</span>
+                  <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+                  </span>
+                </div>
+                <div>
+                  <div class="text-[11px] font-mono text-slate-400">Atelier Configurator:</div>
+                  <div id="tailorGarmentTitle" class="text-sm font-bold text-amber-400">Bespoke 2-Piece Suit</div>
+                  <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
+                    <span>Craft: <strong id="tailorFit" class="text-white">Master Canvassed</strong></span>
+                    <span>•</span>
+                    <span>Timeline: <strong id="tailorTime" class="text-emerald-400">48h Express</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right font-mono">
+                <span id="tailorBadge" class="text-[10px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2 py-1 rounded-md">Heritage Craft</span>
+              </div>
+            </div>
+
+            <!-- 5-Stage Live Workshop Progress Bar -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2 mb-3">
+              <div class="flex items-center justify-between text-[11px] font-mono">
+                <span class="text-slate-400"><i class="fa-solid fa-scissors text-amber-400 mr-1"></i> Workshop Pipeline:</span>
+                <span id="tailorStatusStage" class="text-emerald-400 font-bold">Stage 3 / 5: Master Stitch</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                <div id="tailorProgressBar" class="bg-gradient-to-r from-amber-500 to-emerald-400 h-1.5 rounded-full transition-all duration-500" style="width: 60%"></div>
+              </div>
+              <div id="tailorStageDesc" class="text-[10px] text-slate-400 font-mono truncate">
+                Master craftsman assembling panels with reinforced interior canvas.
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center justify-between gap-2">
+              <button onclick="advanceTailorStage()" class="flex-1 py-2 px-3 rounded-lg text-xs font-mono bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-forward-step text-[10px]"></i>
+                <span>Advance Workshop Stage</span>
+              </button>
+              <button onclick="simulateOrderDispatch()" class="flex-1 py-2 px-3 rounded-lg text-xs font-mono bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white transition flex items-center justify-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-xs"></i>
+                <span>Test WhatsApp Order</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1.5 mt-3">
+            <i class="fa-solid fa-database text-cyan-400"></i>
+            <span>Serverless Python REST Endpoints & Cloud MySQL Order System</span>
+          </div>
+        </div>
+
+        <!-- SIMULATOR 3: CardioGuard AI Clinical Risk Profiler -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 relative shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">CardioGuard AI Clinical Classifier</span>
+              </div>
+              <a href="https://heart-disease-app.vercel.app/" target="_blank" class="text-[11px] font-mono text-rose-400 hover:underline flex items-center gap-1">
+                <span>Open Full App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+              </a>
+            </div>
+
+            <!-- Clinical Sliders -->
+            <div class="space-y-3 mb-4">
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Resting Blood Pressure (trestbps):</span>
+                  <span id="cardioBpVal" class="text-rose-400 font-bold">135 mmHg</span>
+                </div>
+                <input type="range" id="cardioBp" min="90" max="190" value="135" oninput="updateCardioRisk()" class="w-full accent-rose-500 cursor-pointer" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Serum Cholesterol (chol):</span>
+                  <span id="cardioCholVal" class="text-rose-400 font-bold">230 mg/dL</span>
+                </div>
+                <input type="range" id="cardioChol" min="150" max="350" value="230" oninput="updateCardioRisk()" class="w-full accent-rose-500 cursor-pointer" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Patient Age:</span>
+                  <span id="cardioAgeVal" class="text-rose-400 font-bold">52 yrs</span>
+                </div>
+                <input type="range" id="cardioAge" min="25" max="80" value="52" oninput="updateCardioRisk()" class="w-full accent-rose-500 cursor-pointer" />
+              </div>
+            </div>
+
+            <!-- Risk Calculation Result Box -->
+            <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-2 mb-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-slate-400">Cardiovascular Risk Probability:</span>
+                <span id="cardioRiskScore" class="text-lg font-bold font-mono text-rose-400">28%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div id="cardioRiskMeter" class="h-2 rounded-full bg-amber-500 transition-all duration-300" style="width: 28%"></div>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-[11px] font-mono text-slate-500">ML Classification Tier:</span>
+                <span id="cardioRiskBadge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-400">Moderate Risk (Watch)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1.5 mt-3">
+            <i class="fa-solid fa-heart-pulse text-rose-400"></i>
+            <span>Trained Machine Learning Model (Cleveland Heart Disease Dataset)</span>
+          </div>
+        </div>
+
+        <!-- SIMULATOR 4: OmniPulse CLV & Churn Score Estimator -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 relative shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">OmniPulse BG/NBD & CLV Engine</span>
+              </div>
+              <a href="https://omnipulse.vercel.app/" target="_blank" class="text-[11px] font-mono text-cyan-400 hover:underline flex items-center gap-1">
+                <span>Open Full App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+              </a>
+            </div>
+
+            <!-- Parameters Sliders -->
+            <div class="space-y-3 mb-4">
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Days Since Last Purchase (Recency):</span>
+                  <span id="omniRecencyVal" class="text-cyan-400 font-bold">45 days</span>
+                </div>
+                <input type="range" id="omniRecency" min="1" max="180" value="45" oninput="updateOmniPulse()" class="w-full accent-cyan-500 cursor-pointer" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Repeat Order Count (Frequency):</span>
+                  <span id="omniFreqVal" class="text-cyan-400 font-bold">6 orders</span>
+                </div>
+                <input type="range" id="omniFrequency" min="1" max="25" value="6" oninput="updateOmniPulse()" class="w-full accent-cyan-500 cursor-pointer" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1 text-slate-300">
+                  <span>Average Order Value (Monetary Spend):</span>
+                  <span id="omniAovVal" class="text-cyan-400 font-bold">₹1,450</span>
+                </div>
+                <input type="range" id="omniAov" min="200" max="8000" step="50" value="1450" oninput="updateOmniPulse()" class="w-full accent-cyan-500 cursor-pointer" />
+              </div>
+            </div>
+
+            <!-- CLV Calculations -->
+            <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 grid grid-cols-3 gap-2 text-center mb-3">
+              <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800">
+                <div class="text-[10px] font-mono text-slate-400">P(Alive)</div>
+                <div id="omniPAlive" class="text-base font-bold font-mono text-emerald-400 mt-0.5">85%</div>
+              </div>
+              <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800">
+                <div class="text-[10px] font-mono text-slate-400">Churn Risk</div>
+                <div id="omniChurnRisk" class="text-base font-bold font-mono text-emerald-400 mt-0.5">15%</div>
+              </div>
+              <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800">
+                <div class="text-[10px] font-mono text-slate-400">12M CLV Forecast</div>
+                <div id="omniClvForecast" class="text-base font-bold font-mono text-cyan-400 mt-0.5">₹16,269</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1.5 mt-3">
+            <i class="fa-solid fa-chart-line text-cyan-400"></i>
+            <span>Probabilistic BG/NBD & Gamma-Gamma Submodel Retention Calculations</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TECHNICAL SKILLS ARSENAL ================= -->
+  <section id="skills" class="py-24 relative z-10 bg-slate-950/80 border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
-          <i class="fa-solid fa-microchip"></i> TECHNICAL ARSENAL
+          <i class="fa-solid fa-microchip"></i> COMPREHENSIVE ARSENAL
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Skills & Core Competencies
+          Technical Skills & Architecture Standards
         </h2>
         <p class="text-slate-400 text-sm sm:text-base mt-3">
-          Filtering and structured breakdown of languages, backend microservices, cloud platforms, and ML pipelines.
+          Categorized breakdown of backend microservices, cloud infrastructure, machine learning pipelines, and relational database systems.
         </p>
 
         <!-- Search & Filter Controls -->
         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <div class="relative w-full sm:w-72">
             <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
-            <input type="text" id="skillSearch" oninput="filterSkills()" placeholder="Search skill (e.g. Flask, AWS)..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+            <input type="text" id="skillSearch" oninput="filterSkills()" placeholder="Search skill (e.g. Flask, AWS)..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono" />
           </div>
 
-          <div class="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-slate-950/80 rounded-xl border border-slate-800 text-xs">
+          <div class="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-slate-900/90 rounded-xl border border-slate-800 text-xs font-mono">
             <button onclick="setSkillFilter('all')" class="skill-tab active px-3 py-1.5 rounded-lg text-white bg-brand-600 transition" data-filter="all">All</button>
             <button onclick="setSkillFilter('backend')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="backend">Backend & APIs</button>
-            <button onclick="setSkillFilter('frontend')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="frontend">Frontend</button>
-            <button onclick="setSkillFilter('cloud')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="cloud">AWS & DevOps</button>
-            <button onclick="setSkillFilter('data-ml')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="data-ml">Data & ML</button>
+            <button onclick="setSkillFilter('cloud')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="cloud">AWS & Cloud</button>
+            <button onclick="setSkillFilter('data-ml')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="data-ml">ML & AI</button>
             <button onclick="setSkillFilter('database')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="database">Databases</button>
+            <button onclick="setSkillFilter('frontend')" class="skill-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition" data-filter="frontend">Frontend</button>
           </div>
         </div>
       </div>
@@ -276,47 +1136,47 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
       <div id="skillsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Card: Languages -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend frontend">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend frontend">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
               <i class="fa-solid fa-code"></i>
             </div>
             <div>
               <h3 class="font-bold text-white text-base">Languages</h3>
-              <p class="text-xs text-slate-400">Core algorithms & script programming</p>
+              <p class="text-xs text-slate-400">Core algorithms & programming</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">Python</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-yellow-500/10 border border-yellow-500/20 text-yellow-300">JavaScript (ES6+)</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">SQL</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">C++</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">HTML5 / CSS3</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300 font-semibold">Python (Advanced)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-yellow-500/10 border border-yellow-500/20 text-yellow-300">JavaScript (ES6+)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-semibold">SQL</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">C++</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">HTML5 / CSS3</span>
           </div>
         </div>
 
         <!-- Card: Backend & Microservices -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="backend">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
               <i class="fa-solid fa-server"></i>
             </div>
             <div>
-              <h3 class="font-bold text-white text-base">Backend & Frameworks</h3>
-              <p class="text-xs text-slate-400">Microservices & High-Throughput APIs</p>
+              <h3 class="font-bold text-white text-base">Backend & Microservices</h3>
+              <p class="text-xs text-slate-400">High-Throughput RESTful APIs</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">Flask (API Dev)</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">Django</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">RESTful Architecture</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Microservices</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Server-Side Logic</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold">Flask API Architecture</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-teal-500/10 border border-teal-500/20 text-teal-300 font-semibold">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">Django</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Serverless Functions</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">RESTful Architecture</span>
           </div>
         </div>
 
         <!-- Card: Cloud & DevOps -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="cloud">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="cloud">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-lg">
               <i class="fa-brands fa-aws"></i>
@@ -327,74 +1187,75 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300 font-semibold">AWS (EC2, S3, Lambda)</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300">Cloud Architecture</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">Docker Basics</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Scalable Deployment</span>
-          </div>
-        </div>
-
-        <!-- Card: Frontend Development -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="frontend">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
-              <i class="fa-brands fa-react"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base">Frontend Engineering</h3>
-              <p class="text-xs text-slate-400">Interactive & Reactive Web UIs</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-sky-500/10 border border-sky-500/20 text-sky-300 font-semibold">React.js</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-purple-500/10 border border-purple-500/20 text-purple-300">Bootstrap / Tailwind</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Responsive Web Design</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">DOM Manipulation</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Single Page Apps (SPA)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300 font-semibold">AWS (EC2, S3, Lambda, IAM)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-amber-500/10 border border-amber-500/20 text-amber-300">Cloud Architecture</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300 font-semibold">Vercel Deployments</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Docker Basics</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">High Availability</span>
           </div>
         </div>
 
         <!-- Card: Data Science & ML -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="data-ml">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="data-ml">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
               <i class="fa-solid fa-brain"></i>
             </div>
             <div>
               <h3 class="font-bold text-white text-base">Data Science & ML</h3>
-              <p class="text-xs text-slate-400">Computer Vision & Predictive Analysis</p>
+              <p class="text-xs text-slate-400">Computer Vision & Predictive Models</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-rose-500/10 border border-rose-500/20 text-rose-300 font-semibold">OpenCV</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">Scikit-learn</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300">TensorFlow</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">NumPy / Pandas</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Data Preprocessing</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-rose-500/10 border border-rose-500/20 text-rose-300 font-semibold">OpenCV (&gt;90% Accuracy)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-orange-500/10 border border-orange-500/20 text-orange-300 font-semibold">Scikit-learn</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-300">NumPy & Pandas</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">TensorFlow Basics</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Data Preprocessing & Augmentation</span>
           </div>
         </div>
 
         <!-- Card: Databases & Storage -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="database">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="database">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg">
               <i class="fa-solid fa-database"></i>
             </div>
             <div>
               <h3 class="font-bold text-white text-base">Databases & Storage</h3>
-              <p class="text-xs text-slate-400">Schema Design & Query Optimization</p>
+              <p class="text-xs text-slate-400">Schema Design & Latency Cut</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-semibold">MySQL</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Relational Schema Design</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold">Query Optimization (-25% latency)</span>
-            <span class="skill-badge px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">CRUD Operations</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-semibold">MySQL / PyMySQL</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-semibold">Query Optimization (-25% Latency)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Relational Schema Design</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Indexing & CRUD Operations</span>
+          </div>
+        </div>
+
+        <!-- Card: Frontend Engineering -->
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group" data-category="frontend">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Frontend Engineering</h3>
+              <p class="text-xs text-slate-400">Responsive & Reactive Web UIs</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sky-500/10 border border-sky-500/20 text-sky-300 font-semibold">React.js</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-red-500/10 border border-red-500/20 text-red-300 font-semibold">Next.js</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">Tailwind CSS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">DOM Manipulation & SPAs</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Responsive Web Design</span>
           </div>
         </div>
 
         <!-- Card: Core CS & Methodologies -->
-        <div class="skill-item glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group sm:col-span-2 lg:col-span-3" data-category="backend">
+        <div class="skill-item glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-brand-500/50 transition-all group sm:col-span-2 lg:col-span-3" data-category="backend">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
               <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center text-lg">
@@ -402,16 +1263,16 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
               </div>
               <div>
                 <h3 class="font-bold text-white text-base">Core Computer Science & Methodologies</h3>
-                <p class="text-xs text-slate-400">Engineering standards & development lifecycle</p>
+                <p class="text-xs text-slate-400">Engineering principles, quality testing & SDLC</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Data Structures & Algorithms (DSA)</span>
-              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Object-Oriented Programming (OOP)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200 font-semibold">Data Structures & Algorithms (DSA)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200 font-semibold">Object-Oriented Programming (OOP)</span>
               <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Computer Networks</span>
               <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Git / GitHub</span>
-              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Postman</span>
-              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Agile / Scrum (SDLC)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Postman API Testing</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">Agile / Scrum</span>
               <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 border border-slate-700 text-slate-200">TDD & Unit Testing</span>
             </div>
           </div>
@@ -422,319 +1283,8 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
     </div>
   </section>
 
-  <!-- ================= PROJECTS & INTERACTIVE DEMOS ================= -->
-  <section id="projects" class="py-24 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono mb-3">
-          <i class="fa-solid fa-laptop-code"></i> FEATURED WORK & LIVE EXPERIENCES
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Engineering Projects with Live Simulators
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3">
-          Interactive simulations demonstrating computer vision inference and optimized backend API performance.
-        </p>
-      </div>
-
-      <!-- PROJECT 1: Music Recommendation System Based on Facial Expression Recognition -->
-      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 mb-16 shadow-2xl relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-6 space-y-4">
-            <div class="flex items-center gap-2 text-xs font-mono">
-              <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300">Computer Vision</span>
-              <span class="px-2.5 py-1 rounded-md bg-brand-500/10 border border-brand-500/30 text-brand-300">Flask REST API</span>
-              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">>90% Accuracy</span>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
-              Music Recommendation System Based on Facial Expression Recognition
-            </h3>
-
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Designed and developed an end-to-end intelligent music recommendation platform analyzing user facial expressions in real-time. Features an optimized image processing pipeline using OpenCV for low-latency face detection and feature extraction.
-            </p>
-
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Engineered high-throughput backend <strong>Flask RESTful APIs</strong> to handle live video frame streaming, asynchronous model inference, and track delivery.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Implemented supervised machine learning algorithms to classify emotions (<span class="text-emerald-400">Happy</span>, <span class="text-sky-400">Sad</span>, <span class="text-amber-400">Neutral</span>, <span class="text-rose-400">Angry</span>) with <strong>over 90% detection accuracy</strong>.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Optimized OpenCV frame pipeline, resulting in a <strong>20% uplift in real-time user session engagement</strong>.</span>
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Flask</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">OpenCV</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Scikit-learn</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">REST API</span>
-            </div>
-          </div>
-
-          <!-- Interactive Simulator: Face Emotion & Music Recommender -->
-          <div class="lg:col-span-6">
-            <div class="bg-slate-950/90 rounded-2xl p-5 border border-slate-800 shadow-inner relative">
-              
-              <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
-                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Model Inference Simulator</span>
-                </div>
-                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">OpenCV Ready</span>
-              </div>
-
-              <!-- Interactive Buttons -->
-              <div class="mb-4">
-                <label class="block text-xs font-mono text-slate-400 mb-2">Select User Facial Emotion to Classify:</label>
-                <div class="grid grid-cols-4 gap-2">
-                  <button onclick="setEmotion('happy')" id="btn-happy" class="emotion-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-emerald-600 text-white flex flex-col items-center gap-1 border border-emerald-400 transition">
-                    <span class="text-lg">😄</span>
-                    <span>Happy</span>
-                  </button>
-                  <button onclick="setEmotion('sad')" id="btn-sad" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-sky-500 transition">
-                    <span class="text-lg">😢</span>
-                    <span>Sad</span>
-                  </button>
-                  <button onclick="setEmotion('neutral')" id="btn-neutral" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-amber-500 transition">
-                    <span class="text-lg">😐</span>
-                    <span>Neutral</span>
-                  </button>
-                  <button onclick="setEmotion('angry')" id="btn-angry" class="emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-rose-500 transition">
-                    <span class="text-lg">🔥</span>
-                    <span>Energetic</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Visual Classifier Box -->
-              <div class="relative bg-slate-900 rounded-xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
-                <div class="flex items-center gap-3">
-                  <div id="simFaceIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-emerald-500 flex items-center justify-center text-3xl shadow-lg relative">
-                    <span id="faceEmoji">😄</span>
-                    <span class="absolute -top-1 -right-1 flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="text-xs font-mono text-slate-400">Classified Landmark:</div>
-                    <div id="detectedLabel" class="text-sm font-bold text-emerald-400">Happy Expression</div>
-                    <div class="text-[11px] font-mono text-slate-500 flex items-center gap-2 mt-0.5">
-                      <span>Latency: <strong class="text-slate-300">14ms</strong></span>
-                      <span>•</span>
-                      <span>Confidence: <strong id="confidenceScore" class="text-emerald-400">94.8%</strong></span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Equalizer Bar Visualization -->
-                <div class="flex items-end h-8">
-                  <span class="bar bg-brand-400"></span>
-                  <span class="bar bg-brand-400"></span>
-                  <span class="bar bg-brand-400"></span>
-                  <span class="bar bg-brand-400"></span>
-                  <span class="bar bg-brand-400"></span>
-                  <span class="bar bg-brand-400"></span>
-                </div>
-              </div>
-
-              <!-- Track Output Box -->
-              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-music"></i>
-                  </div>
-                  <div>
-                    <div id="trackTitle" class="text-xs font-bold text-white">"Uplifting Vibes" - Synthwave Sunset</div>
-                    <div id="trackMeta" class="text-[11px] text-slate-400 font-mono">BPM: 124 • Mode: Harmonic Major</div>
-                  </div>
-                </div>
-
-                <button onclick="toggleAudioPreview(this)" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-600/20 border border-brand-500/40 text-brand-300 hover:bg-brand-600 hover:text-white transition flex items-center gap-1.5">
-                  <i class="fa-solid fa-play text-[10px]"></i>
-                  <span>Test API Stream</span>
-                </button>
-              </div>
-
-              <div class="mt-3 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1">
-                <i class="fa-solid fa-bolt text-amber-400"></i>
-                <span>Asynchronous Flask API Pipeline & Supervised ML Model</span>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    <!-- PROJECT 2: S.V.T. Tailors — Master Bespoke Tailoring & E-Commerce Platform -->
-      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-6 space-y-4">
-            <div class="flex items-center gap-2 text-xs font-mono">
-              <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300">Bespoke E-Commerce</span>
-              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">Live on Vercel</span>
-              <span class="px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-300">Python + MySQL</span>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
-              S.V.T. Tailors — Master Gents Bespoke Tailoring & E-Commerce Platform
-            </h3>
-
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Designed and engineered a full-stack luxury gents bespoke tailoring e-commerce and booking web platform for a heritage atelier established in 1965. Features dynamic garment customization, precision fitting workflows, serverless Python REST endpoints, and automated multi-channel order dispatch.
-            </p>
-
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Architected serverless <strong>Python backend APIs</strong> and cloud <strong>MySQL database (PyMySQL)</strong> for customer authentication, booking appointments, and live order tracking.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Built an interactive <strong>gents garment customizer & fitting configuration engine</strong> supporting 4 measurement methods (standard sizing, body inches, workshop sample pickup, and doorstep tailor visits).</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-brand-400 mt-1 text-xs"></i>
-                <span>Integrated automated <strong>WhatsApp order routing, printable digital invoices</strong> with barcode simulation, and a live atelier 5-stage production tracker.</span>
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap items-center gap-2 pt-2">
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Serverless APIs</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">MySQL</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">JavaScript ES6+</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Tailwind CSS</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">Vercel</span>
-            </div>
-
-            <div class="flex items-center gap-3 pt-3">
-              <a href="https://svt-tailors.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold font-mono shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <span>Live Website</span>
-              </a>
-              <a href="https://github.com/vardhanyerramsetti71beep/S.V.T.Tailors" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-semibold font-mono transition-all">
-                <i class="fa-brands fa-github text-sm"></i>
-                <span>Source Code</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Interactive Simulator: Atelier Customizer & Tracker -->
-          <div class="lg:col-span-6">
-            <div class="bg-slate-950/90 rounded-2xl p-5 border border-slate-800 shadow-inner relative">
-              
-              <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-                  <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Live Atelier & Order Tracker Simulator</span>
-                </div>
-                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Vercel Live</span>
-              </div>
-
-              <!-- Interactive Buttons -->
-              <div class="mb-4">
-                <label class="block text-xs font-mono text-slate-400 mb-2">Select Bespoke Garment to Configure:</label>
-                <div class="grid grid-cols-4 gap-2">
-                  <button onclick="setTailorGarment('suit')" id="btn-tailor-suit" class="tailor-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-amber-600 text-white flex flex-col items-center gap-1 border border-amber-400 transition">
-                    <span class="text-lg">🤵</span>
-                    <span>Suit</span>
-                  </button>
-                  <button onclick="setTailorGarment('shirt')" id="btn-tailor-shirt" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-sky-500 transition">
-                    <span class="text-lg">👔</span>
-                    <span>Shirt</span>
-                  </button>
-                  <button onclick="setTailorGarment('trouser')" id="btn-tailor-trouser" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-emerald-500 transition">
-                    <span class="text-lg">👖</span>
-                    <span>Trouser</span>
-                  </button>
-                  <button onclick="setTailorGarment('blazer')" id="btn-tailor-blazer" class="tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-indigo-500 transition">
-                    <span class="text-lg">🧥</span>
-                    <span>Blazer</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Visual Configurator Box -->
-              <div class="relative bg-slate-900 rounded-xl p-4 border border-slate-800 flex items-center justify-between mb-4 overflow-hidden">
-                <div class="flex items-center gap-3">
-                  <div id="tailorGarmentIcon" class="w-14 h-14 rounded-xl bg-slate-800 border-2 border-amber-500 flex items-center justify-center text-3xl shadow-lg relative">
-                    <span id="tailorEmoji">🤵</span>
-                    <span class="absolute -top-1 -right-1 flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="text-xs font-mono text-slate-400">Atelier Configurator:</div>
-                    <div id="tailorGarmentTitle" class="text-sm font-bold text-amber-400">Bespoke 2-Piece Suit</div>
-                    <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
-                      <span>Craft: <strong id="tailorFit" class="text-white">Master Tailored</strong></span>
-                      <span>•</span>
-                      <span>Timeline: <strong id="tailorTime" class="text-emerald-400">48h Express</strong></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-right font-mono">
-                  <span id="tailorBadge" class="text-[10px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2 py-1 rounded-md">Luxury Fit</span>
-                </div>
-              </div>
-
-              <!-- Live Atelier Production Tracker -->
-              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2 mb-3">
-                <div class="flex items-center justify-between text-[11px] font-mono">
-                  <span class="text-slate-400"><i class="fa-solid fa-scissors text-amber-400 mr-1"></i> Production Pipeline:</span>
-                  <span id="tailorStatusStage" class="text-emerald-400 font-bold">Stage 3 / 5: Master Stitch</span>
-                </div>
-                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                  <div id="tailorProgressBar" class="bg-gradient-to-r from-amber-500 to-emerald-400 h-1.5 rounded-full transition-all duration-500" style="width: 60%"></div>
-                </div>
-                <div id="tailorStageDesc" class="text-[10px] text-slate-400 font-mono truncate">
-                  Master craftsman executing bespoke canvassing and precision shoulder alignment.
-                </div>
-              </div>
-
-              <!-- Interactive Simulator Action Bar -->
-              <div class="flex items-center justify-between gap-2">
-                <button onclick="advanceTailorStage()" class="flex-1 py-2 px-3 rounded-lg text-xs font-mono bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition flex items-center justify-center gap-1.5">
-                  <i class="fa-solid fa-forward-step text-[10px]"></i>
-                  <span>Simulate Next Stage</span>
-                </button>
-                <button onclick="simulateOrderDispatch()" class="flex-1 py-2 px-3 rounded-lg text-xs font-mono bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white transition flex items-center justify-center gap-1.5">
-                  <i class="fa-brands fa-whatsapp text-xs"></i>
-                  <span>Test WhatsApp Payload</span>
-                </button>
-              </div>
-
-              <div class="mt-3 text-[11px] font-mono text-slate-500 text-center flex items-center justify-center gap-1">
-                <i class="fa-solid fa-cloud text-sky-400"></i>
-                <span>Serverless Python REST Backend & Cloud MySQL Database</span>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- ================= WORK EXPERIENCE & EDUCATION ================= -->
-  <section id="experience" class="py-20 relative z-10 bg-slate-900/40 border-y border-slate-800/60">
+  <section id="experience" class="py-24 relative z-10 border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -742,10 +1292,10 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
           <i class="fa-solid fa-briefcase"></i> CAREER & ACADEMICS
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Work Experience & Education
+          Work Experience & Academic Foundation
         </h2>
         <p class="text-slate-400 text-sm sm:text-base mt-3">
-          A track record of operational throughput, academic mentorship in computer science, and data-driven execution.
+          Proven history of operational throughput, academic computer science mentorship, and rigorous software development.
         </p>
       </div>
 
@@ -754,10 +1304,10 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
         <!-- Experience Column -->
         <div class="lg:col-span-8 space-y-6">
           <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-4">
-            <i class="fa-solid fa-layer-group text-brand-400"></i> Professional Experience
+            <i class="fa-solid fa-layer-group text-brand-400"></i> Professional Roles
           </h3>
 
-          <!-- Instakart -->
+          <!-- Instakart Services -->
           <div class="glass-card rounded-2xl p-6 border border-slate-800 relative group hover:border-brand-500/40 transition">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
               <h4 class="text-lg font-bold text-white">Operations and Logistics Associate</h4>
@@ -769,7 +1319,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <ul class="space-y-2 text-sm text-slate-400">
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-check text-brand-400 mt-1 text-xs"></i>
-                <span>Supervised and audited warehouse operations, order processing, and inventory databases, maintaining <strong>99% data accuracy</strong>.</span>
+                <span>Supervised and audited warehouse logistics, order dispatch, and inventory database operations, maintaining <strong>99% operational data accuracy</strong>.</span>
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-check text-brand-400 mt-1 text-xs"></i>
@@ -781,7 +1331,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
           <!-- Sri Srinivasa Gravity Junior College -->
           <div class="glass-card rounded-2xl p-6 border border-slate-800 relative group hover:border-brand-500/40 transition">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-              <h4 class="text-lg font-bold text-white">Teaching Assistant</h4>
+              <h4 class="text-lg font-bold text-white">Teaching Assistant (Computer Science)</h4>
               <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20 w-fit">
                 Jun 2022 – Aug 2022
               </span>
@@ -815,7 +1365,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
               </li>
               <li class="flex items-start gap-2">
                 <i class="fa-solid fa-check text-amber-400 mt-1 text-xs"></i>
-                <span>Analyzed customer conversion telemetry alongside product and sales teams, contributing to a <strong>10% uplift in lead acquisition</strong>.</span>
+                <span>Analyzed customer conversion telemetry alongside product teams, delivering a <strong>10% uplift in lead acquisition</strong>.</span>
               </li>
             </ul>
           </div>
@@ -855,7 +1405,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <div class="space-y-2 text-xs font-mono">
               <div class="flex justify-between items-center text-slate-300">
                 <span>English</span>
-                <span class="text-emerald-400">Professional</span>
+                <span class="text-emerald-400">Professional Working</span>
               </div>
               <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
                 <div class="bg-brand-500 h-full rounded-full" style="width: 90%"></div>
@@ -887,25 +1437,25 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
   </section>
 
   <!-- ================= CERTIFICATIONS SECTION ================= -->
-  <section id="certifications" class="py-20 relative z-10">
+  <section id="certifications" class="py-24 relative z-10 bg-slate-950/80 border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-brand-aws text-xs font-mono mb-3">
-          <i class="fa-solid fa-award"></i> VERIFIED CREDENTIALS
+          <i class="fa-solid fa-award"></i> VERIFIED ACCREDITATIONS
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Certifications & Accreditations
+          Industry Certifications & Credentials
         </h2>
         <p class="text-slate-400 text-sm sm:text-base mt-3">
-          Validated industry credentials across cloud computing, enterprise networking, and modern software development.
+          Validated industry credentials across Amazon Web Services cloud architecture, enterprise networking, and modern programming.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- AWS Cloud Practitioner -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-brands fa-aws"></i>
@@ -918,12 +1468,12 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">Cloud Architecture</span>
+            <span class="text-slate-400 font-mono text-[11px]">Cloud Architecture</span>
           </div>
         </div>
 
         <!-- AWS Academy -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-brand-aws flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-brands fa-aws"></i>
@@ -936,12 +1486,12 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">EC2 / S3 / IAM</span>
+            <span class="text-slate-400 font-mono text-[11px]">EC2 / S3 / IAM</span>
           </div>
         </div>
 
         <!-- Google Android Enterprise -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-brands fa-google"></i>
@@ -954,12 +1504,12 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">Enterprise Mobile</span>
+            <span class="text-slate-400 font-mono text-[11px]">Enterprise Mobility</span>
           </div>
         </div>
 
         <!-- Cisco Networking -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-sky-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-sky-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-network-wired"></i>
@@ -972,12 +1522,12 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">TCP/IP & Routing</span>
+            <span class="text-slate-400 font-mono text-[11px]">TCP/IP & Routing</span>
           </div>
         </div>
 
         <!-- Coursera C++ -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-indigo-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-indigo-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-cube"></i>
@@ -990,12 +1540,12 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">OOP & Memory</span>
+            <span class="text-slate-400 font-mono text-[11px]">OOP & Memory</span>
           </div>
         </div>
 
         <!-- Coursera Python -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-emerald-500/60 transition group relative">
+        <div class="glow-card glass-card rounded-2xl p-6 border border-slate-800 hover:border-emerald-500/60 transition group relative">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
               <i class="fa-brands fa-python"></i>
@@ -1008,7 +1558,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
             <span class="text-emerald-400 flex items-center gap-1 font-mono">
               <i class="fa-solid fa-circle-check"></i> Verified
             </span>
-            <span class="text-slate-500 font-mono text-[11px]">Python Core</span>
+            <span class="text-slate-400 font-mono text-[11px]">Python Core</span>
           </div>
         </div>
 
@@ -1017,8 +1567,8 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
     </div>
   </section>
 
-  <!-- ================= CONTACT SECTION ================= -->
-  <section id="contact" class="py-24 relative z-10 bg-slate-900/40 border-t border-slate-800/60">
+  <!-- ================= CONTACT & CONNECT SECTION ================= -->
+  <section id="contact" class="py-24 relative z-10 border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -1030,19 +1580,19 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
           </div>
 
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Let's build scalable systems together.
+            Let's build high-performance systems together.
           </h2>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Whether you have an opening for a <strong>Python Full Stack Developer</strong>, an <strong>AWS Cloud Engineer</strong>, or want to collaborate on machine learning projects, I'm just a click away!
+            Looking for a <strong>Python Full Stack Developer</strong> or <strong>AWS Cloud Engineer</strong> who delivers scalable microservices, low-latency REST APIs, and production deployments? Let's connect!
           </p>
 
           <div class="space-y-3 pt-2">
             
             <!-- Email -->
-            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-brand-500/50 transition">
+            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-brand-500/50 transition">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
                   <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div>
@@ -1052,15 +1602,15 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
                   </a>
                 </div>
               </div>
-              <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Email">
+              <button onclick="copyToClipboard('vardhanyerramsetti71@gmail.com', 'Email copied to clipboard!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Email">
                 <i class="fa-regular fa-clone"></i>
               </button>
             </div>
 
             <!-- Phone / WhatsApp -->
-            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition">
+            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
                   <i class="fa-solid fa-phone"></i>
                 </div>
                 <div>
@@ -1071,10 +1621,10 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
                 </div>
               </div>
               <div class="flex items-center gap-1">
-                <a href="https://wa.me/917386033417" target="_blank" class="p-2 text-emerald-400 hover:text-emerald-300 transition" title="Chat on WhatsApp">
+                <a href="https://wa.me/917386033417?text=Hi%20Vardhan,%20I%20reviewed%20your%20developer%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="p-2 text-emerald-400 hover:text-emerald-300 transition" title="Chat on WhatsApp">
                   <i class="fa-brands fa-whatsapp text-lg"></i>
                 </a>
-                <button onclick="copyToClipboard('+91 7386033417', 'Phone number copied!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Phone">
+                <button onclick="copyToClipboard('+91 7386033417', 'Phone number copied to clipboard!')" class="p-2 text-slate-400 hover:text-white transition" title="Copy Phone">
                   <i class="fa-regular fa-clone"></i>
                 </button>
               </div>
@@ -1082,11 +1632,11 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
 
             <!-- Social Links -->
             <div class="grid grid-cols-2 gap-3 pt-2">
-              <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-[#0077b5] flex items-center gap-3 text-slate-300 hover:text-white transition">
+              <a href="https://linkedin.com/in/vardhan-yerramsetti" target="_blank" class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#0077b5] flex items-center gap-3 text-slate-300 hover:text-white transition">
                 <i class="fa-brands fa-linkedin text-xl text-[#0077b5]"></i>
                 <div class="text-xs font-mono font-semibold">LinkedIn Profile</div>
               </a>
-              <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-500 flex items-center gap-3 text-slate-300 hover:text-white transition">
+              <a href="https://github.com/vardhanyerramsetti71beep" target="_blank" class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-slate-500 flex items-center gap-3 text-slate-300 hover:text-white transition">
                 <i class="fa-brands fa-github text-xl text-white"></i>
                 <div class="text-xs font-mono font-semibold">GitHub Profile</div>
               </a>
@@ -1098,29 +1648,29 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
         <!-- Direct Message Form -->
         <div class="lg:col-span-7">
           <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl relative">
-            <h3 class="text-xl font-bold text-white mb-2">Send a Message Directly</h3>
-            <p class="text-xs text-slate-400 mb-6 font-mono">Triggers your default email client with formatted subject & message.</p>
+            <h3 class="text-xl font-bold text-white mb-1">Send a Message Directly</h3>
+            <p class="text-xs text-slate-400 mb-6 font-mono">Triggers your default email client with formatted recipient and content.</p>
 
             <form onsubmit="handleContactSubmit(event)" class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-mono text-slate-400 mb-1">Your Name</label>
-                  <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                  <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono" />
                 </div>
                 <div>
                   <label class="block text-xs font-mono text-slate-400 mb-1">Your Email</label>
-                  <input type="email" id="senderEmail" required placeholder="alex@company.com" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                  <input type="email" id="senderEmail" required placeholder="alex@company.com" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono" />
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-mono text-slate-400 mb-1">Opportunity / Subject</label>
-                <input type="text" id="senderSubject" required placeholder="Python Full Stack / AWS Cloud Role" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
+                <label class="block text-xs font-mono text-slate-400 mb-1">Role / Opportunity</label>
+                <input type="text" id="senderSubject" required placeholder="Python Full Stack / AWS Cloud Role" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono" />
               </div>
 
               <div>
                 <label class="block text-xs font-mono text-slate-400 mb-1">Message</label>
-                <textarea id="senderMessage" rows="4" required placeholder="Hi Vardhan, we'd like to discuss an opportunity..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+                <textarea id="senderMessage" rows="4" required placeholder="Hi Vardhan, we reviewed your deployed projects and would like to invite you for an interview..." class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 font-mono"></textarea>
               </div>
 
               <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-amber-500 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold text-xs tracking-wider uppercase shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
@@ -1150,7 +1700,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
     </div>
   </footer>
 
-  <!-- ================= INTERACTIVE TERMINAL CLI MODAL ================= -->
+  <!-- ================= DEVELOPER TERMINAL (CLI) MODAL ================= -->
   <div id="terminalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
     <div class="bg-slate-950 rounded-2xl w-full max-w-2xl border border-slate-700 shadow-2xl overflow-hidden font-mono flex flex-col h-96">
       
@@ -1160,7 +1710,7 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
           <span onclick="toggleTerminal()" class="w-3 h-3 rounded-full bg-rose-500 cursor-pointer inline-block" title="Close"></span>
           <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
           <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-          <span class="text-xs text-slate-400 ml-2">vardhan@aws-terminal:~</span>
+          <span class="text-xs text-slate-400 ml-2">vardhan@aws-cloud:~</span>
         </div>
         <button onclick="toggleTerminal()" class="text-slate-400 hover:text-white text-xs">
           <i class="fa-solid fa-xmark"></i>
@@ -1169,8 +1719,8 @@ vardhan = <span class="text-amber-300">SoftwareEngineer</span>()
 
       <!-- Output Screen -->
       <div id="terminalOutput" class="flex-1 p-4 overflow-y-auto text-xs text-slate-300 space-y-1.5 leading-relaxed">
-        <div class="text-brand-400">Welcome to Vardhan Yerramsetti's Developer Terminal!</div>
-        <div class="text-slate-500">Type <span class="text-amber-400">'help'</span> to see available commands or <span class="text-amber-400">'skills'</span>, <span class="text-amber-400">'projects'</span>, <span class="text-amber-400">'aws'</span>, <span class="text-amber-400">'contact'</span>, <span class="text-amber-400">'clear'</span>.</div>
+        <div class="text-brand-400 font-bold">⚡ Vardhan Yerramsetti's Developer Cloud Terminal</div>
+        <div class="text-slate-500">Type <span class="text-amber-400 font-bold">'help'</span> for available commands or <span class="text-amber-400 font-bold">'projects'</span> / <span class="text-amber-400 font-bold">'deployments'</span> to see all 8 live URLs.</div>
       </div>
 
       <!-- Input Line -->

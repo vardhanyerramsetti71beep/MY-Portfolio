@@ -1,42 +1,104 @@
 /* ========================================================
-   Vardhan Yerramsetti - Professional Portfolio Stylesheet
+   Vardhan Yerramsetti - Ultra-Modern Developer Portfolio
+   Cyber-Clean Glassmorphism & High-Performance Stylesheet
    ======================================================== */
+
+/* Root Design Tokens */
+:root {
+  --bg-deep: #030712;
+  --bg-surface: #0b1120;
+  --accent-cyan: #0ea5e9;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #10b981;
+}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b1120;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 4px;
+  border-radius: 9999px;
+  border: 2px solid #030712;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #0ea5e9;
 }
 
-/* Ambient Radial Glow */
+/* Smooth Focus Ring */
+*:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Ambient Radial Glow Gradients */
 .glow-bg {
-  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15) 0%, rgba(99, 102, 241, 0.08) 35%, transparent 70%);
+  background: 
+    radial-gradient(circle at 20% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
 }
 
-/* Glassmorphism Cards */
+.glow-card {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.glow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+/* Glassmorphism Surface */
 .glass-card {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Equalizer Spectrum Bars for Project Simulator */
+.glass-nav {
+  background: rgba(3, 7, 18, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-interactive {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Gradient Text Shimmer */
+.shimmer-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #38bdf8 70%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Equalizer Bars for Project Audio Simulator */
 .bar {
   display: inline-block;
-  width: 4px;
+  width: 3.5px;
   margin: 0 1.5px;
   border-radius: 2px;
   animation: soundBars 1s ease-in-out infinite alternate;
@@ -44,27 +106,75 @@
 
 @keyframes soundBars {
   0% {
-    height: 6px;
+    height: 5px;
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
   }
   100% {
-    height: 28px;
+    height: 26px;
+    opacity: 1;
   }
 }
 
-.bar:nth-child(1) { animation-duration: 0.6s; }
-.bar:nth-child(2) { animation-duration: 0.9s; }
-.bar:nth-child(3) { animation-duration: 0.7s; }
-.bar:nth-child(4) { animation-duration: 1.1s; }
-.bar:nth-child(5) { animation-duration: 0.5s; }
-.bar:nth-child(6) { animation-duration: 0.8s; }
-.bar:nth-child(7) { animation-duration: 1.2s; }
-.bar:nth-child(8) { animation-duration: 0.65s; }
+.bar:nth-child(1) { animation-duration: 0.65s; animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-duration: 0.9s;  animation-delay: 0.25s; }
+.bar:nth-child(3) { animation-duration: 0.75s; animation-delay: 0.05s; }
+.bar:nth-child(4) { animation-duration: 1.15s; animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-duration: 0.55s; animation-delay: 0.15s; }
+.bar:nth-child(6) { animation-duration: 0.85s; animation-delay: 0.2s; }
+.bar:nth-child(7) { animation-duration: 1.05s; animation-delay: 0.35s; }
+.bar:nth-child(8) { animation-duration: 0.7s;  animation-delay: 0.12s; }
 
-/* Smooth element hover transitions */
-.skill-item,
-.task-row,
-.emotion-btn {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+/* Pulse Ring Animation for Live Deployments */
+.live-indicator {
+  position: relative;
+  display: inline-flex;
+}
+
+.live-indicator::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  background-color: #10b981;
+  opacity: 0.6;
+  animation: pingIndicator 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pingIndicator {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Interactive Simulators Styling */
+.simulator-screen {
+  background: radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Code Sandbox Styling */
+pre code {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Print Styles for Clean Resume Printing */
@@ -74,19 +184,42 @@
   #terminalModal,
   #toastNotification,
   .emotion-btn,
-  #newTaskInput,
-  button {
+  .tailor-btn,
+  .sim-controls,
+  button:not(.print-keep),
+  #resumeModal {
     display: none !important;
   }
 
   body {
     background: #ffffff !important;
-    color: #000000 !important;
+    color: #111827 !important;
+    font-size: 10pt;
   }
 
-  .glass-card {
-    background: transparent !important;
+  .glass-card,
+  .glass-nav,
+  .glow-card {
+    background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     box-shadow: none !important;
+    color: #111827 !important;
+  }
+
+  .text-white,
+  .text-slate-100,
+  .text-slate-200,
+  .text-slate-300 {
+    color: #111827 !important;
+  }
+
+  .text-slate-400,
+  .text-slate-500 {
+    color: #4b5563 !important;
+  }
+
+  a {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
   }
 }

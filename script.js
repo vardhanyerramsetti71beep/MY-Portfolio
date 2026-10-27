@@ -1,13 +1,15 @@
 /* ========================================================
-   Vardhan Yerramsetti - Interactive Portfolio Scripts
+   Vardhan Yerramsetti - Interactive Portfolio Core Logic
+   High-Performance Cyber-Clean Interactive Suite
    ======================================================== */
 
 // 1. Dynamic Role Typing Animation
 const roles = [
   "Python Full Stack Developer",
   "AWS Certified Cloud Practitioner",
-  "Machine Learning & Computer Vision Enthusiast",
-  "RESTful API & Microservices Architect"
+  "Flask & FastAPI Microservices Architect",
+  "Computer Vision & ML Pipeline Builder",
+  "8+ Full-Stack Deployments Live on Vercel"
 ];
 
 let roleIndex = 0;
@@ -16,6 +18,7 @@ let isDeleting = false;
 const typedElement = document.getElementById("typedRole");
 
 function typeRoles() {
+  if (!typedElement) return;
   const currentRole = roles[roleIndex];
   if (isDeleting) {
     typedElement.textContent = currentRole.substring(0, charIndex - 1);
@@ -25,97 +28,168 @@ function typeRoles() {
     charIndex++;
   }
 
-  let speed = isDeleting ? 40 : 80;
+  let speed = isDeleting ? 35 : 75;
   if (!isDeleting && charIndex === currentRole.length) {
-    speed = 1800; // Pause at end of line
+    speed = 2000; // Pause at end of text
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     roleIndex = (roleIndex + 1) % roles.length;
-    speed = 400;
+    speed = 350;
   }
   setTimeout(typeRoles, speed);
 }
 typeRoles();
 
-// 2. Interactive Background Particle Canvas
+// 2. Interactive Background Particle Canvas (Constellation Network)
 const canvas = document.getElementById("particleCanvas");
-const ctx = canvas.getContext("2d");
-let particles = [];
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let mouse = { x: null, y: null, radius: 120 };
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.vx = (Math.random() - 0.5) * 0.7;
-    this.vy = (Math.random() - 0.5) * 0.7;
-    this.radius = Math.random() * 1.8 + 0.8;
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(14, 165, 233, 0.4)";
-    ctx.fill();
-  }
-}
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
 
-for (let i = 0; i < 45; i++) {
-  particles.push(new Particle());
-}
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+  });
 
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < particles.length; i++) {
-    particles[i].update();
-    particles[i].draw();
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 110) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - dist / 110)})`;
-        ctx.stroke();
+  window.addEventListener("mouseout", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.7;
+      this.vy = (Math.random() - 0.5) * 0.7;
+      this.radius = Math.random() * 1.8 + 0.8;
+      this.baseColor = Math.random() > 0.4 ? "rgba(14, 165, 233, " : "rgba(139, 92, 246, ";
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+      // Mouse interaction
+      if (mouse.x && mouse.y) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          this.x -= (dx / dist) * force * 1.5;
+          this.y -= (dy / dist) * force * 1.5;
+        }
       }
     }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.baseColor + "0.6)";
+      ctx.fill();
+    }
   }
-  requestAnimationFrame(animateParticles);
+
+  const particleCount = Math.min(Math.floor(window.innerWidth / 25), 60);
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 115) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(14, 165, 233, ${0.18 * (1 - dist / 115)})`;
+          ctx.lineWidth = 0.75;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
 }
-animateParticles();
 
 // 3. Mobile Navigation Menu Toggle
 function toggleMobileNav() {
   const nav = document.getElementById("mobileNav");
   const icon = document.getElementById("mobileMenuIcon");
+  if (!nav) return;
   if (nav.classList.contains("hidden")) {
     nav.classList.remove("hidden");
-    icon.classList.replace("fa-bars", "fa-xmark");
+    if (icon) icon.classList.replace("fa-bars", "fa-xmark");
   } else {
     nav.classList.add("hidden");
-    icon.classList.replace("fa-xmark", "fa-bars");
+    if (icon) icon.classList.replace("fa-xmark", "fa-bars");
   }
 }
 
-// 4. Skills Filtering & Real-time Search
-let currentFilter = 'all';
+// 4. Projects Category Filter & Real-Time Search
+let activeProjectCategory = 'all';
+
+function setProjectFilter(category) {
+  activeProjectCategory = category;
+  document.querySelectorAll(".project-filter-btn").forEach(btn => {
+    if (btn.getAttribute("data-category") === category) {
+      btn.className = "project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-brand-600 text-white shadow-md shadow-brand-500/20 transition-all";
+    } else {
+      btn.className = "project-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all";
+    }
+  });
+  filterProjects();
+}
+
+function filterProjects() {
+  const searchInput = document.getElementById("projectSearch");
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+  const cards = document.querySelectorAll(".project-card");
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const categories = card.getAttribute("data-category") || "";
+    const text = card.innerText.toLowerCase();
+    const matchesCategory = (activeProjectCategory === 'all') || categories.includes(activeProjectCategory);
+    const matchesSearch = query === "" || text.includes(query);
+
+    if (matchesCategory && matchesSearch) {
+      card.classList.remove("hidden");
+      visibleCount++;
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+
+  const countEl = document.getElementById("projectCountBadge");
+  if (countEl) {
+    countEl.textContent = `Showing ${visibleCount} of ${cards.length} Deployed Projects`;
+  }
+}
+
+// 5. Skills Category Filter & Search
+let activeSkillCategory = 'all';
 
 function setSkillFilter(filter) {
-  currentFilter = filter;
+  activeSkillCategory = filter;
   document.querySelectorAll(".skill-tab").forEach(tab => {
     if (tab.getAttribute("data-filter") === filter) {
       tab.classList.add("bg-brand-600", "text-white");
@@ -129,14 +203,15 @@ function setSkillFilter(filter) {
 }
 
 function filterSkills() {
-  const query = document.getElementById("skillSearch").value.toLowerCase();
+  const searchInput = document.getElementById("skillSearch");
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
   const items = document.querySelectorAll(".skill-item");
 
   items.forEach(item => {
     const categories = item.getAttribute("data-category") || "";
     const text = item.innerText.toLowerCase();
-    const matchesCategory = (currentFilter === 'all') || categories.includes(currentFilter);
-    const matchesSearch = text.includes(query);
+    const matchesCategory = (activeSkillCategory === 'all') || categories.includes(activeSkillCategory);
+    const matchesSearch = query === "" || text.includes(query);
 
     if (matchesCategory && matchesSearch) {
       item.classList.remove("hidden");
@@ -146,88 +221,107 @@ function filterSkills() {
   });
 }
 
-// 5. Interactive Emotion & Music Recommendation Simulator
+// 6. Interactive Simulator: Emotion Recognition & Music Recommendation
 const emotionData = {
   happy: {
     emoji: "😄",
     label: "Happy Expression (Joy / Uplifting)",
     confidence: "94.8%",
     track: '"Uplifting Vibes" - Synthwave Sunset',
-    meta: "BPM: 124 • Mode: Harmonic Major • Energy: High",
+    meta: "BPM: 124 • Key: G Major • Energy: High",
     color: "text-emerald-400",
     border: "border-emerald-500",
-    btnClass: "bg-emerald-600 text-white"
+    btnClass: "bg-emerald-600 text-white border-emerald-400"
   },
   sad: {
     emoji: "😢",
-    label: "Melancholic Expression (Sad / Reflective)",
+    label: "Melancholic Expression (Reflective / Calm)",
     confidence: "92.3%",
     track: '"Quiet Rainfall" - Ambient Acoustic Chill',
-    meta: "BPM: 78 • Mode: Minor Pentatonic • Energy: Low",
+    meta: "BPM: 78 • Key: D Minor • Energy: Low",
     color: "text-sky-400",
     border: "border-sky-500",
-    btnClass: "bg-sky-600 text-white"
+    btnClass: "bg-sky-600 text-white border-sky-400"
   },
   neutral: {
     emoji: "😐",
-    label: "Neutral Expression (Calm / Focused)",
+    label: "Neutral Expression (Focused / Deep Flow)",
     confidence: "91.1%",
     track: '"Deep Flow" - Lo-Fi Study Beats',
-    meta: "BPM: 85 • Mode: Dorian • Energy: Balanced",
+    meta: "BPM: 85 • Key: A Minor • Energy: Balanced",
     color: "text-amber-400",
     border: "border-amber-500",
-    btnClass: "bg-amber-600 text-white"
+    btnClass: "bg-amber-600 text-white border-amber-400"
   },
   angry: {
     emoji: "🔥",
-    label: "High Arousal (Energetic / Workout)",
+    label: "High Arousal (Energetic / Workout Drive)",
     confidence: "93.7%",
     track: '"Adrenaline Rush" - Electronic Rock Beat',
-    meta: "BPM: 142 • Mode: Phrygian • Energy: Maximum",
+    meta: "BPM: 142 • Key: E Minor • Energy: Maximum",
     color: "text-rose-400",
     border: "border-rose-500",
-    btnClass: "bg-rose-600 text-white"
+    btnClass: "bg-rose-600 text-white border-rose-400"
   }
 };
 
 function setEmotion(type) {
   const data = emotionData[type];
+  if (!data) return;
+
   document.querySelectorAll(".emotion-btn").forEach(btn => {
-    btn.className = "emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 transition";
+    btn.className = "emotion-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 transition hover:border-slate-600";
   });
   const activeBtn = document.getElementById("btn-" + type);
-  activeBtn.className = `emotion-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold ${data.btnClass} flex flex-col items-center gap-1 border transition`;
+  if (activeBtn) {
+    activeBtn.className = `emotion-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold ${data.btnClass} flex flex-col items-center gap-1 border transition`;
+  }
 
-  document.getElementById("faceEmoji").textContent = data.emoji;
-  document.getElementById("detectedLabel").textContent = data.label;
-  document.getElementById("detectedLabel").className = `text-sm font-bold ${data.color}`;
-  document.getElementById("confidenceScore").textContent = data.confidence;
-  document.getElementById("confidenceScore").className = data.color;
-  document.getElementById("trackTitle").textContent = data.track;
-  document.getElementById("trackMeta").textContent = data.meta;
+  const faceEl = document.getElementById("faceEmoji");
+  if (faceEl) faceEl.textContent = data.emoji;
+
+  const labelEl = document.getElementById("detectedLabel");
+  if (labelEl) {
+    labelEl.textContent = data.label;
+    labelEl.className = `text-sm font-bold ${data.color}`;
+  }
+
+  const confEl = document.getElementById("confidenceScore");
+  if (confEl) {
+    confEl.textContent = data.confidence;
+    confEl.className = data.color;
+  }
+
+  const trackEl = document.getElementById("trackTitle");
+  if (trackEl) trackEl.textContent = data.track;
+
+  const metaEl = document.getElementById("trackMeta");
+  if (metaEl) metaEl.textContent = data.meta;
 
   const simBox = document.getElementById("simFaceIcon");
-  simBox.className = `w-14 h-14 rounded-xl bg-slate-800 border-2 ${data.border} flex items-center justify-center text-3xl shadow-lg relative`;
+  if (simBox) {
+    simBox.className = `w-14 h-14 rounded-xl bg-slate-800 border-2 ${data.border} flex items-center justify-center text-3xl shadow-lg relative`;
+  }
 }
 
-function toggleAudioPreview(btn) {
-  showToast("Triggered simulated Flask API stream: 200 OK (Audio Frame Dispatched)");
+function testApiStream(btn) {
+  showToast("Simulated OpenCV + Flask API response: 200 OK (Audio Frame Dispatched)");
 }
 
-// 6. Interactive SVT Tailors Gents Bespoke Configurator & Order Tracker
+// 7. Interactive Simulator: S.V.T. Tailors Atelier Configurator & Order Tracker
 const tailorData = {
   suit: {
     emoji: "🤵",
     title: "Bespoke 2-Piece Suit",
-    fit: "Master Tailored",
+    fit: "Master Canvassed",
     time: "48h Express",
-    badge: "Luxury Fit",
+    badge: "Heritage Craft",
     color: "text-amber-400",
     border: "border-amber-500",
     btnClass: "bg-amber-600 text-white border-amber-400",
     stage: "Stage 3 / 5: Master Stitch",
     progress: "60%",
-    desc: "Master craftsman executing bespoke canvassing and precision shoulder alignment."
+    desc: "Master craftsman assembling panels with reinforced interior canvas."
   },
   shirt: {
     emoji: "👔",
@@ -245,7 +339,7 @@ const tailorData = {
   trouser: {
     emoji: "👖",
     title: "Tailored Formal Trouser",
-    fit: "Slim / Comfort Cut",
+    fit: "Slim / Executive Cut",
     time: "2 Days",
     badge: "Custom Pleats",
     color: "text-emerald-400",
@@ -260,7 +354,7 @@ const tailorData = {
     title: "Classic Bespoke Blazer",
     fit: "Handcrafted Canvassed",
     time: "3 Days",
-    badge: "Italian Wool",
+    badge: "Italian Wool Blend",
     color: "text-indigo-400",
     border: "border-indigo-500",
     btnClass: "bg-indigo-600 text-white border-indigo-400",
@@ -276,13 +370,15 @@ const tailorStages = [
   { stage: "Stage 2 / 5: Fabric Cut", progress: "40%", desc: "Individual paper pattern drafted and shear cutting completed." },
   { stage: "Stage 3 / 5: Master Stitch", progress: "60%", desc: "Master craftsman assembling panels with reinforced interior canvas." },
   { stage: "Stage 4 / 5: Steam Press", progress: "80%", desc: "Industrial steam pressure styling and quality audit inspection." },
-  { stage: "Stage 5 / 5: Ready / Dispatched", progress: "100%", desc: "Digital invoice generated; ready for doorstep delivery / pickup!" }
+  { stage: "Stage 5 / 5: Ready / Dispatched", progress: "100%", desc: "Digital invoice generated; ready for doorstep delivery or atelier pickup!" }
 ];
 let currentStageIdx = 2;
 
 function setTailorGarment(type) {
   currentGarment = type;
   const data = tailorData[type];
+  if (!data) return;
+
   document.querySelectorAll(".tailor-btn").forEach(btn => {
     btn.className = "tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-slate-600 transition";
   });
@@ -342,15 +438,165 @@ function advanceTailorStage() {
 function simulateOrderDispatch() {
   const g = tailorData[currentGarment];
   const orderId = Math.floor(1000 + Math.random() * 9000);
-  showToast(`WhatsApp Order Formatted: [SVT #${orderId}] ${g.title} (Custom Fit Measurements)`);
+  showToast(`WhatsApp Payload Formatted: [SVT #${orderId}] ${g.title} (Measurements Validated)`);
 }
 
-// 7. Interactive Terminal CLI
+// 8. Interactive Simulator: CardioGuard AI Clinical Risk Estimator
+function updateCardioRisk() {
+  const bpInput = document.getElementById("cardioBp");
+  const cholInput = document.getElementById("cardioChol");
+  const ageInput = document.getElementById("cardioAge");
+  
+  if (!bpInput || !cholInput || !ageInput) return;
+
+  const bp = parseInt(bpInput.value, 10);
+  const chol = parseInt(cholInput.value, 10);
+  const age = parseInt(ageInput.value, 10);
+
+  document.getElementById("cardioBpVal").textContent = `${bp} mmHg`;
+  document.getElementById("cardioCholVal").textContent = `${chol} mg/dL`;
+  document.getElementById("cardioAgeVal").textContent = `${age} yrs`;
+
+  // Clinical calculation heuristic derived from Cleveland model weights
+  let riskScore = 10;
+  if (bp > 130) riskScore += (bp - 130) * 0.45;
+  if (chol > 200) riskScore += (chol - 200) * 0.3;
+  if (age > 50) riskScore += (age - 50) * 0.6;
+  riskScore = Math.min(Math.max(Math.round(riskScore), 8), 92);
+
+  const scoreEl = document.getElementById("cardioRiskScore");
+  const badgeEl = document.getElementById("cardioRiskBadge");
+  const meterEl = document.getElementById("cardioRiskMeter");
+
+  if (scoreEl) scoreEl.textContent = `${riskScore}%`;
+  if (meterEl) meterEl.style.width = `${riskScore}%`;
+
+  if (badgeEl) {
+    if (riskScore < 25) {
+      badgeEl.textContent = "Low Clinical Risk";
+      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400";
+      if (meterEl) meterEl.className = "h-2 rounded-full bg-emerald-500 transition-all duration-300";
+    } else if (riskScore < 55) {
+      badgeEl.textContent = "Moderate Risk (Watch)";
+      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-400";
+      if (meterEl) meterEl.className = "h-2 rounded-full bg-amber-500 transition-all duration-300";
+    } else {
+      badgeEl.textContent = "Elevated Risk";
+      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-rose-500/10 border border-rose-500/30 text-rose-400";
+      if (meterEl) meterEl.className = "h-2 rounded-full bg-rose-500 transition-all duration-300";
+    }
+  }
+}
+
+// 9. Interactive Simulator: OmniPulse CLV & Churn Score Estimator
+function updateOmniPulse() {
+  const recencyInput = document.getElementById("omniRecency");
+  const freqInput = document.getElementById("omniFrequency");
+  const aovInput = document.getElementById("omniAov");
+
+  if (!recencyInput || !freqInput || !aovInput) return;
+
+  const recency = parseInt(recencyInput.value, 10);
+  const freq = parseInt(freqInput.value, 10);
+  const aov = parseInt(aovInput.value, 10);
+
+  document.getElementById("omniRecencyVal").textContent = `${recency} days`;
+  document.getElementById("omniFreqVal").textContent = `${freq} orders`;
+  document.getElementById("omniAovVal").textContent = `₹${aov}`;
+
+  // BG/NBD P(Alive) heuristic: higher recency lowers probability; higher frequency cushions decay
+  let pAlive = Math.max(10, Math.min(99, Math.round((100 - (recency * 0.45)) + (freq * 4.5))));
+  let churnRisk = 100 - pAlive;
+  // Estimated 12-month CLV Equity = frequency rate * monetary spend * pAlive factor
+  let clvEquity = Math.round((freq * 2.2) * aov * (pAlive / 100));
+
+  const pAliveEl = document.getElementById("omniPAlive");
+  const churnEl = document.getElementById("omniChurnRisk");
+  const clvEl = document.getElementById("omniClvForecast");
+
+  if (pAliveEl) pAliveEl.textContent = `${pAlive}%`;
+  if (churnEl) {
+    churnEl.textContent = `${churnRisk}%`;
+    churnEl.className = churnRisk > 50 ? "text-rose-400 font-bold" : "text-emerald-400 font-bold";
+  }
+  if (clvEl) clvEl.textContent = `₹${clvEquity.toLocaleString('en-IN')}`;
+}
+
+// 10. Code Card Simulation & Multi-Tab Switcher
+const codeSnippets = {
+  python: `class CloudMicroservice:
+    def __init__(self):
+        self.developer = "Vardhan Yerramsetti"
+        self.certification = "AWS Cloud Practitioner"
+        self.stack = ["Python", "Flask", "MySQL", "OpenCV"]
+        self.endpoints = ["/api/v1/infer", "/api/v1/orders"]
+
+    def process_request(self, payload):
+        # Latency cut by 25% via indexed queries
+        return {
+            "status": 200,
+            "latency": "14ms",
+            "deployed_on": "Vercel + AWS Cloud"
+        }`,
+  aws: `# AWS Infrastructure Topology
+# Region: ap-south-1 (Mumbai) / High Availability
+Resources:
+  VardhanMicroserviceLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.11
+      MemorySize: 512
+      Timeout: 10
+  AtelierDatabaseInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      Engine: mysql
+      MultiAZ: false`,
+  ml: `# OpenCV & Scikit-learn Pipeline
+import cv2
+from sklearn.ensemble import RandomForestClassifier
+
+def extract_facial_landmarks(frame):
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    # >90% Supervised Classification Accuracy
+    return model.predict_proba(faces)`
+};
+
+function switchCodeTab(tab) {
+  document.querySelectorAll(".code-tab-btn").forEach(btn => {
+    if (btn.getAttribute("data-tab") === tab) {
+      btn.className = "code-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-brand-600 text-white transition";
+    } else {
+      btn.className = "code-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white transition";
+    }
+  });
+
+  const codeEl = document.getElementById("heroCodeBlock");
+  if (codeEl && codeSnippets[tab]) {
+    codeEl.textContent = codeSnippets[tab];
+  }
+}
+
+function runSampleCodeAnimation(btn) {
+  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Executing...`;
+  setTimeout(() => {
+    btn.innerHTML = `<span class="text-emerald-400 font-bold">✓ 200 OK (14ms)</span>`;
+    showToast("Executed simulated microservice: 200 OK across AWS & Vercel runtime.");
+    setTimeout(() => {
+      btn.innerHTML = `Run Simulation ▶`;
+    }, 3000);
+  }, 750);
+}
+
+// 11. Interactive Terminal CLI
 function toggleTerminal() {
   const modal = document.getElementById("terminalModal");
+  if (!modal) return;
   modal.classList.toggle("hidden");
   if (!modal.classList.contains("hidden")) {
-    document.getElementById("terminalInput").focus();
+    const input = document.getElementById("terminalInput");
+    if (input) input.focus();
   }
 }
 
@@ -377,37 +623,75 @@ function handleTerminalCommand(e) {
     let response = "";
     switch (cmd) {
       case "help":
-        response = "Commands: <span class='text-amber-400'>about</span>, <span class='text-amber-400'>skills</span>, <span class='text-amber-400'>projects</span>, <span class='text-amber-400'>aws</span>, <span class='text-amber-400'>contact</span>, <span class='text-amber-400'>clear</span>, <span class='text-amber-400'>exit</span>";
+        response = `Available commands:<br>
+• <span class="text-amber-400">about</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Summary & credentials<br>
+• <span class="text-amber-400">projects</span> &nbsp;&nbsp;&nbsp;&nbsp; List all 8 deployed applications<br>
+• <span class="text-amber-400">deployments</span> &nbsp; Verified live Vercel URLs<br>
+• <span class="text-amber-400">skills</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Technical stack & tools<br>
+• <span class="text-amber-400">aws</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AWS Certified Cloud Practitioner info<br>
+• <span class="text-amber-400">stats</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quantified engineering metrics<br>
+• <span class="text-amber-400">contact</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email, WhatsApp, and social handles<br>
+• <span class="text-amber-400">sudo hire</span> &nbsp;&nbsp;&nbsp; Launch hiring workflow<br>
+• <span class="text-amber-400">clear</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clear terminal output<br>
+• <span class="text-amber-400">exit</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Close this terminal window`;
         break;
+
       case "about":
-        response = "Vardhan Yerramsetti | Python Full Stack Developer & AWS Certified Cloud Practitioner. Specializing in Flask, React, MySQL, Computer Vision (OpenCV), and AWS Deployments.";
+        response = "Vardhan Yerramsetti | Python Full Stack Developer & AWS Certified Cloud Practitioner. Specializing in high-performance Flask/FastAPI REST APIs, React interfaces, MySQL optimization, and machine learning computer vision pipelines.";
         break;
+
       case "skills":
-        response = "Languages: Python, JS ES6+, SQL, C++ | Frameworks: Flask, Django, React.js | Cloud: AWS (EC2, S3, Lambda) | ML: OpenCV, Scikit-learn, TensorFlow.";
+        response = "Languages: Python, JavaScript ES6+, SQL, C++, HTML5, CSS3<br>Backend: Flask, FastAPI, Django, RESTful APIs, Serverless<br>Cloud: AWS (EC2, S3, Lambda, IAM), Vercel, Docker<br>ML/Data: OpenCV, Scikit-learn, TensorFlow, NumPy, Pandas<br>Database: MySQL (PyMySQL), Relational Schema Design, Query Optimization (-25% latency)";
         break;
+
       case "projects":
-        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)<br>2. S.V.T. Tailors — Master Gents Bespoke Tailoring & E-Commerce Platform (Python + MySQL + Vercel)";
+      case "deployments":
+        response = `🚀 <strong>8 Live Production Deployments:</strong><br>
+1. 🎵 <strong>Music Emotion Recommender</strong>: <a href="https://music-recommending.vercel.app/" target="_blank" class="text-brand-400 underline">https://music-recommending.vercel.app/</a><br>
+2. 🧵 <strong>S.V.T. Tailors Bespoke Atelier</strong>: <a href="https://svt-tailors.vercel.app/" target="_blank" class="text-brand-400 underline">https://svt-tailors.vercel.app/</a><br>
+3. 🌶️ <strong>MS Pickles Andhra E-Commerce</strong>: <a href="https://ms-pickles.vercel.app/" target="_blank" class="text-brand-400 underline">https://ms-pickles.vercel.app/</a><br>
+4. 📈 <strong>OmniPulse CLV & Churn Engine</strong>: <a href="https://omnipulse.vercel.app/" target="_blank" class="text-brand-400 underline">https://omnipulse.vercel.app/</a><br>
+5. 🫀 <strong>CardioGuard AI Heart Risk App</strong>: <a href="https://heart-disease-app.vercel.app/" target="_blank" class="text-brand-400 underline">https://heart-disease-app.vercel.app/</a><br>
+6. 🩺 <strong>AI Health Symptom Checker</strong>: <a href="https://ai-health-symptom-checker.vercel.app/" target="_blank" class="text-brand-400 underline">https://ai-health-symptom-checker.vercel.app/</a><br>
+7. 🏋️ <strong>90-Day Body Transformation Suite</strong>: <a href="https://90-days-body-transformation.vercel.app/" target="_blank" class="text-brand-400 underline">https://90-days-body-transformation.vercel.app/</a><br>
+8. 🎬 <strong>They Call Him OG Showcase</strong>: <a href="https://they-call-him-og.vercel.app/" target="_blank" class="text-brand-400 underline">https://they-call-him-og.vercel.app/</a>`;
         break;
+
       case "aws":
-        response = "AWS Certified Cloud Practitioner (2023) | AWS Academy Cloud Foundations (2023) | Hands-on: EC2, S3, Lambda, Cloud Architecture.";
+        response = "AWS Certified Cloud Practitioner (2023) | AWS Academy Cloud Foundations (2023)<br>Hands-on: EC2 Instances, S3 Object Storage, Serverless Lambda Functions, IAM Policies, VPC & Cloud Security.";
         break;
+
+      case "stats":
+        response = "• 8 Production Web Applications Deployed Live<br>• >90% Supervised Machine Learning Accuracy<br>• 25% Reduction in Database Query & API Response Latency<br>• 99% Operational SLA & Inventory Accuracy Record<br>• 40+ Students Mentored in Computer Science Fundamentals";
+        break;
+
       case "contact":
-        response = "Email: vardhanyerramsetti71@gmail.com | Phone: +91 7386033417 | LinkedIn: linkedin.com/in/vardhan-yerramsetti | GitHub: github.com/vardhanyerramsetti71beep";
+        response = "Email: vardhanyerramsetti71@gmail.com<br>Phone & WhatsApp: +91 7386033417<br>LinkedIn: linkedin.com/in/vardhan-yerramsetti<br>GitHub: github.com/vardhanyerramsetti71beep";
         break;
+
+      case "sudo hire":
+        response = "<span class='text-emerald-400 font-bold'>Permission granted!</span> Initiating priority interview email to Vardhan...";
+        setTimeout(() => {
+          window.location.href = "mailto:vardhanyerramsetti71@gmail.com?subject=Opportunity%20Discussion%20with%20Vardhan%20Yerramsetti";
+        }, 1200);
+        break;
+
       case "clear":
         output.innerHTML = "";
         input.value = "";
         return;
+
       case "exit":
         toggleTerminal();
         input.value = "";
         return;
+
       default:
-        response = `command not found: ${cmd}. Type <span class='text-amber-400'>'help'</span> for list of commands.`;
+        response = `command not found: <code>${cmd}</code>. Type <span class='text-amber-400'>'help'</span> for list of commands.`;
     }
 
     const resLine = document.createElement("div");
-    resLine.className = "text-slate-400";
+    resLine.className = "text-slate-300";
     resLine.innerHTML = response;
     output.appendChild(resLine);
 
@@ -416,10 +700,10 @@ function handleTerminalCommand(e) {
   }
 }
 
-// 8. Clipboard Copy & Toast notification
+// 12. Clipboard Copy & Toast Notifications
 function copyToClipboard(text, message) {
   navigator.clipboard.writeText(text).then(() => {
-    showToast(message);
+    showToast(message || "Copied to clipboard!");
   }).catch(() => {
     showToast("Copied to clipboard!");
   });
@@ -427,14 +711,17 @@ function copyToClipboard(text, message) {
 
 function showToast(msg) {
   const toast = document.getElementById("toastNotification");
-  document.getElementById("toastMessage").textContent = msg;
+  const msgEl = document.getElementById("toastMessage");
+  if (!toast || !msgEl) return;
+
+  msgEl.textContent = msg;
   toast.classList.remove("translate-y-20", "opacity-0");
   setTimeout(() => {
     toast.classList.add("translate-y-20", "opacity-0");
-  }, 2800);
+  }, 3200);
 }
 
-// 9. Contact Form Email Generator
+// 13. Direct Contact Form Email Generator
 function handleContactSubmit(e) {
   e.preventDefault();
   const name = document.getElementById("senderName").value;
@@ -442,19 +729,14 @@ function handleContactSubmit(e) {
   const subject = document.getElementById("senderSubject").value;
   const msg = document.getElementById("senderMessage").value;
 
-  const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+  const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(msg)}`;
   window.location.href = `mailto:vardhanyerramsetti71@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  showToast("Redirecting to email client...");
+  showToast("Opening default email client with your message...");
 }
 
-// 10. Code Card Simulation
-function runSampleCodeAnimation(btn) {
-  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Executing...`;
-  setTimeout(() => {
-    btn.innerHTML = `<span class="text-emerald-400 font-bold">✓ 200 OK (18ms)</span>`;
-    showToast("Code executed successfully! Microservices active on AWS.");
-    setTimeout(() => {
-      btn.innerHTML = `Run Simulation ▶`;
-    }, 3000);
-  }, 800);
-}
+// 14. Initialize interactive simulators on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  updateCardioRisk();
+  updateOmniPulse();
+  filterProjects();
+});
