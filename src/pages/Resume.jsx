@@ -27,12 +27,20 @@ export default function Resume() {
 
         {/* Action Controls */}
         <div className="flex items-center gap-3">
+          <a
+            href="/Vardhan_Yerramsetti_Resume.pdf"
+            download="Vardhan_Yerramsetti_Resume.pdf"
+            className="apple-pressable inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+          >
+            <Download size={14} />
+            <span>Download PDF</span>
+          </a>
           <button
             onClick={handlePrint}
             className="apple-pressable inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold shadow-sm transition"
           >
             <Printer size={14} />
-            <span>Print / Save PDF</span>
+            <span>Print View</span>
           </button>
         </div>
       </div>
