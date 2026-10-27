@@ -441,50 +441,34 @@ function simulateOrderDispatch() {
   showToast(`WhatsApp Payload Formatted: [SVT #${orderId}] ${g.title} (Measurements Validated)`);
 }
 
-// 8. Interactive Simulator: CardioGuard AI Clinical Risk Estimator
-function updateCardioRisk() {
-  const bpInput = document.getElementById("cardioBp");
-  const cholInput = document.getElementById("cardioChol");
-  const ageInput = document.getElementById("cardioAge");
-  
-  if (!bpInput || !cholInput || !ageInput) return;
+// 8. Interactive Simulator: MySQL Database Query Optimization Engine
+function updateDatabaseSim() {
+  const recordsInput = document.getElementById("dbRecords");
+  const poolInput = document.getElementById("dbPool");
+  const indexedInput = document.getElementById("dbIndexed");
 
-  const bp = parseInt(bpInput.value, 10);
-  const chol = parseInt(cholInput.value, 10);
-  const age = parseInt(ageInput.value, 10);
+  if (!recordsInput || !poolInput) return;
 
-  document.getElementById("cardioBpVal").textContent = `${bp} mmHg`;
-  document.getElementById("cardioCholVal").textContent = `${chol} mg/dL`;
-  document.getElementById("cardioAgeVal").textContent = `${age} yrs`;
+  const records = parseInt(recordsInput.value, 10);
+  const pool = parseInt(poolInput.value, 10);
+  const isIndexed = indexedInput ? indexedInput.checked : true;
 
-  // Clinical calculation heuristic derived from Cleveland model weights
-  let riskScore = 10;
-  if (bp > 130) riskScore += (bp - 130) * 0.45;
-  if (chol > 200) riskScore += (chol - 200) * 0.3;
-  if (age > 50) riskScore += (age - 50) * 0.6;
-  riskScore = Math.min(Math.max(Math.round(riskScore), 8), 92);
+  document.getElementById("dbRecordsVal").textContent = `${records.toLocaleString()} rows`;
+  document.getElementById("dbPoolVal").textContent = `${pool} conns`;
 
-  const scoreEl = document.getElementById("cardioRiskScore");
-  const badgeEl = document.getElementById("cardioRiskBadge");
-  const meterEl = document.getElementById("cardioRiskMeter");
+  const rawLatency = Math.round(18 + (records / 2200));
+  const optLatency = isIndexed ? Math.max(6, Math.round(rawLatency * 0.22)) : rawLatency;
+  const cutPercent = isIndexed ? Math.round(((rawLatency - optLatency) / rawLatency) * 100) : 0;
 
-  if (scoreEl) scoreEl.textContent = `${riskScore}%`;
-  if (meterEl) meterEl.style.width = `${riskScore}%`;
+  const rawEl = document.getElementById("dbRawLatency");
+  const optEl = document.getElementById("dbOptLatency");
+  const cutEl = document.getElementById("dbLatencyCut");
 
-  if (badgeEl) {
-    if (riskScore < 25) {
-      badgeEl.textContent = "Low Clinical Risk";
-      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400";
-      if (meterEl) meterEl.className = "h-2 rounded-full bg-emerald-500 transition-all duration-300";
-    } else if (riskScore < 55) {
-      badgeEl.textContent = "Moderate Risk (Watch)";
-      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-400";
-      if (meterEl) meterEl.className = "h-2 rounded-full bg-amber-500 transition-all duration-300";
-    } else {
-      badgeEl.textContent = "Elevated Risk";
-      badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-rose-500/10 border border-rose-500/30 text-rose-400";
-      if (meterEl) meterEl.className = "h-2 rounded-full bg-rose-500 transition-all duration-300";
-    }
+  if (rawEl) rawEl.textContent = `${rawLatency}ms`;
+  if (optEl) optEl.textContent = `${optLatency}ms`;
+  if (cutEl) {
+    cutEl.textContent = isIndexed ? `-${cutPercent}%` : "0%";
+    cutEl.className = isIndexed ? "text-base font-bold font-mono text-emerald-400 mt-0.5" : "text-base font-bold font-mono text-slate-400 mt-0.5";
   }
 }
 
@@ -646,15 +630,15 @@ function handleTerminalCommand(e) {
 
       case "projects":
       case "deployments":
-        response = `🚀 <strong>8 Live Production Deployments:</strong><br>
+        response = `🚀 <strong>Featured Projects & Production Deployments:</strong><br>
 1. 🎵 <strong>Music Emotion Recommender</strong>: <a href="https://music-recommending.vercel.app/" target="_blank" class="text-brand-400 underline">https://music-recommending.vercel.app/</a><br>
 2. 🧵 <strong>S.V.T. Tailors Bespoke Atelier</strong>: <a href="https://svt-tailors.vercel.app/" target="_blank" class="text-brand-400 underline">https://svt-tailors.vercel.app/</a><br>
 3. 🌶️ <strong>MS Pickles Andhra E-Commerce</strong>: <a href="https://ms-pickles.vercel.app/" target="_blank" class="text-brand-400 underline">https://ms-pickles.vercel.app/</a><br>
-4. 📈 <strong>OmniPulse CLV & Churn Engine</strong>: <a href="https://omnipulse.vercel.app/" target="_blank" class="text-brand-400 underline">https://omnipulse.vercel.app/</a><br>
-5. 🫀 <strong>CardioGuard AI Heart Risk App</strong>: <a href="https://heart-disease-app.vercel.app/" target="_blank" class="text-brand-400 underline">https://heart-disease-app.vercel.app/</a><br>
-6. 🩺 <strong>AI Health Symptom Checker</strong>: <a href="https://ai-health-symptom-checker.vercel.app/" target="_blank" class="text-brand-400 underline">https://ai-health-symptom-checker.vercel.app/</a><br>
-7. 🏋️ <strong>90-Day Body Transformation Suite</strong>: <a href="https://90-days-body-transformation.vercel.app/" target="_blank" class="text-brand-400 underline">https://90-days-body-transformation.vercel.app/</a><br>
-8. 🎬 <strong>They Call Him OG Showcase</strong>: <a href="https://they-call-him-og-lemon.vercel.app/" target="_blank" class="text-brand-400 underline">https://they-call-him-og-lemon.vercel.app/</a>`;
+4. 🎬 <strong>They Call Him OG Showcase</strong>: <a href="https://they-call-him-og-lemon.vercel.app/" target="_blank" class="text-brand-400 underline">https://they-call-him-og-lemon.vercel.app/</a><br>
+5. 🏋️ <strong>90-Day Body Transformation Suite</strong>: <a href="https://90-days-body-transformation.vercel.app/" target="_blank" class="text-brand-400 underline">https://90-days-body-transformation.vercel.app/</a><br>
+6. 📝 <strong>Google Forms Clone & MySQL ORM</strong>: <span class="text-blue-400 font-mono">Flask & MySQL Database Engine</span><br>
+7. 📈 <strong>OmniPulse CLV & Churn Retention Engine</strong>: <a href="https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine" target="_blank" class="text-brand-400 underline">GitHub Source & Live Simulator</a><br>
+8. ☁️ <strong>Scalable Task & Cloud Portal</strong>: <span class="text-purple-400 font-mono">AWS EC2, S3 & Docker Architecture</span>`;
         break;
 
       case "aws":
@@ -736,7 +720,7 @@ function handleContactSubmit(e) {
 
 // 14. Initialize interactive simulators on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  updateCardioRisk();
+  updateDatabaseSim();
   updateOmniPulse();
   filterProjects();
 });
