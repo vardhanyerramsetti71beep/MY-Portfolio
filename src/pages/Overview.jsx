@@ -60,6 +60,8 @@ export default function Overview() {
                 </span>
                 <span className="font-semibold text-emerald-400">AWS Certified Cloud Practitioner</span>
                 <span className="text-slate-500">•</span>
+                <span className="font-semibold text-brand-400">Data Science</span>
+                <span className="text-slate-500">•</span>
                 <span className="text-slate-300">8 Live Deployed Apps</span>
               </div>
             </Reveal>
@@ -77,7 +79,7 @@ export default function Overview() {
             {/* Subtitle & Value Proposition */}
             <Reveal y={14} delay={0.15}>
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer and AWS Certified Cloud Practitioner. I specialize in high-throughput Flask/FastAPI microservices, computer vision pipelines, and reactive full-stack web applications backed by 8 verified production deployments.
+                Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer, AWS Certified Cloud Practitioner, and Data Science Specialist. I specialize in high-throughput Flask/FastAPI microservices, machine learning and computer vision pipelines, and reactive full-stack web applications backed by 8 verified production deployments.
               </p>
             </Reveal>
 
@@ -384,6 +386,8 @@ export default function Overview() {
               <span>Vardhan Yerramsetti</span>
               <span>•</span>
               <span className="text-brand-400">AWS Certified Cloud Practitioner</span>
+              <span>•</span>
+              <span className="text-emerald-400">Data Science</span>
             </div>
           </div>
         </Reveal>

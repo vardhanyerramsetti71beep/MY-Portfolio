@@ -21,7 +21,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-xs">
-              Python Full Stack Developer &amp; AWS Certified Cloud Practitioner. Specializing in high-throughput microservices and reactive cloud applications.
+              Python Full Stack Developer, AWS Certified Cloud Practitioner &amp; Data Science Specialist. Specializing in high-throughput microservices and reactive cloud applications.
             </p>
             <div className="flex items-center gap-2 pt-1 text-[11px] text-emerald-700 dark:text-emerald-400 font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>

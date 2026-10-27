@@ -3,8 +3,8 @@
 
 export const PROFILE = {
   name: "Vardhan Yerramsetti",
-  title: "Python Full Stack Developer & AWS Certified Cloud Practitioner",
-  shortTitle: "Python Full Stack & AWS Architect",
+  title: "Python Full Stack Developer, AWS Certified Cloud Practitioner & Data Science",
+  shortTitle: "Python Full Stack, AWS & Data Science Architect",
   tagline: "Engineered for speed. Architected for the cloud.",
   location: "Andhra Pradesh, India",
   email: "vardhanyerramsetti71@gmail.com",

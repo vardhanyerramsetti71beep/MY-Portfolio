@@ -70,7 +70,7 @@ export default function Resume() {
             {PROFILE.name}
           </h2>
           <div className="text-sm font-semibold text-slate-700 dark:text-slate-300 print:text-gray-800 font-mono">
-            Python Full Stack Developer • AWS Certified Cloud Practitioner
+            Python Full Stack Developer • AWS Certified Cloud Practitioner • Data Science
           </div>
           <div className="text-xs text-slate-600 dark:text-slate-400 print:text-gray-600 font-mono flex flex-wrap items-center justify-center gap-2 pt-1">
             <span>{PROFILE.phone}</span>
