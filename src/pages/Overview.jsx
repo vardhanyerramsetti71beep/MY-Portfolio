@@ -67,9 +67,9 @@ export default function Overview() {
             {/* Main Headline */}
             <Reveal y={16} delay={0.1}>
               <h1 className="headline-editorial text-4xl sm:text-6xl lg:text-7xl text-slate-900 dark:text-white tracking-tight text-balance">
-                Architecting High-Throughput Backends. <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-brand-600 via-indigo-600 to-amber-500 dark:from-brand-400 dark:via-indigo-400 dark:to-amber-300 bg-clip-text text-transparent">
-                  Engineering Systems at Cloud Scale.
+                Engineered for Speed. <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-brand-500 via-indigo-500 to-amber-500 dark:from-brand-400 dark:via-indigo-400 dark:to-amber-300 bg-clip-text text-transparent">
+                  Architected for the Cloud.
                 </span>
               </h1>
             </Reveal>

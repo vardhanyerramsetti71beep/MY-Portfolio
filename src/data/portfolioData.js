@@ -5,7 +5,7 @@ export const PROFILE = {
   name: "Vardhan Yerramsetti",
   title: "Python Full Stack Developer & AWS Certified Cloud Practitioner",
   shortTitle: "Python Full Stack & AWS Architect",
-  tagline: "Architecting high-throughput backends. Engineering resilient systems at cloud scale.",
+  tagline: "Engineered for speed. Architected for the cloud.",
   location: "Andhra Pradesh, India",
   email: "vardhanyerramsetti71@gmail.com",
   phone: "+91 7386033417",
