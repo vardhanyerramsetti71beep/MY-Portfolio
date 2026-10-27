@@ -1,0 +1,159 @@
+/* src/styles/design-system.css
+   Apple-Inspired Unified Design System for Vardhan Yerramsetti
+   Clean Cupertino aesthetic: #fbfbfd canvas, frosted glass, precision typography
+*/
+
+:root {
+  --bg-primary: #fbfbfd;
+  --bg-secondary: #f5f5f7;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-elevated: #ffffff;
+  
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  
+  --brand-blue: #0ea5e9;
+  --brand-aws: #ff9900;
+  --brand-python: #3776ab;
+  --brand-emerald: #10b981;
+  --brand-indigo: #6366f1;
+
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+}
+
+/* Ambient canvas */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Frosted glass utilities */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+}
+
+.apple-glass-dark {
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apple-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), border-color 0.4s ease;
+}
+
+.apple-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+/* Pressable touch/click interaction */
+.apple-pressable {
+  transition: transform 0.15s var(--ease-apple), opacity 0.15s ease;
+}
+.apple-pressable:active {
+  transform: scale(0.97);
+}
+
+/* Typography tokens */
+.headline-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-blue);
+}
+
+.headline-editorial {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+/* Continuous Marquee Animation */
+@keyframes marquee-ltr {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 32s linear infinite;
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 32s linear infinite;
+}
+
+.animate-marquee-ltr:hover,
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
+/* Equalizer bar animation for music emotion recommender */
+@keyframes eq-bounce-1 {
+  0%, 100% { height: 6px; }
+  50% { height: 24px; }
+}
+@keyframes eq-bounce-2 {
+  0%, 100% { height: 18px; }
+  50% { height: 8px; }
+}
+@keyframes eq-bounce-3 {
+  0%, 100% { height: 10px; }
+  50% { height: 28px; }
+}
+@keyframes eq-bounce-4 {
+  0%, 100% { height: 22px; }
+  50% { height: 12px; }
+}
+
+.eq-bar-1 { animation: eq-bounce-1 0.75s ease-in-out infinite; }
+.eq-bar-2 { animation: eq-bounce-2 0.65s ease-in-out infinite; }
+.eq-bar-3 { animation: eq-bounce-3 0.85s ease-in-out infinite; }
+.eq-bar-4 { animation: eq-bounce-4 0.7s ease-in-out infinite; }

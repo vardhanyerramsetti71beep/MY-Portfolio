@@ -1,22 +1,21 @@
-# ⚡ Vardhan Yerramsetti — Interactive Developer Portfolio
+# ⚡ Vardhan Yerramsetti — Apple Cupertino Architecture Developer Portfolio
 
 [![AWS Certified](https://img.shields.io/badge/AWS-Certified_Cloud_Practitioner-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![React 19](https://img.shields.io/badge/React.js-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Microservices-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Flask](https://img.shields.io/badge/Flask-REST_APIs-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![React](https://img.shields.io/badge/React.js-SPA_Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Next.js](https://img.shields.io/badge/Next.js-SSR_Web-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-Optimized_Queries-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-Verified_Deployments-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Global_Edge-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-A modern, high-performance, and deeply interactive developer portfolio built for **Vardhan Yerramsetti** — **Python Full Stack Developer & AWS Certified Cloud Practitioner**.
+A production-grade, Apple-inspired developer portfolio architected for **Vardhan Yerramsetti** — **Python Full Stack Developer & AWS Certified Cloud Practitioner**. Modeled directly on the Cupertino design philosophy: ultra-refined `#fbfbfd` ambient canvas, frosted glass navigation (`blur(20px) saturate(180%)`), continuous dual-direction technology trains, floating spatial project navigation, Apple Command+K QuickSearch modal, interactive in-browser algorithm lab, and verified live production deployments.
 
-Live Portfolio Website: **[https://vardhan-portfolio.vercel.app/](https://vardhan-portfolio.vercel.app/)**
+Live Portfolio: **[https://vardhan-portfolio.vercel.app/](https://vardhan-portfolio.vercel.app/)**
 
 ---
 
-## 🚀 Featured Projects & Verified Production Deployments
+## 🚀 Flagship Systems & Verified Deployments (8 Live Apps)
 
 All featured applications are built, tested, and grounded in authentic repositories from [github.com/vardhanyerramsetti71beep](https://github.com/vardhanyerramsetti71beep) with verified production deployments on Vercel:
 
@@ -33,51 +32,62 @@ All featured applications are built, tested, and grounded in authentic repositor
 
 ---
 
-## 🌟 Key Features & Redesign Highlights
+## 🏛️ System Architecture & Multi-Page Routes
 
-- 🌐 **Comprehensive Showcase**:
-  - Filterable by *All Projects (8)*, *AI & Computer Vision (2)*, *Full Stack & Web (4)*, *E-Commerce (2)*, and *Analytics & Systems (2)*.
-  - Real-time search by technology keywords with live item counters.
-  - One-click launch to verified production URLs and GitHub repositories.
-- 🧠 **4 In-Browser Algorithm Simulators**:
-  - **OpenCV Face Emotion Classifier & Music Recommender**: Real-time landmark classification (>90% accuracy), confidence meters, audio spectrum visualizer.
-  - **S.V.T. Atelier Configurator & 5-Stage Tracker**: Garment customizer and live workshop pipeline tracker (`Order Logged` ➔ `Fabric Cut` ➔ `Master Stitch` ➔ `Steam Press` ➔ `Ready`).
-  - **MySQL Database Latency & Index Optimizer**: Live benchmark showing index cache hits, row latency reduction, and up to -78% query optimization.
-  - **OmniPulse Retention Mathematics**: Live BG/NBD $P(\text{Alive})$ calculation and 12-month forward-looking customer equity forecasting.
-- 💻 **Interactive Developer Terminal (CLI)**:
-  - Toggle anytime via <kbd>~</kbd> or the navigation bar button.
-  - Supports commands: `help`, `about`, `skills`, `projects`, `deployments`, `aws`, `stats`, `contact`, `sudo hire`, `clear`, and `exit`.
-- ⚡ **Interactive Code Sandbox**:
-  - Multi-tab architecture sandbox (Backend Python, AWS Cloud Infrastructure, ML Pipeline) with a simulated execution engine.
-- 🌌 **Constellation Particle Network**:
-  - Interactive HTML5 canvas reacting dynamically to cursor movement with zero external heavy libraries.
-- 📬 **Direct Contact & Utilities**:
-  - 1-click clipboard copy buttons with animated toast alerts.
-  - Direct WhatsApp messaging with pre-configured messages (`wa.me`).
-  - Clean `@media print` support for instant resume generation (`Ctrl + P`).
+1. **`Overview` (`/`)**:
+   - Cinematic Hero with personal identity, status indicators, and metric highlights (`8 Live`, `>90% CV ML`, `-25% Latency`, `AWS Certified`).
+   - Dual-direction continuous Technology Trains marquee.
+   - 4 Top-Tier Flagship Systems Exhibition cards with problem, solution, metrics, and live demo buttons.
+   - Engineering Philosophy editorial quote.
+   - Credentials & Career timeline preview.
+   - Interactive CTA banner.
+2. **`Projects Exhibition` (`/work`)**:
+   - Floating spatial project rail (01 to 08) that syncs dynamically with scroll position.
+   - Category filtering (`AI & Computer Vision`, `Full Stack & Microservices`, `E-Commerce & Frontend`, `Analytics & Systems`).
+   - Deep-dive case studies with problem statement, architectural solution, pipeline diagram, and verified metrics.
+3. **`Technology Ecosystem` (`/ecosystem`)**:
+   - 5-Layer Stack Explorer:
+     - Layer 01: Cloud Infrastructure & Scalability (AWS EC2, S3, Lambda, IAM, Vercel, Docker)
+     - Layer 02: Backend Microservices & REST APIs (Python 3.10+, Flask, FastAPI, Django)
+     - Layer 03: Data Science, Computer Vision & ML (OpenCV, Scikit-learn, TensorFlow, BG/NBD)
+     - Layer 04: Relational Databases & Performance (MySQL, PyMySQL, Flask-SQLAlchemy, Index optimization)
+     - Layer 05: Modern Frontend & Reactive UI (React.js 19, Next.js 14, Tailwind CSS, ES6+)
+4. **`Interactive Lab & Simulators` (`/lab`)**:
+   - **Sim 01**: OpenCV Facial Expression Emotion Recognition & audio player.
+   - **Sim 02**: S.V.T. Tailors 5-stage workshop order tracker (`Order Logged` ➔ `Fabric Cut` ➔ `Master Stitch` ➔ `Steam Press` ➔ `Ready`).
+   - **Sim 03**: MySQL B-Tree Index Query benchmark (150,000 rows scanned vs 12 rows seek; -78% latency drop).
+   - **Sim 04**: OmniPulse BG/NBD Customer Retention & CLV mathematical calculator.
+5. **`Career Experience & Education` (`/experience`)**:
+   - Chronological timeline featuring Instakart Services (Flipkart Logistics), Sri Srinivasa Gravity Junior College, and Future Generali.
+   - Formal degree: B.Tech in CSE from JNTU Kakinada (2018–2026, CGPA: 6.5).
+6. **`Credentials & Certifications` (`/credentials`)**:
+   - AWS Certified Cloud Practitioner, AWS Academy Cloud Foundations, Android Enterprise Associate (Google), Cisco Networking Essentials.
+   - Interactive modal inspection card.
+7. **`Resume Center` (`/resume`)**:
+   - QuickLook document viewer with 98% ATS match score.
+   - 1-click printable view (`window.print()`).
+8. **`Direct Connect` (`/connect`)**:
+   - Interactive message terminal with copy-to-clipboard toast feedback.
+   - WhatsApp instant chat launcher (`wa.me/917386033417`).
+9. **`Global Command+K Search Palette`**:
+   - Keyboard shortcut `<Ctrl + K>` / `<⌘ + K>` opens instant search across all projects, technologies, and certifications.
+10. **`VisionOS Floating Scroll Elevator`**:
+    - Floating pill indicator in bottom-right corner showing scroll progress with 1-click smooth elevation.
 
 ---
 
-## 🛠️ Technical Stack Summary
+## 🛠️ Local Development & Production Build
 
-| Domain | Technologies |
-|---|---|
-| **Languages** | Python, JavaScript (ES6+), SQL, C++, HTML5, CSS3 |
-| **Backend & Microservices** | Flask, FastAPI, Django, RESTful API Architecture, Serverless |
-| **Cloud & DevOps** | AWS (EC2, S3, Lambda, IAM), Cloud Architecture, Vercel, Docker basics |
-| **Machine Learning & AI** | OpenCV (Computer Vision), Scikit-learn, TensorFlow, NumPy, Pandas |
-| **Databases** | MySQL (PyMySQL), Relational Schema Design, Query Optimization (-25% latency) |
-| **Frontend** | React.js, Next.js, Tailwind CSS, DOM Manipulation, SPAs |
-| **Methodologies & Tools** | Git, GitHub, Postman, Agile/Scrum, TDD, Unit Testing |
+```bash
+# 1. Install dependencies
+npm install
 
----
+# 2. Start Vite development server (port 3000)
+npm run dev
 
-## 📂 Project Directory Structure
+# 3. Compile optimized production build (into /dist)
+npm run build
 
-```text
-portfolio/
-├── index.html        # Semantic markup, 8 project cards, 4 simulators, and layout
-├── style.css         # Glassmorphism, equalizer animations, glowing gradients, print styles
-├── script.js         # Interactive canvas, simulators, terminal CLI, filters & toasts
-└── README.md         # Documentation with verified deployment links
+# 4. Preview local production bundle
+npm run preview
 ```
