@@ -18,6 +18,10 @@ export default function Lab() {
   const [purchaseFrequency, setPurchaseFrequency] = useState(5);
   const [recencyWeeks, setRecencyWeeks] = useState(12);
 
+  // Sim 5: Google Forms 3NF Relational Validator
+  const [selectedFieldType, setSelectedFieldType] = useState("RADIO");
+  const [formResponsesCount, setFormResponsesCount] = useState(128);
+
   const STAGES = [
     { title: "Order Logged", desc: "Measurements saved in MySQL" },
     { title: "Fabric Cut", desc: "Pattern drafted by Master Cutter" },
@@ -59,7 +63,7 @@ export default function Lab() {
         </p>
       </div>
 
-      {/* Grid of 4 Interactive Simulators */}
+      {/* Grid of 5 Interactive Simulators */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* ============================================================
@@ -328,9 +332,9 @@ export default function Lab() {
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Grounded: MySQL &amp; Flask Engine</span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Grounded: Task Cloud Portal &amp; AWS S3</span>
             <a
-              href="https://flask-google-form.vercel.app/"
+              href="https://task-cloud-portal.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
@@ -410,6 +414,83 @@ export default function Lab() {
             <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Microservice: Live on Vercel</span>
             <a
               href="https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+            >
+              <span>Launch Live App</span>
+              <ArrowUpRight size={13} />
+            </a>
+          </div>
+        </div>
+
+        {/* ============================================================
+            SIMULATOR 05: GOOGLE FORMS 3NF RELATIONAL ORM
+            ============================================================ */}
+        <div className="apple-card p-7 bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between lg:col-span-2">
+          <div>
+            <div className="flex items-center justify-between text-xs font-mono mb-3">
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold">SIM_05 // RELATIONAL SCHEMA &amp; ORM</span>
+              <span className="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold text-[10px]">
+                Flask-SQLAlchemy + 3NF
+              </span>
+            </div>
+
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+              Google Forms Dynamic 3NF Response Orchestrator
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5 mb-5">
+              Simulating dynamic question schema validation and atomic database transaction persistence.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900/80 space-y-2">
+                <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">Field Type Validation:</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {["RADIO", "CHECKBOX", "TEXT", "RATING"].map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => {
+                        setSelectedFieldType(type);
+                        setFormResponsesCount((prev) => prev + 1);
+                      }}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-mono transition ${
+                        selectedFieldType === type
+                          ? "bg-emerald-600 text-white font-bold"
+                          : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-slate-900 dark:bg-slate-950 text-slate-200 font-mono text-xs space-y-1.5 border border-white/5 md:col-span-2">
+                <div className="flex justify-between text-[11px] text-slate-400 pb-1 border-b border-white/10">
+                  <span>ORM MODEL: SurveyResponse(db.Model)</span>
+                  <span className="text-emerald-400">STATUS: 200 OK</span>
+                </div>
+                <div className="flex justify-between pt-1">
+                  <span className="text-slate-400">Input Validation Latency:</span>
+                  <span className="text-emerald-400 font-bold">&lt; 12.4 ms (Zero Bottleneck)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Database Schema:</span>
+                  <span className="text-slate-200">3NF Normalized (MySQL / SQLite Fallback)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">Active Responses:</span>
+                  <span className="text-brand-400 font-bold">{formResponsesCount} Records Stored</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Grounded: Flask &amp; MySQL Engine</span>
+            <a
+              href="https://flask-google-form.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"

@@ -198,7 +198,7 @@ export const PROJECTS = [
     category: "Full Stack & Microservices",
     tags: ["Python", "Flask REST API", "React.js", "MySQL", "AWS EC2/S3"],
     live: "https://task-cloud-portal.vercel.app/",
-    github: "https://github.com/vardhanyerramsetti71beep",
+    github: "https://github.com/vardhanyerramsetti71beep/task-cloud-portal",
     featured: true,
     stats: [
       { label: "Query Latency", value: "-25%" },
