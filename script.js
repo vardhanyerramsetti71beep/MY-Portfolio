@@ -214,42 +214,135 @@ function toggleAudioPreview(btn) {
   showToast("Triggered simulated Flask API stream: 200 OK (Audio Frame Dispatched)");
 }
 
-// 6. Interactive Task CRUD Workbench
-function addTaskInteractive() {
-  const input = document.getElementById("newTaskInput");
-  const val = input.value.trim();
-  if (!val) return;
+// 6. Interactive SVT Tailors Bespoke Estimator & Order Tracker Simulator
+const tailorData = {
+  suit: {
+    emoji: "🤵",
+    title: "Bespoke 2-Piece Suit",
+    price: "₹4,500",
+    time: "48h Express",
+    badge: "Luxury Fit",
+    color: "text-amber-400",
+    border: "border-amber-500",
+    btnClass: "bg-amber-600 text-white border-amber-400",
+    stage: "Stage 3 / 5: Master Stitch",
+    progress: "60%",
+    desc: "Master craftsman executing bespoke canvassing and precision shoulder alignment."
+  },
+  shirt: {
+    emoji: "👔",
+    title: "Executive Bespoke Shirt",
+    price: "₹650",
+    time: "24h Express",
+    badge: "Giza Cotton",
+    color: "text-sky-400",
+    border: "border-sky-500",
+    btnClass: "bg-sky-600 text-white border-sky-400",
+    stage: "Stage 4 / 5: Buttonhole & Press",
+    progress: "80%",
+    desc: "Precision collar stiffening, cuff stitching, and automated buttonholing."
+  },
+  trouser: {
+    emoji: "👖",
+    title: "Tailored Formal Trouser",
+    price: "₹550",
+    time: "2 Days",
+    badge: "Comfort Waist",
+    color: "text-emerald-400",
+    border: "border-emerald-500",
+    btnClass: "bg-emerald-600 text-white border-emerald-400",
+    stage: "Stage 2 / 5: Inseam Tailoring",
+    progress: "40%",
+    desc: "Computerized chalk drafting, pocket lining assembly, and hem cuffing."
+  },
+  blouse: {
+    emoji: "🥻",
+    title: "Designer Bridal Blouse",
+    price: "₹950",
+    time: "48h Handcrafted",
+    badge: "Maggam Work",
+    color: "text-rose-400",
+    border: "border-rose-500",
+    btnClass: "bg-rose-600 text-white border-rose-400",
+    stage: "Stage 3 / 5: Hand Embroidery",
+    progress: "60%",
+    desc: "Intricate zari work stitching, reinforced lining, and latkan attachment."
+  }
+};
 
-  const container = document.getElementById("taskListContainer");
-  const div = document.createElement("div");
-  div.className = "task-row p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between text-xs transition transform scale-95 opacity-0";
-  div.innerHTML = `
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-brand-400"></span>
-      <span class="text-slate-200">${val}</span>
-    </div>
-    <div class="flex items-center gap-2">
-      <span class="text-[10px] font-mono text-brand-400 bg-brand-500/10 px-1.5 py-0.5 rounded">201 Created</span>
-      <button onclick="deleteTask(this)" class="text-slate-500 hover:text-rose-400 transition" title="Delete">
-        <i class="fa-solid fa-trash-can text-xs"></i>
-      </button>
-    </div>
-  `;
-  container.prepend(div);
-  setTimeout(() => {
-    div.classList.remove("scale-95", "opacity-0");
-  }, 20);
-  input.value = "";
-  showToast("Task inserted via Flask API (Execution: 16ms)");
+let currentGarment = 'suit';
+const tailorStages = [
+  { stage: "Stage 1 / 5: Order Logged", progress: "20%", desc: "Measurements recorded via MySQL REST API and fabric verified." },
+  { stage: "Stage 2 / 5: Fabric Cut", progress: "40%", desc: "Individual paper pattern drafted and shear cutting completed." },
+  { stage: "Stage 3 / 5: Master Stitch", progress: "60%", desc: "Master craftsman assembling panels with reinforced interior canvas." },
+  { stage: "Stage 4 / 5: Steam Press", progress: "80%", desc: "Industrial steam pressure styling and quality audit inspection." },
+  { stage: "Stage 5 / 5: Ready / Dispatched", progress: "100%", desc: "Digital invoice generated; ready for doorstep delivery / pickup!" }
+];
+let currentStageIdx = 2;
+
+function setTailorGarment(type) {
+  currentGarment = type;
+  const data = tailorData[type];
+  document.querySelectorAll(".tailor-btn").forEach(btn => {
+    btn.className = "tailor-btn py-2 px-1 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-slate-300 flex flex-col items-center gap-1 border border-slate-800 hover:border-slate-600 transition";
+  });
+  const activeBtn = document.getElementById("btn-tailor-" + type);
+  if (activeBtn) {
+    activeBtn.className = `tailor-btn active py-2 px-1 rounded-xl text-xs font-mono font-semibold ${data.btnClass} flex flex-col items-center gap-1 border transition`;
+  }
+
+  const emojiEl = document.getElementById("tailorEmoji");
+  if (emojiEl) emojiEl.textContent = data.emoji;
+
+  const titleEl = document.getElementById("tailorGarmentTitle");
+  if (titleEl) {
+    titleEl.textContent = data.title;
+    titleEl.className = `text-sm font-bold ${data.color}`;
+  }
+
+  const priceEl = document.getElementById("tailorPrice");
+  if (priceEl) priceEl.textContent = data.price;
+
+  const timeEl = document.getElementById("tailorTime");
+  if (timeEl) timeEl.textContent = data.time;
+
+  const badgeEl = document.getElementById("tailorBadge");
+  if (badgeEl) badgeEl.textContent = data.badge;
+
+  const simBox = document.getElementById("tailorGarmentIcon");
+  if (simBox) {
+    simBox.className = `w-14 h-14 rounded-xl bg-slate-800 border-2 ${data.border} flex items-center justify-center text-3xl shadow-lg relative`;
+  }
+
+  const stageEl = document.getElementById("tailorStatusStage");
+  if (stageEl) stageEl.textContent = data.stage;
+
+  const barEl = document.getElementById("tailorProgressBar");
+  if (barEl) barEl.style.width = data.progress;
+
+  const descEl = document.getElementById("tailorStageDesc");
+  if (descEl) descEl.textContent = data.desc;
 }
 
-function deleteTask(btn) {
-  const row = btn.closest(".task-row");
-  row.classList.add("opacity-0", "scale-95");
-  setTimeout(() => {
-    row.remove();
-    showToast("Task deleted via DELETE endpoint: 204 No Content");
-  }, 200);
+function advanceTailorStage() {
+  currentStageIdx = (currentStageIdx + 1) % tailorStages.length;
+  const s = tailorStages[currentStageIdx];
+  const stageEl = document.getElementById("tailorStatusStage");
+  if (stageEl) stageEl.textContent = s.stage;
+
+  const barEl = document.getElementById("tailorProgressBar");
+  if (barEl) barEl.style.width = s.progress;
+
+  const descEl = document.getElementById("tailorStageDesc");
+  if (descEl) descEl.textContent = s.desc;
+
+  showToast(`Atelier Stage: ${s.stage}`);
+}
+
+function simulateOrderDispatch() {
+  const g = tailorData[currentGarment];
+  const orderId = Math.floor(1000 + Math.random() * 9000);
+  showToast(`WhatsApp Order Formatted: [SVT #${orderId}] ${g.title} (${g.price})`);
 }
 
 // 7. Interactive Terminal CLI
@@ -293,7 +386,7 @@ function handleTerminalCommand(e) {
         response = "Languages: Python, JS ES6+, SQL, C++ | Frameworks: Flask, Django, React.js | Cloud: AWS (EC2, S3, Lambda) | ML: OpenCV, Scikit-learn, TensorFlow.";
         break;
       case "projects":
-        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)";
+        response = "1. Facial Expression Music Recommendation (OpenCV + Flask, >90% accuracy)<br>2. S.V.T. Tailors — Bespoke Atelier & Luxury E-Commerce Platform (Python + MySQL + Vercel)";
         break;
       case "aws":
         response = "AWS Certified Cloud Practitioner (2023) | AWS Academy Cloud Foundations (2023) | Hands-on: EC2, S3, Lambda, Cloud Architecture.";
