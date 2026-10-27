@@ -93,6 +93,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="https://flask-google-form.vercel.app/" target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white transition-colors">
+                  <span>Google Forms Clone &amp; SQL Engine</span>
+                  <ArrowUpRight size={11} className="text-slate-400" />
+                </a>
+              </li>
+              <li>
                 <a href="https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/" target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white transition-colors">
                   <span>OmniPulse CLV &amp; Retention Engine</span>
                   <ArrowUpRight size={11} className="text-slate-400" />

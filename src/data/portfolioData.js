@@ -159,9 +159,9 @@ export const PROJECTS = [
     subtitle: "Dynamic Survey Orchestration & Relational Response Persistence",
     category: "Full Stack & Microservices",
     tags: ["Python", "Flask", "Flask-SQLAlchemy", "MySQL", "Jinja2"],
-    live: null,
-    github: "https://github.com/vardhanyerramsetti71beep",
-    featured: false,
+    live: "https://flask-google-form.vercel.app/",
+    github: "https://github.com/vardhanyerramsetti71beep/google-forms-",
+    featured: true,
     stats: [
       { label: "Question Types", value: "Multiple" },
       { label: "Schema Normalization", value: "3NF Compliant" },
