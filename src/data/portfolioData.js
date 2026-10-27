@@ -142,7 +142,7 @@ export const PROJECTS = [
     tags: ["Python", "Plotly 3D", "HTML5/CSS3", "JavaScript", "Analytics"],
     live: "https://90-days-body-transformation.vercel.app/",
     github: "https://github.com/vardhanyerramsetti71beep/90-Days-Body-Transformation",
-    featured: false,
+    featured: true,
     stats: [
       { label: "Tracking Days", value: "90 Days" },
       { label: "Biometric Dimensions", value: "6 Axes" },
@@ -178,9 +178,9 @@ export const PROJECTS = [
     subtitle: "BG/NBD Customer Lifetime Value & Churn Prediction Microservice",
     category: "Analytics & Systems",
     tags: ["FastAPI", "Scikit-learn", "BG/NBD", "Gamma-Gamma", "Python"],
-    live: null,
+    live: "https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/",
     github: "https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine",
-    featured: false,
+    featured: true,
     stats: [
       { label: "Probabilistic Model", value: "BG/NBD" },
       { label: "Monetary Value", value: "Gamma-Gamma" },

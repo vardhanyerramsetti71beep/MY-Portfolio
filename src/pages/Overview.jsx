@@ -37,7 +37,7 @@ export default function Overview() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const flagshipProjects = PROJECTS.slice(0, 4);
+  const flagshipProjects = PROJECTS.filter((p) => p.featured);
 
   return (
     <div className="flex flex-col gap-24 sm:gap-32 pb-24">
