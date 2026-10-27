@@ -329,15 +329,15 @@ export default function Overview() {
 
                 {/* Bottom Action Links */}
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-semibold">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2.5">
                     {project.live && (
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition"
+                        className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white hover:bg-black dark:hover:bg-slate-100 text-white dark:text-slate-950 text-xs font-semibold shadow-sm transition"
                       >
-                        <span>Launch App</span>
+                        <span>Launch Live App</span>
                         <ArrowUpRight size={13} />
                       </a>
                     )}
@@ -346,10 +346,10 @@ export default function Overview() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition"
+                        className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700/60 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold transition"
                       >
-                        <span>GitHub Repo</span>
-                        <ExternalLink size={12} />
+                        <Code2 size={13} />
+                        <span>Source</span>
                       </a>
                     )}
                   </div>

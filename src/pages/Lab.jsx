@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Play, Pause, RefreshCw, CheckCircle2, Activity, Volume2, Database, Sliders, ArrowRight, Sparkles } from "lucide-react";
+import { Play, Pause, RefreshCw, CheckCircle2, Activity, Volume2, Database, Sliders, ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import Reveal from "../components/motion/Reveal";
 
 export default function Lab() {
@@ -143,8 +143,17 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-            Deployed on Vercel: <a href="https://music-recommending.vercel.app/" target="_blank" rel="noreferrer" className="text-brand-600 dark:text-brand-400 underline">music-recommending.vercel.app</a>
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Status: Live on Vercel</span>
+            <a
+              href="https://music-recommending.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+            >
+              <span>Launch Live App</span>
+              <ArrowUpRight size={13} />
+            </a>
           </div>
         </div>
 
@@ -227,10 +236,16 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/60 text-[11px] font-mono text-slate-500 dark:text-slate-400">
-            <span>ORDER_ID: SVT-2026-8492</span>
-            <a href="https://svt-tailors.vercel.app/" target="_blank" rel="noreferrer" className="text-amber-600 dark:text-amber-400 underline">
-              svt-tailors.vercel.app →
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
+            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">ORDER_ID: SVT-2026-8492</span>
+            <a
+              href="https://svt-tailors.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+            >
+              <span>Launch Live App</span>
+              <ArrowUpRight size={13} />
             </a>
           </div>
         </div>
@@ -312,8 +327,17 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-            Grounded in: <strong className="text-slate-700 dark:text-slate-300">Scalable Task &amp; Data Management Portal</strong>
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Grounded: MySQL &amp; Flask Engine</span>
+            <a
+              href="https://flask-google-form.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+            >
+              <span>Launch Live App</span>
+              <ArrowUpRight size={13} />
+            </a>
           </div>
         </div>
 
@@ -382,8 +406,17 @@ export default function Lab() {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono pt-4">
-            Repository: <a href="https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine" target="_blank" rel="noreferrer" className="text-purple-600 dark:text-purple-400 underline">OmniPulse Engine GitHub →</a>
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/60">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Microservice: Live on Vercel</span>
+            <a
+              href="https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="apple-pressable inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 text-xs font-semibold shadow-sm hover:bg-black dark:hover:bg-slate-100 transition"
+            >
+              <span>Launch Live App</span>
+              <ArrowUpRight size={13} />
+            </a>
           </div>
         </div>
 
