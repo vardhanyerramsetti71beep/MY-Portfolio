@@ -106,7 +106,7 @@ export default function Resume() {
             <div><strong className="text-slate-900 dark:text-white print:text-black">Languages:</strong> Python, JavaScript (ES6+), SQL, C++, HTML5, CSS3</div>
             <div><strong className="text-slate-900 dark:text-white print:text-black">Backend &amp; APIs:</strong> Flask, FastAPI, Django, RESTful Architecture, Serverless</div>
             <div><strong className="text-slate-900 dark:text-white print:text-black">Cloud &amp; DevOps:</strong> AWS (EC2, S3, Lambda, IAM), Vercel, Docker basics</div>
-            <div><strong className="text-slate-900 dark:text-white print:text-black">Data Science &amp; ML:</strong> OpenCV, Scikit-learn, TensorFlow, NumPy, Pandas, BG/NBD</div>
+            <div><strong className="text-slate-900 dark:text-white print:text-black">Data Science &amp; ML:</strong> OpenCV, Scikit-learn, TensorFlow, NumPy, Pandas, BG/NBD, Plotly 3D</div>
             <div><strong className="text-slate-900 dark:text-white print:text-black">Databases:</strong> MySQL, PyMySQL, Relational Schema Design, Query Optimization (-25%)</div>
             <div><strong className="text-slate-900 dark:text-white print:text-black">Frontend:</strong> React.js, Next.js 14, Tailwind CSS, DOM Manipulation, SPAs</div>
           </div>
@@ -115,41 +115,84 @@ export default function Resume() {
         {/* Section: Key Technical Projects */}
         <div className="space-y-4">
           <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-slate-900 dark:text-white print:text-black border-b border-slate-200 dark:border-slate-700 print:border-gray-300 pb-1">
-            Key Technical Projects (8 Production Deployments)
+            Key Technical Projects (Verified Production Deployments)
           </h3>
           
+          {/* Project 1: Scalable Task Cloud Portal */}
           <div className="space-y-1">
-            <div className="flex justify-between items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
-              <span>Music Recommendation System Based on Facial Expression Recognition</span>
-              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python, Flask, OpenCV, Scikit-learn</span>
-            </div>
-            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-1 leading-relaxed">
-              <li>Designed and deployed an intelligent music platform analyzing facial expressions via live stream with over 90% classification accuracy.</li>
-              <li>Engineered high-throughput Flask RESTful APIs managing asynchronous model inference and targeted track delivery.</li>
-              <li>Built an optimized image processing pipeline using OpenCV for low-latency facial landmark extraction in production.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-1">
-            <div className="flex justify-between items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
-              <span>S.V.T. Tailors Bespoke Atelier &amp; 5-Stage Workshop Tracker</span>
-              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python Serverless, MySQL, PyMySQL, Tailwind</span>
-            </div>
-            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-1 leading-relaxed">
-              <li>Built an end-to-end digital atelier configurator and order tracking pipeline deployed live on Vercel.</li>
-              <li>Persisted customized orders into normalized MySQL relational schemas cutting transaction latency to under 35ms.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-1">
-            <div className="flex justify-between items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
               <span>Scalable Task &amp; Data Management Cloud Portal</span>
-              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python, Flask REST API, React.js, MySQL, AWS</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python, Flask REST API, React.js, MySQL, AWS EC2/S3</span>
             </div>
-            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-1 leading-relaxed">
-              <li>Architected a responsive full-stack task portal powered by Flask REST APIs and secure token authentication.</li>
-              <li>Designed normalized relational database schemas in MySQL with optimized indexing, reducing query latency by 25%.</li>
-              <li>Provisioned compute instances and durable asset storage across AWS EC2 and S3.</li>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Architected a multi-tenant enterprise portal featuring complete tenant data isolation, JWT authentication, and compliance audit logging.</li>
+              <li>Engineered compound B-Tree indexes on <code>(tenant_id, status)</code> in MySQL, reducing query latency by 25% (18.4ms down to 13.8ms).</li>
+              <li>Decoupled binary storage into Amazon S3 with TLS 1.2+ security policies and containerized execution on AWS EC2.</li>
+            </ul>
+          </div>
+
+          {/* Project 2: OmniPulse Retention & CLV Engine */}
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+              <span>OmniPulse Enterprise CLV &amp; Retention Prediction Microservice</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">FastAPI, Scikit-learn, BG/NBD, Gamma-Gamma, Python</span>
+            </div>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Implemented Beta-Geometric/Negative Binomial (BG/NBD) probabilistic models to compute real-time customer vitality probability P(Alive).</li>
+              <li>Integrated Gamma-Gamma sub-models to estimate monetary value and 12-month expected customer lifetime value (CLV) forecasts.</li>
+              <li>Delivered high-throughput in-memory REST inference endpoints with sub-15ms prediction latency.</li>
+            </ul>
+          </div>
+
+          {/* Project 3: Music Emotion Recommender */}
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+              <span>Music Recommendation System Based on Facial Expression Recognition</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python, Flask REST API, OpenCV, Scikit-learn</span>
+            </div>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Built an end-to-end computer vision pipeline analyzing facial expressions via live stream with &gt;90% classification accuracy.</li>
+              <li>Engineered high-throughput Flask RESTful APIs managing asynchronous model inference and targeted audio playlist dispatch.</li>
+              <li>Optimized image processing pipeline using OpenCV for low-latency facial landmark extraction in production.</li>
+            </ul>
+          </div>
+
+          {/* Project 4: 90-Day Body Transformation */}
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+              <span>90-Day Body Transformation Biometric 3D Manifolds Dashboard</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python, Plotly 3D WebGL, Biometrics, HTML5/CSS3</span>
+            </div>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Developed a biometric analytics dashboard converting time-series physical measurements into interactive Plotly 3D WebGL surface meshes.</li>
+              <li>Implemented mathematical data smoothing algorithms to track morphological variations across circumference and body fat timelines.</li>
+              <li>Designed interactive 3D spatial rotation controls and temporal telemetry sliders for exploratory health metrics analysis.</li>
+            </ul>
+          </div>
+
+          {/* Project 5: S.V.T. Tailors Atelier */}
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+              <span>S.V.T. Tailors Bespoke Atelier &amp; 5-Stage Workshop Tracker</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">Python Serverless, MySQL, PyMySQL, React, Tailwind</span>
+            </div>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Built an end-to-end digital atelier configurator with dynamic garment customizer (fabrics, collar, cuffs, measurements).</li>
+              <li>Architected a 5-stage workshop state machine persisting orders into normalized MySQL schemas with &lt;35ms transaction latency.</li>
+              <li>Engineered public tracking portal providing transparent visibility into handcrafted garment fabrication milestones.</li>
+            </ul>
+          </div>
+
+          {/* Project 6: MS Pickles Store */}
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
+              <span>MS Pickles Artisanal Andhra E-Commerce Platform</span>
+              <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">JavaScript (ES6+), HTML5/CSS3, Tailwind CSS, LocalStorage</span>
+            </div>
+            <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-0.5 leading-relaxed">
+              <li>Engineered a responsive, mobile-first artisanal food e-commerce platform with dynamic flavor filtering and localized regional UX.</li>
+              <li>Implemented persistent client-side cart state management supporting real-time price calculations, quantity updates, and local storage hydration.</li>
+              <li>Optimized critical rendering paths and asset delivery, achieving sub-second first contentful paint (FCP).</li>
             </ul>
           </div>
         </div>
