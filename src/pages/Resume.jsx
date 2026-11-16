@@ -213,7 +213,7 @@ export default function Resume() {
           {EXPERIENCE.map((exp) => (
             <div key={exp.id} className="space-y-1">
               <div className="flex justify-between items-baseline text-xs font-bold text-slate-900 dark:text-white print:text-black">
-                <span>{exp.role} — {exp.company}</span>
+                <span>{exp.role} — {exp.company}{exp.client ? ` (at ${exp.client})` : ""}</span>
                 <span className="font-mono font-normal text-slate-500 dark:text-slate-400 print:text-gray-600">{exp.period}</span>
               </div>
               <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 print:text-gray-800 space-y-1 leading-relaxed">

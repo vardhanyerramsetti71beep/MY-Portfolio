@@ -59,7 +59,7 @@ All featured applications are built, tested, and grounded in authentic repositor
    - **Sim 03**: MySQL B-Tree Index Query benchmark (150,000 rows scanned vs 12 rows seek; -78% latency drop).
    - **Sim 04**: OmniPulse BG/NBD Customer Retention & CLV mathematical calculator.
 5. **`Career Experience & Education` (`/experience`)**:
-   - Chronological timeline featuring Instakart Services (Flipkart Logistics), Sri Srinivasa Gravity Junior College, and Future Generali.
+   - Chronological timeline: Quess Corp Limited (deployed at Instakart Services / Flipkart Logistics, and at Future Generali), and Sri Srinivasa Gravity Junior College.
    - Formal degree: B.Tech in CSE from JNTU Kakinada (2018–2026, CGPA: 6.5).
 6. **`Credentials & Certifications` (`/credentials`)**:
    - AWS Certified Cloud Practitioner, AWS Academy Cloud Foundations, Android Enterprise Associate (Google), Cisco Networking Essentials.

@@ -277,8 +277,9 @@ export const EXPERIENCE = [
   {
     id: "instakart",
     role: "Operations and Logistics Associate",
-    company: "Instakart Services Private Limited",
-    subCompany: "Flipkart Logistics & Supply Chain",
+    company: "Quess Corp Limited",
+    subCompany: "deployed at Instakart Services, Flipkart Logistics",
+    client: "Instakart Services, Flipkart Logistics",
     period: "Jan 2026 – Apr 2026",
     location: "Andhra Pradesh, India",
     type: "Industry Operations",
@@ -291,6 +292,26 @@ export const EXPERIENCE = [
       "Supervised and audited real-time warehouse operations, order dispatch processing, and inventory databases, maintaining 99% data integrity.",
       "Coordinated cross-functional workflows between ground teams and dispatch systems, eliminating bottlenecks and driving a 15% increase in daily operational throughput.",
       "Conducted root-cause telemetry audits across fulfillment logistics pipelines to minimize order variance and transit latency."
+    ]
+  },
+  {
+    id: "marketing-coordinator",
+    role: "Direct Marketing Coordinator",
+    company: "Quess Corp Limited",
+    subCompany: "deployed at Future Generali Total Health Insurance",
+    client: "Future Generali Total Health Insurance",
+    period: "Sep 2023 – Dec 2023",
+    location: "Andhra Pradesh, India",
+    type: "Data-Driven Marketing",
+    metrics: [
+      { label: "Leads Engaged", value: "5,000+" },
+      { label: "Lead Acquisition Lift", value: "+10%" },
+      { label: "Telemetry Channels", value: "Multi-channel" }
+    ],
+    bullets: [
+      "Executed targeted digital campaigns across multi-touch customer channels, engaging 5,000+ prospective leads.",
+      "Analyzed conversion telemetry and customer demographic funnels alongside sales teams, driving a 10% uplift in qualified lead acquisition.",
+      "Synthesized quantitative campaign performance reports to optimize marketing resource allocation and customer retention touchpoints."
     ]
   },
   {
@@ -309,24 +330,6 @@ export const EXPERIENCE = [
       "Mentored 40+ engineering aspirants in fundamental computer science principles, Object-Oriented Programming (OOP), and algorithmic problem-solving.",
       "Conducted weekly practical debugging labs, evaluating logic implementations in Python and C++ to build rock-solid foundational fluency.",
       "Assisted senior computer science faculty in designing technical assignments and measuring academic milestone progression."
-    ]
-  },
-  {
-    id: "marketing-coordinator",
-    role: "Direct Marketing Coordinator",
-    company: "Future Generali Total Health Insurance",
-    period: "Aug 2022 – Jan 2023",
-    location: "Andhra Pradesh, India",
-    type: "Data-Driven Marketing",
-    metrics: [
-      { label: "Leads Engaged", value: "5,000+" },
-      { label: "Lead Acquisition Lift", value: "+10%" },
-      { label: "Telemetry Channels", value: "Multi-channel" }
-    ],
-    bullets: [
-      "Executed targeted digital campaigns across multi-touch customer channels, engaging 5,000+ prospective leads.",
-      "Analyzed conversion telemetry and customer demographic funnels alongside sales teams, driving a 10% uplift in qualified lead acquisition.",
-      "Synthesized quantitative campaign performance reports to optimize marketing resource allocation and customer retention touchpoints."
     ]
   }
 ];
@@ -425,7 +428,7 @@ export const SEARCH_INDEX = [
   { title: "AMARA Jewellery Concept", path: "/work", keywords: "amara jewellery ring rebrand opencv computer vision frames gsap scroll calla vercel" },
   { title: "Interactive Engineering Lab", path: "/lab", keywords: "lab simulators algorithm opencv audio visualizer mysql query index benchmark retention" },
   { title: "Technology Ecosystem", path: "/ecosystem", keywords: "ecosystem architecture cloud infrastructure backend python ml databases frontend" },
-  { title: "Experience & Education", path: "/experience", keywords: "experience instakart flipkart teaching assistant future generali jntu kakinada btech" },
+  { title: "Experience & Education", path: "/experience", keywords: "experience quess corp instakart flipkart teaching assistant future generali jntu kakinada btech" },
   { title: "Certifications & Credentials", path: "/credentials", keywords: "credentials certifications aws certified cloud practitioner cisco android enterprise" },
   { title: "Resume QuickLook", path: "/resume", keywords: "resume cv download pdf ats score curriculum vitae qualifications" },
   { title: "Connect & Contact", path: "/connect", keywords: "connect contact email whatsapp message hire linkedin github collaborate" }
