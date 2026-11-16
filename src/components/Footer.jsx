@@ -39,7 +39,7 @@ export default function Footer() {
                 <Link to="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">Overview</Link>
               </li>
               <li>
-                <Link to="/work" className="hover:text-slate-900 dark:hover:text-white transition-colors">Flagship Projects (8 Live)</Link>
+                <Link to="/work" className="hover:text-slate-900 dark:hover:text-white transition-colors">Flagship Projects (9 Live)</Link>
               </li>
               <li>
                 <Link to="/ecosystem" className="hover:text-slate-900 dark:hover:text-white transition-colors">Architecture Ecosystem</Link>

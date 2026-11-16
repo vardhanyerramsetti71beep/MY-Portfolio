@@ -7,7 +7,7 @@ import "../styles/Navbar.css";
 
 const NAV_LINKS = [
   { label: "Overview", path: "/" },
-  { label: "Projects", path: "/work", badge: "8 Live" },
+  { label: "Projects", path: "/work", badge: "9 Live" },
   { label: "Architecture", path: "/ecosystem" },
   { label: "Simulators", path: "/lab" },
   { label: "Experience", path: "/experience" },
@@ -64,7 +64,7 @@ export default function Navbar() {
               </span>
               <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                AWS Certified • 8 Live Apps
+                AWS Certified • 9 Live Apps
               </span>
             </div>
           </Link>

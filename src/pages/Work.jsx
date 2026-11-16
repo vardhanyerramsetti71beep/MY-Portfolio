@@ -46,7 +46,7 @@ export default function Work() {
           Projects &amp; Deployments.
         </h1>
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-3 max-w-2xl leading-relaxed">
-          8 verified production web applications and microservices grounded in authentic repositories from GitHub, deployed live across Vercel and AWS.
+          9 verified production web applications and microservices grounded in authentic repositories from GitHub, deployed live across Vercel and AWS.
         </p>
 
         {/* Filter Pills */}

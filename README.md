@@ -15,7 +15,7 @@ Live Production Deployment: **[https://my-portfolio-vardhan-yerramsetti.vercel.a
 
 ---
 
-## 🚀 Flagship Systems & Verified Deployments (8 Live Apps)
+## 🚀 Flagship Systems & Verified Deployments (9 Live Apps)
 
 All featured applications are built, tested, and grounded in authentic repositories from [github.com/vardhanyerramsetti71beep](https://github.com/vardhanyerramsetti71beep) with verified production deployments on Vercel:
 
@@ -29,13 +29,14 @@ All featured applications are built, tested, and grounded in authentic repositor
 | 6 | **Google Forms Clone & MySQL ORM Engine** | Python, Flask, Flask-SQLAlchemy, MySQL, Jinja2 | [🔗 Live App](https://flask-google-form.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/google-forms-) |
 | 7 | **OmniPulse Enterprise CLV & Retention Engine** | FastAPI, Scikit-learn, BG/NBD, Gamma-Gamma | [🔗 Live App](https://omni-pulse-enterprise-clv-churn-int-teal.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/OmniPulse-Enterprise-CLV-Churn-Intelligence-Engine) |
 | 8 | **Scalable Task & Data Management Portal** | Python, Flask REST API, AWS EC2, S3, Docker | [🔗 Live App](https://task-cloud-portal.vercel.app/) | [GitHub Profile](https://github.com/vardhanyerramsetti71beep) |
+| 9 | **AMARA Fine Jewellery Concept Site** (adapted from Gireesh Kumar Reddy's CALLA concept) | Python, OpenCV, GSAP ScrollTrigger, Lenis | [🔗 Live App](https://amara-jewellery-five.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/amara-jewellery) |
 
 ---
 
 ## 🏛️ System Architecture & Multi-Page Routes
 
 1. **`Overview` (`/`)**:
-   - Cinematic Hero with personal identity, status indicators, and metric highlights (`8 Live`, `>90% CV ML`, `-25% Latency`, `AWS Certified`).
+   - Cinematic Hero with personal identity, status indicators, and metric highlights (`9 Live`, `>90% CV ML`, `-25% Latency`, `AWS Certified`).
    - Dual-direction continuous Technology Trains marquee.
    - 4 Top-Tier Flagship Systems Exhibition cards with problem, solution, metrics, and live demo buttons.
    - Engineering Philosophy editorial quote.

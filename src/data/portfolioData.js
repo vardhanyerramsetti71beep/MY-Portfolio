@@ -15,7 +15,7 @@ export const PROFILE = {
   linkedin: "https://www.linkedin.com/in/vardhan-yerramsetti/",
   livePortfolio: "https://vardhan-portfolio.vercel.app/",
   stats: [
-    { label: "Deployed Web Apps", value: "8", suffix: " Live", highlight: "emerald" },
+    { label: "Deployed Web Apps", value: "9", suffix: " Live", highlight: "emerald" },
     { label: "Computer Vision ML", value: ">90", suffix: "%", highlight: "brand" },
     { label: "Query Latency Cut", value: "-25", suffix: "%", highlight: "indigo" },
     { label: "Cloud Architecture", value: "AWS", suffix: " Certified", highlight: "amber" }
@@ -208,6 +208,25 @@ export const PROJECTS = [
     problem: "Enterprise task and asset pipelines require high availability, low-latency relational queries, and secure cloud storage without server bottlenecking.",
     solution: "Architected a responsive full-stack task portal featuring a Flask REST API backend, React.js dynamic state management, normalized MySQL indexing cutting query latency by 25%, and asset persistence on AWS S3 with EC2 host provisioning.",
     architecture: "React SPA ➔ JWT Auth Middleware ➔ Flask Microservice ➔ MySQL B-Tree Indexed Engine ➔ AWS S3 Object Store."
+  },
+  {
+    id: "amara-jewellery",
+    index: "09",
+    title: "AMARA Fine Jewellery Concept Site",
+    subtitle: "Rebranded Scroll-Driven Storefront & Computer-Vision Frame Pipeline",
+    category: "E-Commerce & Frontend",
+    tags: ["Python", "OpenCV", "GSAP ScrollTrigger", "Lenis", "Vercel"],
+    live: "https://amara-jewellery-five.vercel.app/",
+    github: "https://github.com/vardhanyerramsetti71beep/amara-jewellery",
+    featured: true,
+    stats: [
+      { label: "Frames Re-lettered", value: "183" },
+      { label: "Hero Film Source", value: "61 Frames" },
+      { label: "Metal Previews", value: "3 Golds" }
+    ],
+    problem: "A scroll-driven jewellery concept had its brand name baked into 183 rendered animation frames, shipped without its hero film, and had a hidden overlay that made every button unclickable.",
+    solution: "Adapted and rebranded Gireesh Kumar Reddy's CALLA scroll-driven jewellery concept as AMARA. Wrote a Python + OpenCV pipeline that found the old name stamped on the ring box in all 183 animation frames, painted it out with texture from the gaps between the letters and printed the new name at the same angle and in the same foil colours; built the hero film by cutting the ring out of its 61 turntable frames; fixed a hidden overlay that blocked every button; and added a catalogue section with white and rose gold previews.",
+    architecture: "Rendered Frame Sequences ➔ OpenCV Logo Detection & Texture Inpainting ➔ Re-lettered WebP Frames ➔ GSAP ScrollTrigger Canvas Playback ➔ Vercel Git Deploys."
   }
 ];
 
@@ -394,7 +413,7 @@ export const ECOSYSTEM_LAYERS = [
 
 export const SEARCH_INDEX = [
   { title: "Overview", path: "/", keywords: "home about hero bio python aws full stack developer vardhan yerramsetti" },
-  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 8 live apps vercel github deployments" },
+  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 9 live apps vercel github deployments" },
   { title: "Music Emotion Recommender", path: "/work", keywords: "music emotion opencv facial expression classification flask vercel computer vision" },
   { title: "S.V.T. Tailors Atelier & Tracker", path: "/work", keywords: "svt tailors bespoke order pipeline pymysql serverless mysql 5 stages" },
   { title: "MS Pickles Andhra E-Commerce", path: "/work", keywords: "ms pickles artisanal store andhra food cart tailwind es6" },
@@ -403,6 +422,7 @@ export const SEARCH_INDEX = [
   { title: "Google Forms Clone", path: "/work", keywords: "google forms clone flask sqlalchemy mysql relational survey engine" },
   { title: "OmniPulse Retention & CLV Engine", path: "/work", keywords: "omnipulse clv churn bg nbd gamma gamma customer lifetime value fastapi" },
   { title: "Scalable Task Cloud Portal", path: "/work", keywords: "task cloud portal aws ec2 s3 docker flask react rest api" },
+  { title: "AMARA Jewellery Concept", path: "/work", keywords: "amara jewellery ring rebrand opencv computer vision frames gsap scroll calla vercel" },
   { title: "Interactive Engineering Lab", path: "/lab", keywords: "lab simulators algorithm opencv audio visualizer mysql query index benchmark retention" },
   { title: "Technology Ecosystem", path: "/ecosystem", keywords: "ecosystem architecture cloud infrastructure backend python ml databases frontend" },
   { title: "Experience & Education", path: "/experience", keywords: "experience instakart flipkart teaching assistant future generali jntu kakinada btech" },
