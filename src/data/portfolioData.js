@@ -15,7 +15,7 @@ export const PROFILE = {
   linkedin: "https://www.linkedin.com/in/vardhan-yerramsetti/",
   livePortfolio: "https://vardhan-portfolio.vercel.app/",
   stats: [
-    { label: "Deployed Web Apps", value: "9", suffix: " Live", highlight: "emerald" },
+    { label: "Deployed Web Apps", value: "10", suffix: " Live", highlight: "emerald" },
     { label: "Computer Vision ML", value: ">90", suffix: "%", highlight: "brand" },
     { label: "Query Latency Cut", value: "-25", suffix: "%", highlight: "indigo" },
     { label: "Cloud Architecture", value: "AWS", suffix: " Certified", highlight: "amber" }
@@ -227,6 +227,25 @@ export const PROJECTS = [
     problem: "A scroll-driven jewellery concept had its brand name baked into 183 rendered animation frames, shipped without its hero film, and had a hidden overlay that made every button unclickable.",
     solution: "Adapted and rebranded Gireesh Kumar Reddy's CALLA scroll-driven jewellery concept as AMARA. Wrote a Python + OpenCV pipeline that found the old name stamped on the ring box in all 183 animation frames, painted it out with texture from the gaps between the letters and printed the new name at the same angle and in the same foil colours; built the hero film by cutting the ring out of its 61 turntable frames; fixed a hidden overlay that blocked every button; and added a catalogue section with white and rose gold previews.",
     architecture: "Rendered Frame Sequences ➔ OpenCV Logo Detection & Texture Inpainting ➔ Re-lettered WebP Frames ➔ GSAP ScrollTrigger Canvas Playback ➔ Vercel Git Deploys."
+  },
+  {
+    id: "ms-dhoni-tribute",
+    index: "10",
+    title: "MS Dhoni Cricket Career Tribute",
+    subtitle: "Data-Driven Sports Stats Site with Interactive Charts & Official Highlights",
+    category: "Analytics & Systems",
+    tags: ["JavaScript (ES6+)", "HTML5", "CSS3", "SVG", "Vercel"],
+    live: "https://ms-dhoni-tribute.vercel.app/",
+    github: "https://github.com/vardhanyerramsetti71beep/ms-dhoni-tribute",
+    featured: true,
+    stats: [
+      { label: "IPL Seasons Charted", value: "19" },
+      { label: "Captaincy Results", value: "567 Matches" },
+      { label: "Official Clips", value: "8 Embeds" }
+    ],
+    problem: "A career of 538 internationals and 278 IPL matches is hard to take in from scattered stats tables, and highlight videos online are often re-uploads that break or cannot be embedded.",
+    solution: "Built a one-page fan site, current to Dhoni's IPL retirement in November 2026. It renders captaincy win and loss bars for Tests, ODIs, T20Is and the IPL from data, an interactive 19-season IPL runs chart with a detail panel, and a grid of eight official ICC and Cricbuzz clips, each checked with YouTube oEmbed and loaded only when tapped. His public-domain autograph writes itself across an SVG camera lens. No dependencies and no build step.",
+    architecture: "Verified Stats Data ➔ DOM-Rendered Win/Loss Bars & Season Chart ➔ IntersectionObserver Reveals ➔ Click-to-Load YouTube Embeds ➔ Vercel CLI Deploy."
   }
 ];
 
@@ -416,7 +435,7 @@ export const ECOSYSTEM_LAYERS = [
 
 export const SEARCH_INDEX = [
   { title: "Overview", path: "/", keywords: "home about hero bio python aws full stack developer vardhan yerramsetti" },
-  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 9 live apps vercel github deployments" },
+  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 10 live apps vercel github deployments" },
   { title: "Music Emotion Recommender", path: "/work", keywords: "music emotion opencv facial expression classification flask vercel computer vision" },
   { title: "S.V.T. Tailors Atelier & Tracker", path: "/work", keywords: "svt tailors bespoke order pipeline pymysql serverless mysql 5 stages" },
   { title: "MS Pickles Andhra E-Commerce", path: "/work", keywords: "ms pickles artisanal store andhra food cart tailwind es6" },
@@ -426,6 +445,7 @@ export const SEARCH_INDEX = [
   { title: "OmniPulse Retention & CLV Engine", path: "/work", keywords: "omnipulse clv churn bg nbd gamma gamma customer lifetime value fastapi" },
   { title: "Scalable Task Cloud Portal", path: "/work", keywords: "task cloud portal aws ec2 s3 docker flask react rest api" },
   { title: "AMARA Jewellery Concept", path: "/work", keywords: "amara jewellery ring rebrand opencv computer vision frames gsap scroll calla vercel" },
+  { title: "MS Dhoni Career Tribute", path: "/work", keywords: "ms dhoni cricket ipl csk captain stats charts tribute youtube highlights svg vercel" },
   { title: "Interactive Engineering Lab", path: "/lab", keywords: "lab simulators algorithm opencv audio visualizer mysql query index benchmark retention" },
   { title: "Technology Ecosystem", path: "/ecosystem", keywords: "ecosystem architecture cloud infrastructure backend python ml databases frontend" },
   { title: "Experience & Education", path: "/experience", keywords: "experience quess corp instakart flipkart teaching assistant future generali jntu kakinada btech" },

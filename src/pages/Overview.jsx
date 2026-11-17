@@ -62,7 +62,7 @@ export default function Overview() {
                 <span className="text-slate-500">•</span>
                 <span className="font-semibold text-brand-400">Data Science</span>
                 <span className="text-slate-500">•</span>
-                <span className="text-slate-300">9 Live Deployed Apps</span>
+                <span className="text-slate-300">10 Live Deployed Apps</span>
               </div>
             </Reveal>
 
@@ -79,7 +79,7 @@ export default function Overview() {
             {/* Subtitle & Value Proposition */}
             <Reveal y={14} delay={0.15}>
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer, AWS Certified Cloud Practitioner, and Data Science Specialist. I specialize in high-throughput Flask/FastAPI microservices, machine learning and computer vision pipelines, and reactive full-stack web applications backed by 9 verified production deployments.
+                Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">{PROFILE.name}</strong> — a Python Full Stack Developer, AWS Certified Cloud Practitioner, and Data Science Specialist. I specialize in high-throughput Flask/FastAPI microservices, machine learning and computer vision pipelines, and reactive full-stack web applications backed by 10 verified production deployments.
               </p>
             </Reveal>
 
@@ -272,7 +272,7 @@ export default function Overview() {
             to="/work"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition group"
           >
-            <span>View All 9 Deployed Applications</span>
+            <span>View All 10 Deployed Applications</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
