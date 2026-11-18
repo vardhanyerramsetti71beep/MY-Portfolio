@@ -15,7 +15,7 @@ export const PROFILE = {
   linkedin: "https://www.linkedin.com/in/vardhan-yerramsetti/",
   livePortfolio: "https://vardhan-portfolio.vercel.app/",
   stats: [
-    { label: "Deployed Web Apps", value: "10", suffix: " Live", highlight: "emerald" },
+    { label: "Deployed Web Apps", value: "11", suffix: " Live", highlight: "emerald" },
     { label: "Computer Vision ML", value: ">90", suffix: "%", highlight: "brand" },
     { label: "Query Latency Cut", value: "-25", suffix: "%", highlight: "indigo" },
     { label: "Cloud Architecture", value: "AWS", suffix: " Certified", highlight: "amber" }
@@ -246,6 +246,25 @@ export const PROJECTS = [
     problem: "A career of 538 internationals and 278 IPL matches is hard to take in from scattered stats tables, and highlight videos online are often re-uploads that break or cannot be embedded.",
     solution: "Built a one-page fan site, current to Dhoni's IPL retirement in November 2026. It renders captaincy win and loss bars for Tests, ODIs, T20Is and the IPL from data, an interactive 19-season IPL runs chart with a detail panel, and a grid of eight official ICC and Cricbuzz clips, each checked with YouTube oEmbed and loaded only when tapped. His public-domain autograph writes itself across an SVG camera lens. No dependencies and no build step.",
     architecture: "Verified Stats Data ➔ DOM-Rendered Win/Loss Bars & Season Chart ➔ IntersectionObserver Reveals ➔ Click-to-Load YouTube Embeds ➔ Vercel CLI Deploy."
+  },
+  {
+    id: "saltline",
+    index: "11",
+    title: "SALTLINE Playable Road Game Teaser",
+    subtitle: "3D Browser Game with a Garage, Generative Radio & Code-Drawn Art",
+    category: "E-Commerce & Frontend",
+    tags: ["React", "TypeScript", "Three.js", "Web Audio API", "Vercel"],
+    live: "https://saltline-one.vercel.app/",
+    github: "https://github.com/vardhanyerramsetti71beep/saltline",
+    featured: true,
+    stats: [
+      { label: "Route Length", value: "580 km" },
+      { label: "Regions", value: "4" },
+      { label: "Media Files", value: "0" }
+    ],
+    problem: "Game teaser pages usually offer trailers and screenshots, so visitors watch instead of play, and the pages depend on heavy media files.",
+    solution: "Built a playable teaser for an invented road game in React, TypeScript and Three.js. Players drive 580 km through four regions on three lives, choose and respray three cars in a 3D garage, tune a radio whose three stations are synthesized live with the Web Audio API, hunt six secrets and download a driver's card. All artwork is generated in code, so the site ships no image, audio or video files.",
+    architecture: "React Chapters ➔ Zustand Game State ➔ Three.js Road & Garage Scenes ➔ Web Audio Synthesis ➔ Canvas Driver's Card ➔ Vercel CLI Deploy."
   }
 ];
 
@@ -435,7 +454,7 @@ export const ECOSYSTEM_LAYERS = [
 
 export const SEARCH_INDEX = [
   { title: "Overview", path: "/", keywords: "home about hero bio python aws full stack developer vardhan yerramsetti" },
-  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 10 live apps vercel github deployments" },
+  { title: "Projects Exhibition", path: "/work", keywords: "projects work portfolio 11 live apps vercel github deployments" },
   { title: "Music Emotion Recommender", path: "/work", keywords: "music emotion opencv facial expression classification flask vercel computer vision" },
   { title: "S.V.T. Tailors Atelier & Tracker", path: "/work", keywords: "svt tailors bespoke order pipeline pymysql serverless mysql 5 stages" },
   { title: "MS Pickles Andhra E-Commerce", path: "/work", keywords: "ms pickles artisanal store andhra food cart tailwind es6" },
@@ -446,6 +465,7 @@ export const SEARCH_INDEX = [
   { title: "Scalable Task Cloud Portal", path: "/work", keywords: "task cloud portal aws ec2 s3 docker flask react rest api" },
   { title: "AMARA Jewellery Concept", path: "/work", keywords: "amara jewellery ring rebrand opencv computer vision frames gsap scroll calla vercel" },
   { title: "MS Dhoni Career Tribute", path: "/work", keywords: "ms dhoni cricket ipl csk captain stats charts tribute youtube highlights svg vercel" },
+  { title: "SALTLINE Road Game", path: "/work", keywords: "saltline game three.js webgl 3d road trip garage radio web audio react typescript vercel" },
   { title: "Interactive Engineering Lab", path: "/lab", keywords: "lab simulators algorithm opencv audio visualizer mysql query index benchmark retention" },
   { title: "Technology Ecosystem", path: "/ecosystem", keywords: "ecosystem architecture cloud infrastructure backend python ml databases frontend" },
   { title: "Experience & Education", path: "/experience", keywords: "experience quess corp instakart flipkart teaching assistant future generali jntu kakinada btech" },
