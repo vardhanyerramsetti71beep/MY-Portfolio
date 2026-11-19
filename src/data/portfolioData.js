@@ -251,20 +251,20 @@ export const PROJECTS = [
     id: "saltline",
     index: "11",
     title: "SALTLINE Playable Road Game Teaser",
-    subtitle: "3D Browser Game with a Garage, Generative Radio & Code-Drawn Art",
+    subtitle: "3D Browser Game with Levels, a Vehicle Shop, Generative Radio & Code-Drawn Art",
     category: "E-Commerce & Frontend",
     tags: ["React", "TypeScript", "Three.js", "Web Audio API", "Vercel"],
     live: "https://saltline-one.vercel.app/",
     github: "https://github.com/vardhanyerramsetti71beep/saltline",
     featured: true,
     stats: [
-      { label: "Route Length", value: "580 km" },
-      { label: "Regions", value: "4" },
+      { label: "Levels", value: "4" },
+      { label: "Cars & Trucks", value: "9" },
       { label: "Media Files", value: "0" }
     ],
     problem: "Game teaser pages usually offer trailers and screenshots, so visitors watch instead of play, and the pages depend on heavy media files.",
-    solution: "Built a playable teaser for an invented road game in React, TypeScript and Three.js. Players drive 580 km through four regions on three lives, choose and respray three cars in a 3D garage, tune a radio whose three stations are synthesized live with the Web Audio API, hunt six secrets and download a driver's card. All artwork is generated in code, so the site ships no image, audio or video files.",
-    architecture: "React Chapters ➔ Zustand Game State ➔ Three.js Road & Garage Scenes ➔ Web Audio Synthesis ➔ Canvas Driver's Card ➔ Vercel CLI Deploy."
+    solution: "Built a playable teaser for an invented road game in React, TypeScript and Three.js. It has four levels on new maps, each ending at a pit stop where the player parks in a marked bay, with three lives per run, traffic and fuel that burns faster on boost. Coins collected on the road buy and upgrade nine cars and trucks, a radio with three stations synthesized live through the Web Audio API plays during the run, and every level hides six secrets. All artwork is generated in code, so the site ships no image, audio or video files.",
+    architecture: "React Chapters ➔ Zustand Game State & Saved Progress ➔ Three.js Levels, Traffic & Garage ➔ Web Audio Synthesis ➔ Canvas Driver's Card ➔ Vercel CLI Deploy."
   }
 ];
 
@@ -465,7 +465,7 @@ export const SEARCH_INDEX = [
   { title: "Scalable Task Cloud Portal", path: "/work", keywords: "task cloud portal aws ec2 s3 docker flask react rest api" },
   { title: "AMARA Jewellery Concept", path: "/work", keywords: "amara jewellery ring rebrand opencv computer vision frames gsap scroll calla vercel" },
   { title: "MS Dhoni Career Tribute", path: "/work", keywords: "ms dhoni cricket ipl csk captain stats charts tribute youtube highlights svg vercel" },
-  { title: "SALTLINE Road Game", path: "/work", keywords: "saltline game three.js webgl 3d road trip garage radio web audio react typescript vercel" },
+  { title: "SALTLINE Road Game", path: "/work", keywords: "saltline game three.js webgl 3d road trip levels parking shop upgrades garage radio web audio react typescript vercel" },
   { title: "Interactive Engineering Lab", path: "/lab", keywords: "lab simulators algorithm opencv audio visualizer mysql query index benchmark retention" },
   { title: "Technology Ecosystem", path: "/ecosystem", keywords: "ecosystem architecture cloud infrastructure backend python ml databases frontend" },
   { title: "Experience & Education", path: "/experience", keywords: "experience quess corp instakart flipkart teaching assistant future generali jntu kakinada btech" },

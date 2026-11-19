@@ -31,7 +31,7 @@ All featured applications are built, tested, and grounded in authentic repositor
 | 8 | **Scalable Task & Data Management Portal** | Python, Flask REST API, AWS EC2, S3, Docker | [🔗 Live App](https://task-cloud-portal.vercel.app/) | [GitHub Profile](https://github.com/vardhanyerramsetti71beep) |
 | 9 | **AMARA Fine Jewellery Concept Site** (adapted from Gireesh Kumar Reddy's CALLA concept) | Python, OpenCV, GSAP ScrollTrigger, Lenis | [🔗 Live App](https://amara-jewellery-five.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/amara-jewellery) |
 | 10 | **MS Dhoni Cricket Career Tribute** | HTML5, CSS3, JavaScript ES6+, SVG, YouTube embeds | [🔗 Live App](https://ms-dhoni-tribute.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/ms-dhoni-tribute) |
-| 11 | **SALTLINE Playable Road Game Teaser** | React, TypeScript, Three.js, Web Audio API | [🔗 Live App](https://saltline-one.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/saltline) |
+| 11 | **SALTLINE Playable Road Game Teaser** | React, TypeScript, Three.js, Web Audio API, Zustand: 4 levels, pit-stop parking, coin shop | [🔗 Live App](https://saltline-one.vercel.app/) | [GitHub Repo](https://github.com/vardhanyerramsetti71beep/saltline) |
 
 ---
 
